@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 309aaa8c27eb4334fa6f6dae7aa782d3
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - plasmaBullet: {fileID: 100000, guid: 2d6baad89413ccd4e8f7f290fc43cd14, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

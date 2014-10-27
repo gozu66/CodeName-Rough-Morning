@@ -1529,11 +1529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4c7b35cabcd564088bcdd2796146e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vertex: {fileID: 100000, guid: 44bcd87554f5b02429ce9b83dc1f71cf, type: 2}
-  gridRoot: {fileID: 752670211}
-  gridSize: {x: 5, y: 5, z: 0}
-  gridspace: {x: .25, y: .25, z: 0}
-  telekenisisRange: 5
 --- !u!1 &1468094503
 GameObject:
   m_ObjectHideFlags: 0

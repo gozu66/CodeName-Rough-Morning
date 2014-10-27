@@ -168,11 +168,11 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Points:
-  - {x: -24.7620144, y: 1.12153578}
-  - {x: 26.2031345, y: .908422232}
-  - {x: 25.7165337, y: 21.3076611}
-  - {x: -23.7283421, y: 21.3744335}
-  - {x: -24.0433979, y: .643425226}
+  - {x: -24.0930996, y: -1.92990613}
+  - {x: 25.7253399, y: -1.751809}
+  - {x: 25.6209774, y: 20.6817245}
+  - {x: -24.6839294, y: 21.0614681}
+  - {x: -24.2345142, y: -1.86032224}
 --- !u!4 &43429458
 Transform:
   m_ObjectHideFlags: 0
@@ -250,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5ad0afbfca67e46951100456ecb4fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {fileID: 0}
   playerHP: 0
 --- !u!114 &60445777
 MonoBehaviour:

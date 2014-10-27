@@ -10,6 +10,11 @@ TextureImporter:
     21300010: guy_2_spritesheet_5
     21300012: guy_2_spritesheet_6
     21300014: guy_2_spritesheet_7
+    21300016: guy_2_spritesheet_8
+    21300018: guy_2_spritesheet_9
+    21300020: guy_2_spritesheet_10
+    21300022: guy_2_spritesheet_11
+    21300024: guy_2_spritesheet_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,82 +59,92 @@ TextureImporter:
     - name: guy_2_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 116
-        y: 1508
-        width: 401
-        height: 501
+        x: 251
+        y: 1507
+        width: 210
+        height: 400
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guy_2_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 584
+        x: 715
         y: 1508
-        width: 452
-        height: 501
+        width: 221
+        height: 346
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guy_2_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1371
-        y: 1511
-        width: 227
-        height: 514
+        x: 1366
+        y: 1500
+        width: 202
+        height: 512
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guy_2_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 1747
-        y: 1503
-        width: 185
-        height: 533
+        x: 1735
+        y: 1492
+        width: 173
+        height: 520
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guy_2_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 429
-        y: 790
-        width: 267
-        height: 508
+        x: 184
+        y: 780
+        width: 212
+        height: 498
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guy_2_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 862
-        y: 786
-        width: 362
-        height: 518
+        x: 436
+        y: 776
+        width: 228
+        height: 509
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guy_2_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 1660
-        y: 813
-        width: 368
-        height: 503
+        x: 927
+        y: 748
+        width: 198
+        height: 537
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: guy_2_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 142
-        y: 786
-        width: 288
-        height: 516
+        x: 1243
+        y: 768
+        width: 267
+        height: 526
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guy_2_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 780
+        width: 195
+        height: 502
+      alignment: 7
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

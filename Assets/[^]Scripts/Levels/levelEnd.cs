@@ -17,10 +17,15 @@ public class levelEnd : MonoBehaviour
 
 	IEnumerator endLevel()
 	{
-		AudioSource.PlayClipAtPoint(winner, transform.position);
+		audio.Play();
+
+		//AudioSource.PlayClipAtPoint(winner, transform.position);
+
 		winnerSprite.SetActive(true);
 		yield return new WaitForSeconds(2);
 		Application.LoadLevel(0);
+
+
 	}
 	
 }

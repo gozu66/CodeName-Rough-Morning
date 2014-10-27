@@ -3,19 +3,20 @@ using System.Collections;
 
 public class playerHealth : MonoBehaviour 
 {
-	public Transform startPoint;
+	Vector3 startPoint;
 	public float playerHP;
 
 	void Start()
 	{
 		playerHP = 100;
+		startPoint = transform.position;
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if(col.tag == "playerHazard")
 		{
-			transform.position = startPoint.position;
+			transform.position = startPoint;
 		}
 	}
 }

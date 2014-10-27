@@ -222,6 +222,7 @@ Transform:
   - {fileID: 854364348}
   - {fileID: 713004210}
   - {fileID: 693509224}
+  - {fileID: 903339209}
   - {fileID: 517700036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -701,7 +702,7 @@ Transform:
   m_LocalScale: {x: 5.97258759, y: 5.97258759, z: 5.97258759}
   m_Children: []
   m_Father: {fileID: 60445774}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &517700037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,7 +757,7 @@ Transform:
   m_GameObject: {fileID: 693509223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .0188810006, z: 0}
-  m_LocalScale: {x: .0187861025, y: .0385355949, z: .0192677975}
+  m_LocalScale: {x: .0253172088, y: .0385355949, z: .0192677975}
   m_Children: []
   m_Father: {fileID: 60445774}
   m_RootOrder: 4
@@ -825,7 +826,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: c5bc03875afd55d4d9e1d03dd67e9fac, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -913,6 +914,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 60445774}
   m_RootOrder: 2
+--- !u!1 &903339208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
+  m_PrefabInternal: {fileID: 1059874327}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 903339209}
+  m_Layer: 0
+  m_Name: gridRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &903339209
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
+  m_PrefabInternal: {fileID: 1059874327}
+  m_GameObject: {fileID: 903339208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 60445774}
+  m_RootOrder: 5
 --- !u!1 &941367735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,11 +1216,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: .5
   rotSpeed: 150
-  moveSpeed: 5
-  throwForce: 7500
+  moveSpeed: 3
+  throwForce: 5000
   gravityGunRange: 10
   isThrowing: 0
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: .629999995, y: .839999974, z: 0}
   objRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1411882272
 MonoBehaviour:

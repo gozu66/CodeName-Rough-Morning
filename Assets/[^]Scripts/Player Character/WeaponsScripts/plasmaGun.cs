@@ -86,7 +86,7 @@ public class plasmaGun : MonoBehaviour
 
 			if(!isTrigger)
 			{
-				if(Input.GetAxisRaw("Triggers_1") <= -0.9)
+				if(Input.GetAxisRaw("RTrigger_1") > 0)
 				{
 					GameObject newBullet = Instantiate(plasmaBullet, transform.position, transform.rotation)as GameObject;
 					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (SA_force*1000));
@@ -94,11 +94,11 @@ public class plasmaGun : MonoBehaviour
 					SA_fireCooldown = 0;
 					isTrigger = true;
 				}
-			}	else {
-				{
-					if(Input.GetAxisRaw("Triggers_1") >= 0)
-						isTrigger = false;
-				}
+			}	
+			else 
+			{
+				if(Input.GetAxisRaw("RTrigger_1") <= 0)
+					isTrigger = false;					
 			}
 
 			//Debug.Log(Input.GetAxisRaw("Triggers_1"));
@@ -109,7 +109,7 @@ public class plasmaGun : MonoBehaviour
 	{
 		if(ammo > 0)
 		{
-				if(Input.GetAxis("Triggers_1") <= -0.1f && FA_fireCooldown >= FA_fireRate)
+			if(Input.GetAxisRaw("RTrigger_1") > 0 && FA_fireCooldown >= FA_fireRate)
 				{
 					GameObject newBullet = Instantiate(plasmaBullet, transform.position, transform.rotation)as GameObject;
 					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (FA_force*1000));
@@ -126,7 +126,7 @@ public class plasmaGun : MonoBehaviour
 
 	void grenadeUpdate()
 	{
-		if(Input.GetAxis("Triggers_1") <= -0.1f && G_fireCooldown >= G_fireRate)
+		if(Input.GetAxisRaw("RTrigger_1") > 0 && G_fireCooldown >= G_fireRate)
 		{
 			GameObject newBullet = Instantiate(plasmaGrenade, transform.position, transform.rotation)as GameObject;
 			newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (G_force*1000));

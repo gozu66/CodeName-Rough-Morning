@@ -74,7 +74,7 @@ public class weaponManager : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetButton("RB_1"))
+/*		if(Input.GetButton("RB_1"))
 		{
 			weaponWheelActive = true;
 
@@ -100,6 +100,25 @@ public class weaponManager : MonoBehaviour
 
 		if(Input.GetButtonUp("RB_1"))
 			selectWeapon(highlightedWeaponType);
+																*/
+
+
+		//Debug.Log(Input.GetButtonDown("DPad_D_1"));
+
+		if(Input.GetAxisRaw("DPad_XAxis_1") != 0)
+		{
+			if(Input.GetAxisRaw("DPad_XAxis_1") > 0)
+				selectWeapon(Weapon.gravityGun);
+			else
+				selectWeapon(Weapon.plasmaGun);
+		}
+		if(Input.GetAxisRaw("DPad_YAxis_1") != 0)
+		{
+			if(Input.GetAxisRaw("DPad_YAxis_1") > 0)
+				selectWeapon(Weapon.timeGun);
+			else
+				selectWeapon(Weapon.NoWeapon);
+		}	
 
 	}
 

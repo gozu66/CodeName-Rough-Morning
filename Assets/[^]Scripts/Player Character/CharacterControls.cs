@@ -53,13 +53,14 @@ public class CharacterControls : MonoBehaviour
 					Flip();
 			}
 
-		if(Input.GetButton("LB_1"))
+		if(Input.GetAxis("LTrigger_1") >= 0.1)
 		{
 			jump();
-		}	else
-			{
-				jumpPressed = false;
-			}
+		}	
+		else
+		{
+			jumpPressed = false;
+		}
 
 		if(Input.GetAxis("R_XAxis_1") != 0 && !gravityGun.isHolding)	
 			{
@@ -76,6 +77,10 @@ public class CharacterControls : MonoBehaviour
 	{
 		anim.SetBool("isGrounded", groundCheck.isGrounded);
 		anim.SetBool("isMoving", isMoving);
+
+		//Debug.Log(Input.GetAxis("RTrigger_1") + "Right");
+		//Debug.Log(Input.GetAxis("LTrigger_1") + "Left");
+
 	}
 
 	void Flip()

@@ -222,7 +222,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 1642368716}
   m_GameObject: {fileID: 190457201}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 41769d74ce8b7d341849c6f7a6806c63, type: 2}
+  m_Material: {fileID: 6200000, guid: ffe78bb7f187dca458ab0e640964db26, type: 2}
   m_IsTrigger: 0
   m_Size: {x: .839999974, y: 1.91999996}
   m_Center: {x: 0, y: .970000029}
@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5ad0afbfca67e46951100456ecb4fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {fileID: 900852063}
   playerHP: 0
 --- !u!114 &190457205
 MonoBehaviour:
@@ -1358,7 +1357,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .569999993, y: 2.00399995}
+  m_Size: {x: .959999979, y: 2.00399995}
   m_Center: {x: 0, y: 1.00199997}
 --- !u!1 &1393053475
 GameObject:
@@ -1432,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32818943af1473c469c626cc1d0758da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToSlow: .25
+  amountToSlow: .5
   effectDuration: 5
   cooldown: 10
   maxCooldown: 10
@@ -1470,7 +1469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: .5
   rotSpeed: 150
-  moveSpeed: 3
+  moveSpeed: 7
   throwForce: 5000
   gravityGunRange: 10
   isThrowing: 0
@@ -1819,48 +1818,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400012, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400014, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: startPoint
-      value: 
-      objectReference: {fileID: 900852063}
-    - target: {fileID: 11400006, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400012, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: amountToSlow
-      value: .25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100004, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_Size.x
-      value: .569999993
-      objectReference: {fileID: 0}
-    - target: {fileID: 6100002, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 41769d74ce8b7d341849c6f7a6806c63, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
   m_RootGameObject: {fileID: 190457201}

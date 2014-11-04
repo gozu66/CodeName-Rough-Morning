@@ -107,8 +107,8 @@ public class gravityGun : MonoBehaviour
 		
 		dropObject(heldObj);								//drop obj
 		
-		obj.rigidbody2D.AddForce((myTransform.right * myTransformParent.localScale.x) * throwForce, ForceMode2D.Impulse);	//throw obj
-		
+		obj.rigidbody2D.AddForce(new Vector2(obj.transform.position.x - myTransform.position.x , obj.transform.position.y - myTransform.position.y) * throwForce, ForceMode2D.Impulse);
+
 		yield return new WaitForSeconds (1);
 		
 		isThrowing = false;

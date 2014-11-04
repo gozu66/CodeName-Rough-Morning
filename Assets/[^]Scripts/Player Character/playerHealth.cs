@@ -14,6 +14,11 @@ public class playerHealth : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		if(col.tag == "checkPoint")
+		{
+			startPoint = col.transform.position;
+			col.enabled = false;
+		}
 		if(col.tag == "playerHazard")
 		{
 			transform.position = startPoint;

@@ -1182,7 +1182,6 @@ MonoBehaviour:
   cooldown: 10
   maxCooldown: 10
   mySkin: {fileID: 0}
-  TM: {fileID: 0}
   charCont: {fileID: 0}
 --- !u!114 &1411882270
 MonoBehaviour:

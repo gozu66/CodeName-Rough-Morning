@@ -67,7 +67,8 @@ public class gravityGun : MonoBehaviour
 
 	void grabObject(Transform obj)
 	{																								//creating desired position and adding offset
-		Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x) * myTransformParent.localScale.x), myTransform.position.y, 0) + offset;               				
+		//Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x) * myTransformParent.localScale.x), myTransform.position.y, 0) + offset;               				
+		Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset;               				
 
 		obj.position = Vector3.SmoothDamp(obj.position, newPos, ref refV3, followSpeed); 			//moving held object to desired postion + offset
 

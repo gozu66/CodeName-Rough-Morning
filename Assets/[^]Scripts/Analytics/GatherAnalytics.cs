@@ -16,6 +16,8 @@ public class GatherAnalytics : MonoBehaviour
 	public InputField playerName;
 	public Canvas canvas;
 
+	public bool debugEmail;
+
 	void Start()
 	{
 		Time.timeScale = 0;
@@ -50,25 +52,31 @@ public class GatherAnalytics : MonoBehaviour
 
 	void SendMail ()
 	{
-		MailMessage mail = new MailMessage();
+		if(debugEmail)
+		{
+			MailMessage mail = new MailMessage();
 
-		mail.From = new MailAddress("codenameroughmorning@gmail.com");
-		mail.To.Add("codenameroughmorning@gmail.com");
-		mail.To.Add("gozu66@gmail.com");
-		mail.Subject = testerName + " @ " + System.DateTime.Now;
-		mail.Body = timeSpent.ToString() + " seconds spent in level";
+			mail.From = new MailAddress("codenameroughmorning@gmail.com");
+			mail.To.Add("codenameroughmorning@gmail.com");
+			mail.To.Add("gozu66@gmail.com");
+			mail.Subject = testerName + " @ " + System.DateTime.Now;
+			mail.Body = timeSpent.ToString() + " seconds spent in level";
 
-		SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
-		smtpServer.Port = 587;
-		smtpServer.Credentials = new System.Net.NetworkCredential("codenameroughmorning@gmail.com", "codenameroughmorning00") as ICredentialsByHost;
-		smtpServer.EnableSsl = true;
-		ServicePointManager.ServerCertificateValidationCallback = 
-		delegate(object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) 
-		{ 
-			return true; 
-		};
-		smtpServer.Send(mail);
-		Debug.Log("success");
+			SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
+			smtpServer.Port = 587;
+			smtpServer.Credentials = new System.Net.NetworkCredential("codenameroughmorning@gmail.com", "codenameroughmorning00") as ICredentialsByHost;
+			smtpServer.EnableSsl = true;
+			ServicePointManager.ServerCertificateValidationCallback = 
+			delegate(object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) 
+			{ 
+				return true; 
+			};
+			smtpServer.Send(mail);
+			Debug.Log("success");
+		}
+		else{
+			return;
+		}
 	}
 
 }

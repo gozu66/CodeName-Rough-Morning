@@ -842,6 +842,7 @@ MonoBehaviour:
   testerName: testerName
   playerName: {fileID: 826120527}
   canvas: {fileID: 1774283790}
+  debugEmail: 0
 --- !u!4 &747632625
 Transform:
   m_ObjectHideFlags: 0
@@ -1412,6 +1413,8 @@ GameObject:
   - 114: {fileID: 942819734}
   - 114: {fileID: 942819733}
   - 61: {fileID: 942819732}
+  - 68: {fileID: 942819740}
+  - 68: {fileID: 942819739}
   m_Layer: 2
   m_Name: Guy
   m_TagString: Untagged
@@ -1551,6 +1554,32 @@ SpriteRenderer:
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: e5dcb09547e75a34f9dc8b85780a47bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!68 &942819739
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6800000, guid: eaa4ec9c92c65a7489c841573166e24b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1634714199}
+  m_GameObject: {fileID: 942819730}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 8648f43f2be046b4190f7d2be0dcbf2d, type: 2}
+  m_IsTrigger: 0
+  m_Points:
+  - {x: -.426194668, y: 1.89697862}
+  - {x: -.423659801, y: .0385100394}
+--- !u!68 &942819740
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6800002, guid: eaa4ec9c92c65a7489c841573166e24b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1634714199}
+  m_GameObject: {fileID: 942819730}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 8648f43f2be046b4190f7d2be0dcbf2d, type: 2}
+  m_IsTrigger: 0
+  m_Points:
+  - {x: .42835331, y: 1.89586997}
+  - {x: .42507267, y: .0414158031}
 --- !u!1 &996246992
 GameObject:
   m_ObjectHideFlags: 0

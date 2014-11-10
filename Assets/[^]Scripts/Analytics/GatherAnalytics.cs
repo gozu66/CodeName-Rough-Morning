@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.IO;
@@ -40,7 +40,7 @@ public class GatherAnalytics : MonoBehaviour
 			sr.Close();
 		*/
 
-		SendMail();
+/*		SendMail();
 	}
 
 	void SetName()
@@ -80,3 +80,4 @@ public class GatherAnalytics : MonoBehaviour
 	}
 
 }
+*/

@@ -235,7 +235,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.86499977, y: -.146990001, z: 0}
+  m_LocalPosition: {x: -16.4839993, y: 5.37750006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400012}
@@ -575,8 +575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToSlow: .5
   effectDuration: 5
-  cooldown: 10
-  maxCooldown: 10
+  cooldown: 2
+  maxCooldown: 2
   mySkin: {fileID: 0}
   charCont: {fileID: 0}
 --- !u!114 &11400014

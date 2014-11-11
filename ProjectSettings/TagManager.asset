@@ -48,3 +48,15 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Background
+    userID: 1
+    uniqueID: 3794706849
+    locked: 0
+  - name: Midground
+    userID: 2
+    uniqueID: 3010793625
+    locked: 0
+  - name: Foreground
+    userID: 3
+    uniqueID: 1404451337
+    locked: 0

@@ -63,6 +63,11 @@ public class plasmaGun : MonoBehaviour
 					else if(currFireType == fireType.Grenade)
 						currFireType = fireType.semiAuto;
 		}
+
+		if(ammo < 50)
+		{
+			ammo += Time.deltaTime/3;
+		}
 	}
 
 	void semiAutoUpdate()
@@ -148,12 +153,12 @@ public class plasmaGun : MonoBehaviour
 		switch(currFireType)
 		{
 		case fireType.semiAuto:
-			GUI.Box(new Rect(25, 5, 100, 50),"Ammo\n "+ammo);
+			GUI.Box(new Rect(25, 5, 100, 50),"Ammo\n " + ammo.ToString("0"));
 			GUI.Box(new Rect(150, 5, 100, 50),"Semi Auto\nX");
 			break;
 			
 		case fireType.fullAuto:
-			GUI.Box(new Rect(25, 5, 100, 50),"Ammo\n "+ammo);
+			GUI.Box(new Rect(25, 5, 100, 50),"Ammo\n " + ammo.ToString("0"));
 			GUI.Box(new Rect(150, 5, 100, 50),"Full Auto\nX");
 			break;
 

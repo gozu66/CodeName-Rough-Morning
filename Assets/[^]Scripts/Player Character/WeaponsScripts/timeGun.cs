@@ -11,7 +11,7 @@ public class timeGun : MonoBehaviour
 
 	public GUISkin mySkin;
 
-	public TimeManager TM;
+	TimeManager TM;
 	public CharacterControls charCont;
 
 	void Start()

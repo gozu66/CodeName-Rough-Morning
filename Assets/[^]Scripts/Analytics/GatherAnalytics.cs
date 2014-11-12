@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System;
 using System.Net;
@@ -19,15 +20,49 @@ public class GatherAnalytics : MonoBehaviour
 	int deaths = 0;
 	int checkpointReached = 0;
 	float CP0, CP1, CP2, CP3, CP4, CP5, CP6, CP7, CP8, CP9;
+	float CPT0, CPT1, CPT2, CPT3, CPT4, CPT5, CPT6, CPT7, CPT8, CPT9;
+	public float telekinesis, projectile, timeslow, nothing;
+	public int i;
+	int x = 0;
 
 	void Start()
 	{
 		Time.timeScale = 0;
+		i = 0;
 	}
 
 	void Update()
 	{
-		timeSpent += Time.deltaTime * Time.timeScale;
+		timeSpent += Time.deltaTime;
+
+		if(Time.timeScale == 1)
+		{
+		if(i == 0)
+			nothing += Time.deltaTime;
+
+		if(i == 1)
+			telekinesis += Time.deltaTime;
+
+		if(i == 2)
+			timeslow += Time.deltaTime;
+
+		if(i == 3)
+			projectile += Time.deltaTime ;
+		}
+		else{
+
+			if(i == 0)
+				nothing += Time.deltaTime * 2;
+			
+			if(i == 1)
+				telekinesis += Time.deltaTime * 2;
+			
+			if(i == 2)
+				timeslow += Time.deltaTime * 2;
+			
+			if(i == 3)
+				projectile += Time.deltaTime * 2;
+		}
 
 		if(Input.GetMouseButton(1))
 		{
@@ -42,7 +77,8 @@ public class GatherAnalytics : MonoBehaviour
 			sr.Close();
 		*/
 
-		SendMail();
+
+		//SendMail();
 	}
 
 	void SetName()
@@ -65,8 +101,11 @@ public class GatherAnalytics : MonoBehaviour
 
 
 			mail.Body = timeSpent.ToString() + " seconds spent in level" + "\n" +deaths + " Times died overall" + "\n" + checkpointReached + " checkpoints passed" + "\n" 
-				+ "Deths at Checkpoint 0 : " + CP0 + "\n" + "Deths at Checkpoint 1 : " + CP1 + "\n" +  "Deths at Checkpoint 2 : " + CP2 + "\n" +  "Deths at Checkpoint 3 : " + CP3 + "\n" + "Deths at Checkpoint 4 : " + CP4 + "\n" + "Deths at Checkpoint 5 : " + CP5 +
-					"\n" + "Deths at Checkpoint 6 : " + CP6 + "\n" + "Deths at Checkpoint 7 : " + CP7 + "\n" + "Deths at Checkpoint 8 : " + CP8 + "\n" + "Deths at Checkpoint 9 : " + CP9;
+				+ "Time to checkpoint 0 : " + CPT0 + "\n" + "Time to checkpoint 1 : " + CPT1 + "\n" + "Time to checkpoint 2 : " + CPT2 + "\n" +"Time to checkpoint 3 : " + CPT3 + "\n" +"Time to checkpoint 4 : " + CPT4 + "\n" +"Time to checkpoint 5 : " + CPT5 + "\n" +
+					"Time to checkpoint 6 : " + CPT6 + "\n" +"Time to checkpoint 7 : " + CPT7 + "\n" +"Time to checkpoint 8 : " + CPT8 + "\n" +"Time to checkpoint 9 : " + CPT9 + "\n"
+						+ "Deaths at Checkpoint 0 : " + CP0 + "\n" + "Deaths at Checkpoint 1 : " + CP1 + "\n" +  "Deaths at Checkpoint 2 : " + CP2 + "\n" +  "Deaths at Checkpoint 3 : " + CP3 + "\n" + "Deaths at Checkpoint 4 : " + CP4 + "\n" + "Deaths at Checkpoint 5 : " + CP5 +
+							"\n" + "Deaths at Checkpoint 6 : " + CP6 + "\n" + "Deaths at Checkpoint 7 : " + CP7 + "\n" + "Deaths at Checkpoint 8 : " + CP8 + "\n" + "Deaths at Checkpoint 9 : " + CP9 + "\n" + "Time spent with nothing selected : " + nothing + "\n" + "Time spent with Telekinesis selected : "
+								+ telekinesis + "\n" + "Time spent with Projectiles selected : " + projectile + "\n" + "Time spent with Time slow selected : " + timeslow;
 
 
 			SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
@@ -94,38 +133,111 @@ public class GatherAnalytics : MonoBehaviour
 	void AddCheckpoint()
 	{
 		checkpointReached++;
+		if(checkpointReached == 0)
+		{
+			CPT0 = timeSpent;
+		}
+		
+		if(checkpointReached == 1)
+		{
+			CPT1 = timeSpent;
+		}
+		
+		if(checkpointReached == 2)
+		{
+			CPT2 = timeSpent;
+		}
+		
+		if(checkpointReached == 3)
+		{
+			CPT3 = timeSpent;
+		}
+		
+		if(checkpointReached == 4)
+		{
+			CPT4 = timeSpent;
+		}
+		
+		if(checkpointReached == 5)
+		{
+			CPT5 = timeSpent;
+		}
+		
+		if(checkpointReached == 6)
+		{
+			CPT6 = timeSpent;
+		}
+		
+		if(checkpointReached == 7)
+		{
+			CPT7 = timeSpent;
+		}
+		
+		if(checkpointReached == 8)
+		{
+			CPT8 = timeSpent;
+		}
+		
+		if(checkpointReached == 9)
+		{
+			CPT9 = timeSpent;
+		}
 	}
 	void DeathAtCheckpoint()
 	{
 		if(checkpointReached == 0)
+		{
 			CP0++;
+		}
 		
 		if(checkpointReached == 1)
+		{
 			CP1++;
+		}
 		
 		if(checkpointReached == 2)
+		{
 			CP2++;
+		}
 		
 		if(checkpointReached == 3)
+		{
 			CP3++;
+		}
 		
 		if(checkpointReached == 4)
+		{
 			CP4++;
+		}
 		
 		if(checkpointReached == 5)
+		{
 			CP5++;
+		}
 		
 		if(checkpointReached == 6)
+		{
 			CP6++;
+		}
 		
 		if(checkpointReached == 7)
+		{
 			CP7++;
+		}
 		
 		if(checkpointReached == 8)
+		{
 			CP8++;
+		}
 		
 		if(checkpointReached == 9)
+		{
 			CP9++;
+		}
 	}
 
+	void WeaponTimer(int x)
+	{
+		i = x;
+	}
 }

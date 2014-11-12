@@ -6,6 +6,9 @@ public class levelEnd : MonoBehaviour
 	public AudioClip winner;
 	public GameObject winnerSprite;
 
+	public GameObject anaNode;		//ANALYTICS 
+
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.tag == "Player")
@@ -18,11 +21,11 @@ public class levelEnd : MonoBehaviour
 	IEnumerator endLevel()
 	{
 		audio.Play();
-
-		//AudioSource.PlayClipAtPoint(winner, transform.position);
-
 		winnerSprite.SetActive(true);
-		yield return new WaitForSeconds(2);
+		//AudioSource.PlayClipAtPoint(winner, transform.position);
+		//anaNode.SendMessage("WeaponTimer", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
+		yield return new WaitForSeconds(1.5f);
+		anaNode.SendMessage("SendMail", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		Application.LoadLevel(0);
 
 

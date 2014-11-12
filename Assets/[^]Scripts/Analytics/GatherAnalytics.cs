@@ -64,10 +64,12 @@ public class GatherAnalytics : MonoBehaviour
 				projectile += Time.deltaTime * 2;
 		}
 
-		if(Input.GetMouseButton(1))
+		if(Input.GetKeyDown(KeyCode.Tab))
 		{
 			SendMail();
 		}
+
+
 	}
 	void OnApplicationQuit()
 	{

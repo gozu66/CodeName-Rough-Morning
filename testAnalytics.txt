@@ -1,0 +1,27 @@
+1.813457 seconds spent in level
+0 Times died overall
+0 checkpoints passed 
+Time to checkpoint 0 : 0
+Time to checkpoint 1 : 0
+Time to checkpoint 2 : 0
+Time to checkpoint 3 : 0
+Time to checkpoint 4 : 0
+Time to checkpoint 5 : 0
+Time to checkpoint 6 : 0
+Time to checkpoint 7 : 0
+Time to checkpoint 8 : 0
+Time to checkpoint 9 : 0
+Deaths at Checkpoint 0 : 0
+Deaths at Checkpoint 1 : 0
+Deaths at Checkpoint 2 : 0
+Deaths at Checkpoint 3 : 0
+Deaths at Checkpoint 4 : 0
+Deaths at Checkpoint 5 : 0
+Deaths at Checkpoint 6 : 0
+Deaths at Checkpoint 7 : 0
+Deaths at Checkpoint 8 : 0
+Deaths at Checkpoint 9 : 0
+Time spent with nothing selected : 1.833457
+Time spent with Telekinesis selected : 0
+Time spent with Projectiles selected : 0
+Time spent with Time slow selected : 0

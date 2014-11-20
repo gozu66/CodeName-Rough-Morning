@@ -64,6 +64,8 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   - 61: {fileID: 6100002}
+  - 68: {fileID: 6800002}
+  - 68: {fileID: 6800000}
   m_Layer: 2
   m_Name: Guy
   m_TagString: Untagged
@@ -233,7 +235,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07050002, y: 4.92479992, z: 0}
+  m_LocalPosition: {x: -16.4839993, y: 5.37750006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400012}
@@ -420,6 +422,30 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!68 &6800000
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 8648f43f2be046b4190f7d2be0dcbf2d, type: 2}
+  m_IsTrigger: 0
+  m_Points:
+  - {x: -.426194668, y: 1.89697862}
+  - {x: -.423659801, y: .0385100394}
+--- !u!68 &6800002
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 8648f43f2be046b4190f7d2be0dcbf2d, type: 2}
+  m_IsTrigger: 0
+  m_Points:
+  - {x: .42835331, y: 1.89586997}
+  - {x: .42507267, y: .0414158031}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -549,10 +575,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToSlow: .5
   effectDuration: 5
-  cooldown: 10
-  maxCooldown: 10
+  cooldown: 2
+  maxCooldown: 2
   mySkin: {fileID: 0}
-  TM: {fileID: 0}
   charCont: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:

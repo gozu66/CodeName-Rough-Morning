@@ -6,6 +6,10 @@ public class playerHealth : MonoBehaviour
 	Vector3 startPoint;
 	public float playerHP;
 
+	public GameObject anaNode;
+
+
+
 	void Start()
 	{
 		playerHP = 100;
@@ -18,10 +22,12 @@ public class playerHealth : MonoBehaviour
 		{
 			startPoint = col.transform.position;
 			col.enabled = false;
+			anaNode.SendMessage("AddCheckpoint", SendMessageOptions.DontRequireReceiver);
 		}
 		if(col.tag == "playerHazard")
 		{
 			transform.position = startPoint;
+			anaNode.SendMessage("AddDeath", SendMessageOptions.DontRequireReceiver);
 		}
 	}
 }

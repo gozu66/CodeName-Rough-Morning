@@ -20,6 +20,8 @@ public class weaponManager : MonoBehaviour
 
 	public GUISkin weaponManagerSkin;
 
+	public GameObject anaNode;		//ANALYTICS 
+
 	void Start()
 	{
 		TM = transform.parent.GetComponent<TimeManager>();
@@ -125,16 +127,25 @@ public class weaponManager : MonoBehaviour
 	void selectWeaponSwitch(Weapon w)
 	{
 		if(w == Weapon.NoWeapon)
+		{
 			switchWeapon(false, false, false, false, false, false, false, false);
-
+			anaNode.SendMessage("WeaponTimer", 0, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
+		}
 		if(w == Weapon.gravityGun)
+		{
 			switchWeapon(true, true, false, true, true, false, false, false);
-
+			anaNode.SendMessage("WeaponTimer", 1, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
+		}
 		if(w == Weapon.timeGun)
+		{
 			switchWeapon(false, false, true, false, false, true, false, false);
-
+			anaNode.SendMessage("WeaponTimer", 2, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
+		}
 		if(w == Weapon.plasmaGun)
-			switchWeapon(true, false, false, true, false, false, true, true);;
+		{
+			switchWeapon(true, false, false, true, false, false, true, true);
+			anaNode.SendMessage("WeaponTimer", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
+		}
 	}
 
 	void OnGUI()

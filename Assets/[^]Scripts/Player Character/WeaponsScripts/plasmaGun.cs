@@ -52,7 +52,7 @@ public class plasmaGun : MonoBehaviour
 				break;
 		}
 
-		if(Input.GetButtonDown("X_1"))
+		/*if(Input.GetButtonDown("RB_1"))
 		{
 			if(currFireType == fireType.semiAuto)
 			currFireType = fireType.fullAuto;
@@ -62,7 +62,7 @@ public class plasmaGun : MonoBehaviour
 
 					else if(currFireType == fireType.Grenade)
 						currFireType = fireType.semiAuto;
-		}
+		}*/
 
 		if(ammo < 50)
 		{
@@ -91,7 +91,7 @@ public class plasmaGun : MonoBehaviour
 
 			if(!isTrigger)
 			{
-				if(Input.GetAxisRaw("RTrigger_1") > 0)
+				if(Input.GetButtonDown("RB_1") && !gravityGun.isHolding)
 				{
 					GameObject newBullet = Instantiate(plasmaBullet, transform.position, transform.rotation)as GameObject;
 					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (SA_force*1000));
@@ -102,7 +102,7 @@ public class plasmaGun : MonoBehaviour
 			}	
 			else 
 			{
-				if(Input.GetAxisRaw("RTrigger_1") <= 0)
+				if(Input.GetButtonUp("RB_1"))
 					isTrigger = false;					
 			}
 
@@ -114,24 +114,24 @@ public class plasmaGun : MonoBehaviour
 	{
 		if(ammo > 0)
 		{
-			if(Input.GetAxisRaw("RTrigger_1") > 0 && FA_fireCooldown >= FA_fireRate)
+			/*if(Input.GetButton("B_1") && FA_fireCooldown >= FA_fireRate && !gravityGun.isHolding)
 				{
 					GameObject newBullet = Instantiate(plasmaBullet, transform.position, transform.rotation)as GameObject;
 					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (FA_force*1000));
 					ammo--;
 					FA_fireCooldown = 0;
-				}
+				}else{return;}
 				
 				if(FA_fireCooldown < FA_fireRate)
 				{
 					FA_fireCooldown += (Time.deltaTime) / Time.timeScale;
-				}
+				}*/
 		}
 	}
 
 	void grenadeUpdate()
 	{
-		if(Input.GetAxisRaw("RTrigger_1") > 0 && G_fireCooldown >= G_fireRate)
+		if(Input.GetButtonDown("B_1") && G_fireCooldown >= G_fireRate && !gravityGun.isHolding)
 		{
 			GameObject newBullet = Instantiate(plasmaGrenade, transform.position, transform.rotation)as GameObject;
 			newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (G_force*1000));
@@ -146,7 +146,7 @@ public class plasmaGun : MonoBehaviour
 
 	}
 
-	void OnGUI()
+	/*void OnGUI()
 	{
 		GUI.skin = mySkin;
 
@@ -172,5 +172,5 @@ public class plasmaGun : MonoBehaviour
 			break;
 		}
 
-	}
+	}*/
 }

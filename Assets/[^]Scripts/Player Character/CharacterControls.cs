@@ -53,7 +53,7 @@ public class CharacterControls : MonoBehaviour
 					Flip();
 			}
 
-		if(Input.GetAxis("LTrigger_1") >= 0.1)
+		if(Input.GetAxis("LTrigger_1") >= 0.1 || Input.GetButton("A_1"))
 		{
 			jump();
 		}	

@@ -43,7 +43,7 @@ public class timeGun : MonoBehaviour
 			}
 
 			else{
-					if(Input.GetAxis("RTrigger_1") >= 0.1f)
+					if(Input.GetButtonDown("Y_1"))
 					{
 							timeStopped = true;
 							cooldown = 0; 

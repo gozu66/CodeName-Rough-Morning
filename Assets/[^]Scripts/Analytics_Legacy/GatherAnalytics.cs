@@ -13,8 +13,8 @@ public class GatherAnalytics : MonoBehaviour
 {
 	public InputField playerName;
 	public Canvas canvas;
-	public bool debugEmail;
-	public bool debugTxt;
+	public bool debugEmail = false;
+	public bool debugTxt = false;
 
 	string testerName = "testername";
 	string FILE_NAME = "Analytics.txt";
@@ -85,6 +85,7 @@ public class GatherAnalytics : MonoBehaviour
 
 	void SendMail ()
 	{
+		debugEmail = false;
 		if(debugEmail)
 		{
 			MailMessage mail = new MailMessage();
@@ -233,42 +234,46 @@ public class GatherAnalytics : MonoBehaviour
 
 	void WriteTxt()
 	{
-		StreamWriter sr = File.CreateText(testerName + FILE_NAME);
-//		sr.WriteLine(timeSpent.ToString() + " seconds spent in level   " + "\n" +deaths + " Times died overall   " + "\n" + checkpointReached + " checkpoints passed   " + "\n" 
-//		             + "Time to checkpoint 0 : " + CPT0 + "\n" + "   Time to checkpoint 1 : " + CPT1 + "\n" + "   Time to checkpoint 2 : " + CPT2 + "\n" +"   Time to checkpoint 3 : " + CPT3 + "\n" +"   Time to checkpoint 4 : " + CPT4 + "\n" +"   Time to checkpoint 5 : " + CPT5 + "\n" +
-//		             "   Time to checkpoint 6 : " + CPT6 + "\n" +"   Time to checkpoint 7 : " + CPT7 + "\n" +"   Time to checkpoint 8 : " + CPT8 + "\n" +"   Time to checkpoint 9 : " + CPT9 + "\n"
-//		             + "   Deaths at Checkpoint 0 : " + CP0 + "\n" + "   Deaths at Checkpoint 1 : " + CP1 + "\n" +  "   Deaths at Checkpoint 2 : " + CP2 + "\n" +  "   Deaths at Checkpoint 3 : " + CP3 + "\n" + "   Deaths at Checkpoint 4 : " + CP4 + "\n" + "   Deaths at Checkpoint 5 : " + CP5 +
-//		             "\n" + "   Deaths at Checkpoint 6 : " + CP6 + "\n" + "   Deaths at Checkpoint 7 : " + CP7 + "\n" + "   Deaths at Checkpoint 8 : " + CP8 + "\n" + "   Deaths at Checkpoint 9 : " + CP9 + "\n" + "   Time spent with nothing selected : " + nothing + "\n" + "   Time spent with Telekinesis selected : "
-//		             + telekinesis + "\n" + "   Time spent with Projectiles selected : " + projectile + "\n" + "   Time spent with Time slow selected : " + timeslow);
+		debugTxt = false;
+		if(debugTxt)
+		{
+			StreamWriter sr = File.CreateText(testerName + FILE_NAME);
+	//		sr.WriteLine(timeSpent.ToString() + " seconds spent in level   " + "\n" +deaths + " Times died overall   " + "\n" + checkpointReached + " checkpoints passed   " + "\n" 
+	//		             + "Time to checkpoint 0 : " + CPT0 + "\n" + "   Time to checkpoint 1 : " + CPT1 + "\n" + "   Time to checkpoint 2 : " + CPT2 + "\n" +"   Time to checkpoint 3 : " + CPT3 + "\n" +"   Time to checkpoint 4 : " + CPT4 + "\n" +"   Time to checkpoint 5 : " + CPT5 + "\n" +
+	//		             "   Time to checkpoint 6 : " + CPT6 + "\n" +"   Time to checkpoint 7 : " + CPT7 + "\n" +"   Time to checkpoint 8 : " + CPT8 + "\n" +"   Time to checkpoint 9 : " + CPT9 + "\n"
+	//		             + "   Deaths at Checkpoint 0 : " + CP0 + "\n" + "   Deaths at Checkpoint 1 : " + CP1 + "\n" +  "   Deaths at Checkpoint 2 : " + CP2 + "\n" +  "   Deaths at Checkpoint 3 : " + CP3 + "\n" + "   Deaths at Checkpoint 4 : " + CP4 + "\n" + "   Deaths at Checkpoint 5 : " + CP5 +
+	//		             "\n" + "   Deaths at Checkpoint 6 : " + CP6 + "\n" + "   Deaths at Checkpoint 7 : " + CP7 + "\n" + "   Deaths at Checkpoint 8 : " + CP8 + "\n" + "   Deaths at Checkpoint 9 : " + CP9 + "\n" + "   Time spent with nothing selected : " + nothing + "\n" + "   Time spent with Telekinesis selected : "
+	//		             + telekinesis + "\n" + "   Time spent with Projectiles selected : " + projectile + "\n" + "   Time spent with Time slow selected : " + timeslow);
 
-		sr.WriteLine(timeSpent.ToString() + " seconds spent in level");
-		sr.WriteLine(deaths + " Times died overall");
-		sr.WriteLine(checkpointReached + " checkpoints passed ");
-		sr.WriteLine("Time to checkpoint 0 : " + CPT0);
-			sr.WriteLine("Time to checkpoint 1 : " + CPT1);
-				sr.WriteLine("Time to checkpoint 2 : " + CPT2);
-					sr.WriteLine("Time to checkpoint 3 : " + CPT3);
-						sr.WriteLine("Time to checkpoint 4 : " + CPT4);
-							sr.WriteLine("Time to checkpoint 5 : " + CPT5);
-								sr.WriteLine("Time to checkpoint 6 : " + CPT6);
-									sr.WriteLine("Time to checkpoint 7 : " + CPT7);
-										sr.WriteLine("Time to checkpoint 8 : " + CPT8);
-											sr.WriteLine("Time to checkpoint 9 : " + CPT9);
-		sr.WriteLine("Deaths at Checkpoint 0 : " + CP0);
-			sr.WriteLine("Deaths at Checkpoint 1 : " + CP1);
-				sr.WriteLine("Deaths at Checkpoint 2 : " + CP2);
-					sr.WriteLine("Deaths at Checkpoint 3 : " + CP3);
-						sr.WriteLine("Deaths at Checkpoint 4 : " + CP4);
-							sr.WriteLine("Deaths at Checkpoint 5 : " + CP5);
-								sr.WriteLine("Deaths at Checkpoint 6 : " + CP6);
-									sr.WriteLine("Deaths at Checkpoint 7 : " + CP7);
-										sr.WriteLine("Deaths at Checkpoint 8 : " + CP8);
-											sr.WriteLine("Deaths at Checkpoint 9 : " + CP9);
-		sr.WriteLine("Time spent with nothing selected : " + nothing);
-		sr.WriteLine("Time spent with Telekinesis selected : " + telekinesis);
-		sr.WriteLine("Time spent with Projectiles selected : " + projectile);
-		sr.WriteLine("Time spent with Time slow selected : " + timeslow);
-		sr.Close();
+			sr.WriteLine(timeSpent.ToString() + " seconds spent in level");
+			sr.WriteLine(deaths + " Times died overall");
+			sr.WriteLine(checkpointReached + " checkpoints passed ");
+			sr.WriteLine("Time to checkpoint 0 : " + CPT0);
+				sr.WriteLine("Time to checkpoint 1 : " + CPT1);
+					sr.WriteLine("Time to checkpoint 2 : " + CPT2);
+						sr.WriteLine("Time to checkpoint 3 : " + CPT3);
+							sr.WriteLine("Time to checkpoint 4 : " + CPT4);
+								sr.WriteLine("Time to checkpoint 5 : " + CPT5);
+									sr.WriteLine("Time to checkpoint 6 : " + CPT6);
+										sr.WriteLine("Time to checkpoint 7 : " + CPT7);
+											sr.WriteLine("Time to checkpoint 8 : " + CPT8);
+												sr.WriteLine("Time to checkpoint 9 : " + CPT9);
+			sr.WriteLine("Deaths at Checkpoint 0 : " + CP0);
+				sr.WriteLine("Deaths at Checkpoint 1 : " + CP1);
+					sr.WriteLine("Deaths at Checkpoint 2 : " + CP2);
+						sr.WriteLine("Deaths at Checkpoint 3 : " + CP3);
+							sr.WriteLine("Deaths at Checkpoint 4 : " + CP4);
+								sr.WriteLine("Deaths at Checkpoint 5 : " + CP5);
+									sr.WriteLine("Deaths at Checkpoint 6 : " + CP6);
+										sr.WriteLine("Deaths at Checkpoint 7 : " + CP7);
+											sr.WriteLine("Deaths at Checkpoint 8 : " + CP8);
+												sr.WriteLine("Deaths at Checkpoint 9 : " + CP9);
+			sr.WriteLine("Time spent with nothing selected : " + nothing);
+			sr.WriteLine("Time spent with Telekinesis selected : " + telekinesis);
+			sr.WriteLine("Time spent with Projectiles selected : " + projectile);
+			sr.WriteLine("Time spent with Time slow selected : " + timeslow);
+			sr.Close();
+		}
 	}
 
 	void WeaponTimer(int x)

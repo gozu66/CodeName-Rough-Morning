@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cc03a2edea44947b2ca022f458429a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _input: 0
   maxSpeed: 10
   jumpForce: 2500
   ground:
@@ -244,6 +245,8 @@ MonoBehaviour:
   groundcheck: {fileID: 693509224}
   aimReticule: {fileID: 713004210}
   GroundCheckSize: 1
+  reticule: {fileID: 0}
+  range: 0
 --- !u!95 &60445779
 Animator:
   serializedVersion: 3
@@ -295,7 +298,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: e5dcb09547e75a34f9dc8b85780a47bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -428,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &274448486
 Transform:
   m_ObjectHideFlags: 0
@@ -460,7 +463,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 627e899c1f4f4634482b4101ec400f13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1138,7 +1141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &848343790
 Transform:
   m_ObjectHideFlags: 0
@@ -1170,7 +1173,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0482e0c79a05a654fb2afbe2cfcddc57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1533,7 +1536,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 243883769}
   m_GameObject: {fileID: 1411882266}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 309aaa8c27eb4334fa6f6dae7aa782d3, type: 3}
   m_Name: 
@@ -1557,15 +1560,15 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 243883769}
   m_GameObject: {fileID: 1411882266}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32818943af1473c469c626cc1d0758da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   amountToSlow: .5
   effectDuration: 5
-  cooldown: 2
-  maxCooldown: 2
+  cooldown: 5
+  maxCooldown: 5
   mySkin: {fileID: 0}
   charCont: {fileID: 0}
 --- !u!114 &1411882270
@@ -1575,7 +1578,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 243883769}
   m_GameObject: {fileID: 1411882266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 431684dc0ee151f4081be75acc2da309, type: 3}
   m_Name: 
@@ -1593,7 +1596,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 243883769}
   m_GameObject: {fileID: 1411882266}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6301dedb7351f4e40a4cab3c2416834a, type: 3}
   m_Name: 
@@ -1601,7 +1604,7 @@ MonoBehaviour:
   followSpeed: .5
   rotSpeed: 150
   moveSpeed: 7
-  throwForce: 5000
+  throwForce: 2500
   gravityGunRange: 10
   isThrowing: 0
   offset: {x: .629999995, y: .839999974, z: 0}
@@ -1618,8 +1621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77db2df4e9ac9c64581b1ed87c8b77af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reticule: {fileID: 713004210}
-  range: 1
+  _input: 0
+  reticule: {fileID: 0}
+  range: 0
 --- !u!212 &1411882273
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1639,8 +1643,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 3010793625
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1f8cf8a7c6f809843a524654ff051c9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1468094503
@@ -1736,7 +1740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1743600578
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1756,7 +1760,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a0a07d26b9f54c4685335adb2504559, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

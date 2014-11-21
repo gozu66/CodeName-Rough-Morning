@@ -235,7 +235,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.86499977, y: -.146990001, z: 0}
+  m_LocalPosition: {x: -27.1830006, y: 5.15920019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400012}
@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cc03a2edea44947b2ca022f458429a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _input: 0
   maxSpeed: 10
   jumpForce: 2500
   ground:
@@ -506,6 +507,8 @@ MonoBehaviour:
   groundcheck: {fileID: 400000}
   aimReticule: {fileID: 400008}
   GroundCheckSize: 1
+  reticule: {fileID: 0}
+  range: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -545,7 +548,7 @@ MonoBehaviour:
   followSpeed: .5
   rotSpeed: 150
   moveSpeed: 7
-  throwForce: 5000
+  throwForce: 2500
   gravityGunRange: 10
   isThrowing: 0
   offset: {x: .629999995, y: .839999974, z: 0}
@@ -561,8 +564,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77db2df4e9ac9c64581b1ed87c8b77af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reticule: {fileID: 400008}
-  range: 1
+  _input: 0
+  reticule: {fileID: 0}
+  range: 0
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -576,8 +580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToSlow: .5
   effectDuration: 5
-  cooldown: 0
-  maxCooldown: 0
+  cooldown: 5
+  maxCooldown: 5
   mySkin: {fileID: 0}
   charCont: {fileID: 0}
 --- !u!114 &11400014
@@ -650,7 +654,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0482e0c79a05a654fb2afbe2cfcddc57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -672,7 +676,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 627e899c1f4f4634482b4101ec400f13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -694,7 +698,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: e5dcb09547e75a34f9dc8b85780a47bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -738,7 +742,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1f8cf8a7c6f809843a524654ff051c9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -760,7 +764,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3010793625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a0a07d26b9f54c4685335adb2504559, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

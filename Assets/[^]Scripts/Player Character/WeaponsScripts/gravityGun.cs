@@ -28,49 +28,57 @@ public class gravityGun : MonoBehaviour
 	{
 		if(!isHolding)
 		{	
-			if(Input.GetButton("RB_1") && !isThrowing)
-			{																																		//raycasting along the aim diretion
-				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, myTransform.right.y, myTransform.right.z), gravityGunRange);
+			//if(Input.GetAxisRaw("RTrigger_1") > 0 && !isThrowing)
+			if(Input.GetButtonDown("RB_1")&& !isThrowing)
+			{																		
+				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, 			//raycasting along the aim diretion
+				                                       new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, 
+				             										myTransform.right.y, myTransform.right.z), gravityGunRange);
 
-				if(hit2D == true)													//Raycasting for object pick-up
+				if(hit2D == true)														//Raycasting for object pick-up
 				{
 					if(hit2D.collider.tag == "moveable")
 					{
 						isHolding = true;									
 
 						hit2D.collider.rigidbody2D.isKinematic = true;
-						heldObj = hit2D.collider.transform;							//cache selected object as heldobj
-						heldObj.gameObject.layer = 10;								//set layer to telekinesis layer
+						heldObj = hit2D.collider.transform;								//cache selected object as heldobj
+						heldObj.gameObject.layer = 10;									//set layer to telekinesis layer
 					}
 				}
 			}
 		}	
 		else
 		{
-			offset.x += Input.GetAxis("R_XAxis_1")* Time.deltaTime * moveSpeed;		//While holding obj, V3 offset adjusted by D-Pad input
+			offset.x += Input.GetAxis("R_XAxis_1")* Time.deltaTime * moveSpeed;			//While holding obj, V3 offset adjusted by D-Pad input
 			offset.y += -Input.GetAxis("R_YAxis_1")* Time.deltaTime * moveSpeed;		
 
-			if(Input.GetButton("RB_1") && !isThrowing)
+			if(isHolding && !isThrowing)
 			{	
-				grabObject(heldObj);						//calling grab object function every frame the obj is held and RT is pressed
+				grabObject(heldObj);							//calling grab object function every frame the obj is held and RT is pressed
 			} 
 			else
 			{	
-				dropObject(heldObj);						//calling drop object if object is held an RT is no longer being pressed
+				dropObject(heldObj);							//calling drop object if object is held an RT is no longer being pressed
+			}
+			//if(Input.GetAxisRaw("RTrigger_1") > 0)
+			if(Input.GetButtonDown("RB_1"))
+			{
+				dropObject(heldObj);							//calling drop object if object is held an RT is no longer being pressed
+			}
+			if(Input.GetAxisRaw("RTrigger_1") > 0)
+			//if(Input.GetButtonDown("RB_1"))
+			{
+				StartCoroutine("throwObject", heldObj);			//Throwing coroutine
 			}
 		}
-		if(Input.GetAxisRaw("RTrigger_1") != 0 && isHolding)
-		{
-			StartCoroutine("throwObject", heldObj);			//Throwing coroutine
-		}
-
 	}
 
 	void grabObject(Transform obj)
-	{																								//creating desired position and adding offset
+	{																									//creating desired position and adding offset
 		Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset;               				
 
-		obj.position = Vector3.SmoothDamp(obj.position, newPos, ref refV3, followSpeed); 			//moving held object to desired postion + offset
+		obj.position = Vector3.SmoothDamp(obj.position, newPos, ref refV3, followSpeed); 				//moving held object to desired postion + offset
 
 		if(Input.GetButton("LB_1"))
 		{

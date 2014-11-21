@@ -62,7 +62,7 @@ public class timeGun : MonoBehaviour
 		timeStopped = false;
 		timeSinceGunfired = Time.timeSinceLevelLoad;
 	}
-
+	/*
 	void OnGUI()
 	{
 		GUI.skin = mySkin;
@@ -73,5 +73,5 @@ public class timeGun : MonoBehaviour
 		{
 			GUI.Box(new Rect(25, 5, cooldown * 10, 10),"");
 		}
-	}
+	}*/
 }

@@ -7058,7 +7058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77db2df4e9ac9c64581b1ed87c8b77af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input: 0
   reticule: {fileID: 0}
   range: 0
 --- !u!212 &287261411

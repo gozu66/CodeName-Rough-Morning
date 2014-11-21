@@ -4,7 +4,7 @@ using System.Collections;
 public class playerAim : MonoBehaviour 
 {
 	public enum InputType {XboxPad, MouseKBoard};
-	public InputType _input;
+	public static InputType _input;
 
 	public Transform reticule; 
 	public float range;
@@ -33,13 +33,14 @@ public class playerAim : MonoBehaviour
 			break;
 
 			case InputType.MouseKBoard:
+
 				Vector3 mouse_pos = Input.mousePosition;
 				Vector3 player_pos = Camera.main.WorldToScreenPoint(this.transform.position);
 				
 				mouse_pos.x = mouse_pos.x - player_pos.x;																		//MOUSE AND
 				mouse_pos.y = mouse_pos.y - player_pos.y;																		//KEYBOARD AIM
 
-				float angle = Mathf.Atan2 (mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
+				float angle = Mathf.Atan2 (mouse_pos.y, mouse_pos.x * transform.parent.localScale.x) * Mathf.Rad2Deg;
 				this.transform.rotation = Quaternion.Euler (new Vector3(0, 0, angle));				
 			break;
 		}

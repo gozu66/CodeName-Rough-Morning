@@ -79,7 +79,7 @@ public class plasmaGun : MonoBehaviour
 		{
 			if(!isTrigger)
 			{
-				if(Input.GetAxisRaw("RTrigger_1") != 0)
+				if(Input.GetAxisRaw("RTrigger_1") != 0 || Input.GetMouseButtonDown(0))
 				{
 					GameObject newBullet = Instantiate(plasmaBullet, transform.position, transform.rotation)as GameObject;
 					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (SA_force*1000));

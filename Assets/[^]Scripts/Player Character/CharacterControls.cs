@@ -23,12 +23,12 @@ public class CharacterControls : MonoBehaviour
 	{
 		anim = GetComponent<Animator>();
 
-		if(Input.GetJoystickNames().Length > 0)
+		if(Input.GetJoystickNames().Length <= 0)
 		{
-			_input = InputType.XboxPad;
+			_input = InputType.MouseKBoard;
 		}
 		else{
-			_input = InputType.MouseKBoard;
+			_input = InputType.XboxPad;
 		}
 	}
 
@@ -37,12 +37,14 @@ public class CharacterControls : MonoBehaviour
 		switch(_input)
 		{
 			case InputType.MouseKBoard:
+
 				if(Input.GetAxis("Horizontal") != 0){isMoving = true;}else{isMoving = false;}
 				
-				if(Input.GetKeyDown(KeyCode.Space))
+				if(Input.GetKey(KeyCode.Space))
 				{
 					jump();
-				} else if (Input.GetKeyUp(KeyCode.Space))
+				} 
+				else 
 				{
 					jumpPressed = false;
 				}
@@ -61,6 +63,7 @@ public class CharacterControls : MonoBehaviour
 			break;
 
 			case InputType.XboxPad:
+
 				if(Input.GetAxis("L_XAxis_1") != 0){isMoving = true;}else{isMoving = false;}
 
 				if(Input.GetAxis("L_XAxis_1") != 0)														

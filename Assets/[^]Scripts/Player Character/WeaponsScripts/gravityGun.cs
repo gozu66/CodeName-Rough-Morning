@@ -28,20 +28,17 @@ public class gravityGun : MonoBehaviour
 	{
 		if(!isHolding)
 		{	
-			//if(Input.GetAxisRaw("RTrigger_1") > 0 && !isThrowing)
-			if(Input.GetButtonDown("RB_1")&& !isThrowing)
+			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1) && !isThrowing)
 			{																		
 				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, 			//raycasting along the aim diretion
 				                                       new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, 
 				             										myTransform.right.y, myTransform.right.z), gravityGunRange);
-
-				if(hit2D == true)														//Raycasting for object pick-up
+									if(hit2D == true)														//Raycasting for object pick-up
 				{
 					if(hit2D.collider.tag == "moveable")
 					{
 						isHolding = true;									
-
-						hit2D.collider.rigidbody2D.isKinematic = true;
+													hit2D.collider.rigidbody2D.isKinematic = true;
 						heldObj = hit2D.collider.transform;								//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;									//set layer to telekinesis layer
 					}
@@ -57,17 +54,18 @@ public class gravityGun : MonoBehaviour
 			{	
 				grabObject(heldObj);							//calling grab object function every frame the obj is held and RT is pressed
 			} 
+
 			else
 			{	
 				dropObject(heldObj);							//calling drop object if object is held an RT is no longer being pressed
 			}
-			//if(Input.GetAxisRaw("RTrigger_1") > 0)
-			if(Input.GetButtonDown("RB_1"))
+
+			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1))
 			{
 				dropObject(heldObj);							//calling drop object if object is held an RT is no longer being pressed
 			}
-			if(Input.GetAxisRaw("RTrigger_1") > 0)
-			//if(Input.GetButtonDown("RB_1"))
+
+			if(Input.GetAxisRaw("RTrigger_1") > 0 || Input.GetMouseButtonDown(0))
 			{
 				StartCoroutine("throwObject", heldObj);			//Throwing coroutine
 			}
@@ -112,7 +110,8 @@ public class gravityGun : MonoBehaviour
 		
 		dropObject(heldObj);								//drop obj
 		
-		obj.rigidbody2D.AddForce(new Vector2(obj.transform.position.x - myTransform.position.x , obj.transform.position.y - myTransform.position.y) * throwForce, ForceMode2D.Impulse);
+		obj.rigidbody2D.AddForce(new Vector2(obj.transform.position.x - myTransform.position.x, 
+		                                     obj.transform.position.y - myTransform.position.y) * throwForce, ForceMode2D.Impulse);
 
 		yield return new WaitForSeconds (1);
 		

@@ -43,7 +43,7 @@ public class timeGun : MonoBehaviour
 			}
 
 			else{
-					if(Input.GetButtonDown("Y_1"))
+					if(Input.GetButtonDown("Y_1") || Input.GetMouseButtonDown(2))
 					{
 							timeStopped = true;
 							cooldown = 0; 

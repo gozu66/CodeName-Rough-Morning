@@ -96,10 +96,11 @@ public class gravityGun : MonoBehaviour
 
 			obj.position = Vector3.SmoothDamp(obj.position, mousePos, ref refV3, followSpeed); 		//moving held object to desired postion + offset
 			 
-			if(Input.GetButton("LB_1"))
+			if(Input.GetAxis("QE") != 0)
 			{
-				obj.Rotate(new Vector3(0,0,rotSpeed) * (Time.deltaTime), Space.Self);				
+				obj.Rotate(new Vector3(0,0,rotSpeed * Input.GetAxis("QE")) * (Time.deltaTime), Space.Self);					
 			}
+
 
 //			mousePos.x = Mathf.Clamp(offset.x, -10, 10);
 //			mousePos.y = Mathf.Clamp(offset.y, -10, 10);

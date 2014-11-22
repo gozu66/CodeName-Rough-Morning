@@ -33,7 +33,7 @@ public class gravityGun : MonoBehaviour
 				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, 			//raycasting along the aim diretion
 				                                       new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, 
 				             										myTransform.right.y, myTransform.right.z), gravityGunRange);
-									if(hit2D == true)														//Raycasting for object pick-up
+				if(hit2D == true)														//Raycasting for object pick-up
 				{
 					if(hit2D.collider.tag == "moveable")
 					{
@@ -73,19 +73,37 @@ public class gravityGun : MonoBehaviour
 	}
 
 	void grabObject(Transform obj)
-	{																									//creating desired position and adding offset
-		Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset;               				
-
-		obj.position = Vector3.SmoothDamp(obj.position, newPos, ref refV3, followSpeed); 				//moving held object to desired postion + offset
-
-		if(Input.GetButton("LB_1"))
+	{																								//creating desired position and adding offset
+		if(playerAim._input == playerAim.InputType.XboxPad)
 		{
-			obj.Rotate(new Vector3(0,0,rotSpeed) * (Time.deltaTime), Space.Self);					
+			Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset;               				
+
+			obj.position = Vector3.SmoothDamp(obj.position, newPos, ref refV3, followSpeed); 		//moving held object to desired postion + offset
+
+			if(Input.GetButton("LB_1"))
+			{
+				obj.Rotate(new Vector3(0,0,rotSpeed) * (Time.deltaTime), Space.Self);					
+			}
+
+			offset.x = Mathf.Clamp(offset.x, -10, 10);
+			offset.y = Mathf.Clamp(offset.y, -10, 10);
 		}
+		else{
+			//Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset;
 
+			//float dist = heldObj.position.z - Camera.main.transform.position.z;
+			Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z - Camera.main.transform.position.z));
 
-		offset.x = Mathf.Clamp(offset.x, -10, 10);
-		offset.y = Mathf.Clamp(offset.y, -10, 10);
+			obj.position = Vector3.SmoothDamp(obj.position, mousePos, ref refV3, followSpeed); 		//moving held object to desired postion + offset
+			 
+			if(Input.GetButton("LB_1"))
+			{
+				obj.Rotate(new Vector3(0,0,rotSpeed) * (Time.deltaTime), Space.Self);				
+			}
+
+//			mousePos.x = Mathf.Clamp(offset.x, -10, 10);
+//			mousePos.y = Mathf.Clamp(offset.y, -10, 10);
+		}
 	}
 
 	public void dropObject(Transform obj)					//called to drop current held object

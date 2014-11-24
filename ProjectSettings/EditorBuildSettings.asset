@@ -4,6 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/[^]Scenes/Test Enviroments [TE]/Matt - TE/M.R_Test Env.unity
+  m_Scenes: []

@@ -419,6 +419,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
+      propertyPath: moveSpeed
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
   m_RootGameObject: {fileID: 60445773}
@@ -1661,7 +1665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: .5
   rotSpeed: 150
-  moveSpeed: 7
+  moveSpeed: 70
   throwForce: 2500
   gravityGunRange: 10
   isThrowing: 0

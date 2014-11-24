@@ -8,10 +8,9 @@ public class timeGun : MonoBehaviour
 	public float amountToSlow = 0.2f, effectDuration = 5, cooldown = 10, maxCooldown = 10;
 	float storedSpeed;
 	float timeSinceGunfired = 0;
-
-	public GUISkin mySkin;
-
+	
 	TimeManager TM;
+
 	public CharacterControls charCont;
 
 	void Start()
@@ -43,8 +42,8 @@ public class timeGun : MonoBehaviour
 			}
 
 			else{
-					if(Input.GetButtonDown("Y_1") || Input.GetMouseButtonDown(2))
-					{
+				if(Input.GetButtonDown("Y_1") || Input.GetMouseButtonDown(2))
+				{
 							timeStopped = true;
 							cooldown = 0; 
 							TM.slowTime(amountToSlow, effectDuration);
@@ -62,16 +61,5 @@ public class timeGun : MonoBehaviour
 		timeStopped = false;
 		timeSinceGunfired = Time.timeSinceLevelLoad;
 	}
-	/*
-	void OnGUI()
-	{
-		GUI.skin = mySkin;
 
-		GUI.Label(new Rect(25, 5, 100, 10),"");
-
-		if(cooldown >= 1f)
-		{
-			GUI.Box(new Rect(25, 5, cooldown * 10, 10),"");
-		}
-	}*/
 }

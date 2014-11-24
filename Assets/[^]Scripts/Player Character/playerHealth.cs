@@ -8,7 +8,7 @@ public class playerHealth : MonoBehaviour
 
 	public GameObject anaNode;
 
-
+	GameObject weaponTransform;
 
 	void Start()
 	{
@@ -28,6 +28,8 @@ public class playerHealth : MonoBehaviour
 		{
 			transform.position = startPoint;
 			//anaNode.SendMessage("AddDeath", SendMessageOptions.DontRequireReceiver);
+			weaponTransform = GameObject.Find("weaponTrans");
+			weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
 		}
 	}
 }

@@ -34,8 +34,6 @@ public class playerAim : MonoBehaviour
 
 			case InputType.MouseKBoard:
 
-				if(!gravityGun.isHolding)
-				{
 					Vector3 mouse_pos = Input.mousePosition;
 					Vector3 player_pos = Camera.main.WorldToScreenPoint(this.transform.position);
 					
@@ -44,7 +42,7 @@ public class playerAim : MonoBehaviour
 
 					float angle = Mathf.Atan2 (mouse_pos.y, mouse_pos.x * transform.parent.localScale.x) * Mathf.Rad2Deg;
 					this.transform.rotation = Quaternion.Euler (new Vector3(0, 0, angle));		
-				}
+
 			break;
 		}
 

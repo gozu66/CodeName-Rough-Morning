@@ -348,10 +348,18 @@ public class LumosUser : LumosUserProfile, ILocalUser
 	/// <param name="password">Password.</param>
 	/// <param name="other">Additional information.</param>
 	/// <param name="callback">Callback.</param>
-	public void UpdateInfo (string name=null, string email=null, string password=null, string new_password=null, Dictionary<string, object> other=null, Action<bool> callback=null)
+	public void UpdateInfo (string name, string email, string password, string new_password, Dictionary<string, object> other, Action<bool> callback)
 	{
 		// Check if the user is updating their password
 		// If they are, make sure both the current and new password are provided.
+		name=null;
+		email=null;
+		password=null;
+		new_password=null;
+		other=null;
+		callback=null;
+
+
 		if ((!string.IsNullOrEmpty(password) && new_password == null) || (password == null && !string.IsNullOrEmpty(new_password))) {
 			LumosUnity.Debug.LogError("If you update a user's password, you must provide both their current and new password.", true);
 			callback(false);

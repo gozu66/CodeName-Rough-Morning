@@ -37,10 +37,10 @@ public static class LumosSpecs
 		LumosRequest.Send(LumosDiagnostics.instance, endpoint, LumosRequest.Method.PUT, payload,
 			success => {
 				PlayerPrefs.SetString(prefsKey, System.DateTime.Now.ToString());
-				LumosUnity.Debug.Log("System information successfully sent.");
+				LumosUnity.Debug.Log("System information successfully sent.", false);
 			},
 			error => {
-				LumosUnity.Debug.LogError("Failed to send system information.");
+				LumosUnity.Debug.LogError("Failed to send system information.", false);
 			}
 		);
 	}

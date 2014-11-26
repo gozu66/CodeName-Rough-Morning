@@ -3,7 +3,7 @@ using System.Collections;
 
 public class gravityGun : MonoBehaviour 
 {
-	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f;
+	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f;
 	float maxRotSpeed, maxMoveSpeed;
 
 	public static bool isHolding = false;
@@ -41,8 +41,8 @@ public class gravityGun : MonoBehaviour
 					{
 						isHolding = true;									
 						hit2D.collider.rigidbody2D.isKinematic = true;
-						heldObj = hit2D.collider.transform;								//cache selected object as heldobj
-						heldObj.gameObject.layer = 10;									//set layer to telekinesis layer
+						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
+						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 					}
 				}
 			}
@@ -56,12 +56,12 @@ public class gravityGun : MonoBehaviour
 
 			else
 			{	
-				dropObject();													//calling drop object if object is held an RT is no longer being pressed
+				dropObject();															//calling drop object if object is held an RT is no longer being pressed
 			}
 
 			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1))
 			{
-				dropObject();													//calling drop object if object is held an RT is no longer being pressed
+				dropObject();															//calling drop object if object is held an RT is no longer being pressed
 			}
 
 			if(Input.GetAxisRaw("RTrigger_1") > 0 || Input.GetMouseButtonDown(0))
@@ -87,8 +87,10 @@ public class gravityGun : MonoBehaviour
 			offset.x += Input.GetAxis("R_XAxis_1")* Time.deltaTime * moveSpeed;			//While holding obj, V3 offset adjusted by R-Stick input
 			offset.y += -Input.GetAxis("R_YAxis_1")* Time.deltaTime * moveSpeed;		
 
-			offset.x = Mathf.Clamp(offset.x, -10, 10);
-			offset.y = Mathf.Clamp(offset.y, -10, 10);
+//			offset.x = Mathf.Clamp(offset.x, -TKlimit, TKlimit);
+//			offset.y = Mathf.Clamp(offset.y, -TKlimit, TKlimit);
+
+			offset = Vector3.ClampMagnitude(offset, TKlimit);
 		}
 		else if(playerAim._input == playerAim.InputType.MouseKBoard)		//TELEKINESIS CONTROLS FOR GAMEPAD____________________________________
 		{	
@@ -107,12 +109,12 @@ public class gravityGun : MonoBehaviour
 //			offset.x = Mathf.Clamp(offset.x, -10, 10);
 //			offset.y = Mathf.Clamp(offset.y, -10, 10);
 
-			offset = Vector3.ClampMagnitude(offset, 10);
+			offset = Vector3.ClampMagnitude(offset, TKlimit);
 
 		}
 	}
 
-	public void dropObject()					//called to drop current held object
+	public void dropObject()								//called to drop current held object
 	{
 		heldObj.gameObject.layer = 11;						//reset object layer
 		heldObj.rigidbody2D.isKinematic = false;	
@@ -120,20 +122,19 @@ public class gravityGun : MonoBehaviour
 		offset = Vector3.zero;								//reset offset
 		rotSpeed = maxRotSpeed;								//reset speeds
 		moveSpeed = maxMoveSpeed;
-		Debug.Log("DONEZONE");	
 	}
 	
 	void OnDisable()
 	{
 		if(heldObj)
-			dropObject();							//if telekinesis is deselected during use, drop obejct
+			dropObject();									//if telekinesis is deselected during use, drop obejct
 	}
 
 	IEnumerator throwObject(Transform obj)					//throwing co-routine
 	{
 		isThrowing = true;			
 		
-		dropObject();								//drop obj
+		dropObject();										//drop obj
 		
 //		obj.rigidbody2D.AddForce(new Vector2(obj.transform.position.x - myTransform.position.x, 
 //		                                     obj.transform.position.y - myTransform.position.y) * throwForce, ForceMode2D.Impulse);

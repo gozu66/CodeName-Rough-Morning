@@ -1629,9 +1629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToSlow: .5
   effectDuration: 5
-  cooldown: 5
-  maxCooldown: 5
-  mySkin: {fileID: 0}
+  cooldown: 0
+  maxCooldown: 0
   charCont: {fileID: 0}
 --- !u!114 &1411882270
 MonoBehaviour:
@@ -1666,6 +1665,7 @@ MonoBehaviour:
   followSpeed: .5
   rotSpeed: 150
   moveSpeed: 70
+  MKmoveSpeed: 100
   throwForce: 2500
   gravityGunRange: 10
   isThrowing: 0

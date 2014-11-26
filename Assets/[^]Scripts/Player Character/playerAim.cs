@@ -25,11 +25,10 @@ public class playerAim : MonoBehaviour
 		switch(_input)
 		{
 			case InputType.XboxPad:
-				if(!gravityGun.isHolding)
-				{
+				
 					float angle2 = Mathf.Atan2 (-Input.GetAxis("R_YAxis_1")*0.75f, transform.localPosition.x) * Mathf.Rad2Deg;	//XBOX PAD 
 					this.transform.rotation = Quaternion.Euler (new Vector3(0, 0, angle2));										//AIM
-				}
+
 			break;
 
 			case InputType.MouseKBoard:

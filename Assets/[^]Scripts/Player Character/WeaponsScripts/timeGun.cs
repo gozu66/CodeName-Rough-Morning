@@ -25,10 +25,9 @@ public class timeGun : MonoBehaviour
 		{
 			cooldown = maxCooldown;
 		}	
-		else 
+		else if(timeSinceGunfired > 0)
 		{
-			if(timeSinceGunfired > 0)
-				cooldown = Time.timeSinceLevelLoad - timeSinceGunfired;
+			cooldown = Time.timeSinceLevelLoad - timeSinceGunfired;
 		}
 	}
 
@@ -47,8 +46,8 @@ public class timeGun : MonoBehaviour
 							timeStopped = true;
 							cooldown = 0; 
 							TM.slowTime(amountToSlow, effectDuration);
-							storedSpeed = charCont.maxSpeed;
-							charCont.maxSpeed = charCont.maxSpeed / (Time.timeScale*2);
+							//storedSpeed = charCont.maxSpeed;
+							//charCont.maxSpeed = charCont.maxSpeed / (Time.timeScale*2);
 				}
 			}
 		}
@@ -57,7 +56,7 @@ public class timeGun : MonoBehaviour
 	public void returnTimeScale()
 	{
 		Time.timeScale = 1.0f;
-		charCont.maxSpeed = storedSpeed;
+		//charCont.maxSpeed = storedSpeed;
 		timeStopped = false;
 		timeSinceGunfired = Time.timeSinceLevelLoad;
 	}

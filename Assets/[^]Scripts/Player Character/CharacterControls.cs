@@ -8,6 +8,8 @@ public class CharacterControls : MonoBehaviour
 
 	public float maxSpeed, jumpForce;
 
+	public float speedIncrease, jumpIncrease, gravityIncrease;
+
 	bool isMoving, facingLeft, jumpPressed = false;
 
 	public LayerMask ground;
@@ -60,6 +62,7 @@ public class CharacterControls : MonoBehaviour
 					else if (move < 0 && !facingLeft)													
 						Flip();	
 				}
+
 			break;
 
 			case InputType.XboxPad:
@@ -96,6 +99,7 @@ public class CharacterControls : MonoBehaviour
 					else if (move < 0 && !facingLeft)
 						Flip();
 				}
+
 			break;
 		}
 	}
@@ -120,6 +124,22 @@ public class CharacterControls : MonoBehaviour
 		{
 			rigidbody2D.AddForce((Vector2.up * jumpForce), ForceMode2D.Force);
 			jumpPressed = true;
+		}
+	}
+
+	public void TimeAdjust(bool on_off)
+	{
+		if(on_off)
+		{
+			maxSpeed += speedIncrease;
+			jumpForce += jumpIncrease;
+			rigidbody2D.gravityScale += gravityIncrease;
+		}
+		else if (!on_off)
+		{
+			maxSpeed -= speedIncrease;
+			jumpForce -= jumpIncrease;
+			rigidbody2D.gravityScale -= gravityIncrease;
 		}
 	}
 

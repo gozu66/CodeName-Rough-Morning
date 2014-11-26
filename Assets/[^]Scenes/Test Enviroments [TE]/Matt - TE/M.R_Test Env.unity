@@ -7004,9 +7004,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToSlow: .5
   effectDuration: 5
-  cooldown: 5
-  maxCooldown: 5
-  mySkin: {fileID: 0}
+  cooldown: 0
+  maxCooldown: 0
   charCont: {fileID: 0}
 --- !u!114 &287261408
 MonoBehaviour:
@@ -7041,6 +7040,7 @@ MonoBehaviour:
   followSpeed: .5
   rotSpeed: 150
   moveSpeed: 7
+  MKmoveSpeed: 25
   throwForce: 2500
   gravityGunRange: 10
   isThrowing: 0
@@ -20115,6 +20115,10 @@ Prefab:
     - target: {fileID: 400006, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}
+      propertyPath: MKmoveSpeed
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa4ec9c92c65a7489c841573166e24b, type: 2}

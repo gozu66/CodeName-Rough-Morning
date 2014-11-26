@@ -10,6 +10,8 @@ TagManager:
   - playerHazard
   - boundingBox
   - checkPoint
+  - GamePadUI
+  - M+KB_UI
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

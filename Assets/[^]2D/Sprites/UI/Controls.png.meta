@@ -23,6 +23,14 @@ TextureImporter:
     21300036: Controls_18
     21300038: Controls_19
     21300040: Controls_20
+    21300042: Controls_21
+    21300044: Controls_22
+    21300046: Controls_23
+    21300048: Controls_24
+    21300050: Controls_25
+    21300052: Controls_26
+    21300054: Controls_27
+    21300056: Controls_28
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -271,6 +279,86 @@ TextureImporter:
         y: 753
         width: 299
         height: 261
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_21
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 340
+        width: 426
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_22
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 238
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_23
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 242
+        width: 105
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_24
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 240
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_25
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 242
+        width: 102
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_26
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 2
+        width: 138
+        height: 223
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_27
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 0
+        width: 118
+        height: 232
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Controls_28
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 0
+        width: 135
+        height: 230
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -21,6 +21,6 @@ public class LumosDiagnosticsDemo : MonoBehaviour {
 		Debug.LogWarning("Warnings can be captured and recorded to the Lumos website.");
 		Debug.LogError("Errors and exceptions can be captured and recorded to the Lumos website.");
 
-		LumosUnity.Debug.Log("You can use this function (in combination with Lumos.debug=True) to make logs that are not recorded.");
+		LumosUnity.Debug.Log("You can use this function (in combination with Lumos.debug=True) to make logs that are not recorded.", false);
 	}
 }

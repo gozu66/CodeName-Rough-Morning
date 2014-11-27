@@ -39,10 +39,10 @@ public static class LumosFeedback
 
 		LumosRequest.Send(LumosDiagnostics.instance, endpoint, LumosRequest.Method.POST, feedback,
 			success => {
-				LumosUnity.Debug.Log("Feedback sent.");
+				LumosUnity.Debug.Log("Feedback sent.", false);
 			},
 			error => {
-				LumosUnity.Debug.LogWarning("Log messages not sent. Will try again at next timer interval.");
+				LumosUnity.Debug.LogWarning("Log messages not sent. Will try again at next timer interval.", false);
 			}
 		);
 	}

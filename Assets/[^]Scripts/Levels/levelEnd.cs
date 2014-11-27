@@ -6,7 +6,7 @@ public class levelEnd : MonoBehaviour
 	public AudioClip winner;
 	public GameObject winnerSprite;
 
-	public GameObject anaNode;		//ANALYTICS 
+//	public GameObject anaNode;		//ANALYTICS 
 
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -28,8 +28,6 @@ public class levelEnd : MonoBehaviour
 		//anaNode.SendMessage("SendMail", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		//anaNode.SendMessage("WriteTxt", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		Application.LoadLevel(0);
-
-
 	}
 	
 }

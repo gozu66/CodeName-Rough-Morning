@@ -3,20 +3,51 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
-	public GameObject MouseKB, XBOX;
+	public enum InputType {XboxPad, MouseKBoard};
+	public static InputType _input;
+
+	public GameObject MouseKB, XBOX, canvas;
 
 	void Start()
 	{
-		if(playerAim._input == playerAim.InputType.XboxPad)
+//		yield return new WaitForSeconds(0.25F);
+
+//		Time.timeScale = 0;
+
+		if(Input.GetJoystickNames().Length > 0)
+		{
+			_input = InputType.XboxPad;
+		}
+		else{
+			_input = InputType.MouseKBoard;
+		}
+
+		if(_input == UIManager.InputType.XboxPad)
 		{
 			MouseKB.SetActive(false);
-			XBOX.SetActive(true);
 		}
-		if(playerAim._input == playerAim.InputType.MouseKBoard)
+		if(_input == UIManager.InputType.MouseKBoard)
 		{
-			MouseKB.SetActive(false);
-			XBOX.SetActive(true);
+			XBOX.SetActive(false);
 		}
+
+	}
+
+	void XboxPad()
+	{
+		Screen.showCursor = false;
+		Time.timeScale = 1;
+		_input = InputType.XboxPad;
+		MouseKB.SetActive(false);
+		canvas.SetActive(false);
+	}
+	void MKB()
+	{
+		Screen.showCursor = false;
+		Time.timeScale = 1;
+		_input = InputType.MouseKBoard;
+		XBOX.SetActive(false);
+		canvas.SetActive(false);
 	}
 
 }

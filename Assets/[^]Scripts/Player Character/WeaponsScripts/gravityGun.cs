@@ -17,7 +17,6 @@ public class gravityGun : MonoBehaviour
 
 	void Start()
 	{
-		Screen.showCursor = false;
 
 		myTransform = transform;														//cached transform
 		myTransformParent = transform.parent;											//cached transform.parent
@@ -73,7 +72,7 @@ public class gravityGun : MonoBehaviour
 
 	void grabObject(Transform obj)
 	{																					
-		if(playerAim._input == playerAim.InputType.XboxPad)					//TELEKINESIS CONTROLS FOR GAMEPAD__________________________________
+		if(UIManager._input == UIManager.InputType.XboxPad)					//TELEKINESIS CONTROLS FOR GAMEPAD__________________________________
 		{
 			Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset;   //creating desired position and adding offset            				
 
@@ -92,7 +91,7 @@ public class gravityGun : MonoBehaviour
 
 			offset = Vector3.ClampMagnitude(offset, TKlimit);
 		}
-		else if(playerAim._input == playerAim.InputType.MouseKBoard)		//TELEKINESIS CONTROLS FOR GAMEPAD____________________________________
+		else if(UIManager._input == UIManager.InputType.MouseKBoard)		//TELEKINESIS CONTROLS FOR GAMEPAD____________________________________
 		{	
 			Vector2 mousePos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset; 
 

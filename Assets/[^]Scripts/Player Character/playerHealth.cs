@@ -23,7 +23,7 @@ public class playerHealth : MonoBehaviour
 			startPoint = col.transform.position;
 			col.enabled = false;
 			//anaNode.SendMessage("AddCheckpoint", SendMessageOptions.DontRequireReceiver);
-			transform.GetChild(7).SendMessage("CheckPointHit", SendMessageOptions.DontRequireReceiver);
+			transform.GetChild(5).SendMessage("CheckPointHit", SendMessageOptions.DontRequireReceiver);
 		}
 		if(col.tag == "playerHazard")
 		{

@@ -3,19 +3,20 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
-	public bool Gamepad, MKB;
+	public GameObject MouseKB, XBOX;
 
 	void Start()
 	{
-//		Time.timeScale = 0;	
+		if(playerAim._input == playerAim.InputType.XboxPad)
+		{
+			MouseKB.SetActive(false);
+			XBOX.SetActive(true);
+		}
+		if(playerAim._input == playerAim.InputType.MouseKBoard)
+		{
+			MouseKB.SetActive(false);
+			XBOX.SetActive(true);
+		}
 	}
 
-	void ChosenPad()
-	{
-
-	}
-	void ChosenMKB()
-	{
-
-	}
 }

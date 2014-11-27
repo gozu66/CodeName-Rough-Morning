@@ -8,6 +8,8 @@ public class ControllsUI : MonoBehaviour
 
 	void Start()
 	{
+		Debug.Log("STUFF");
+
 		if(playerAim._input == playerAim.InputType.MouseKBoard)
 		{
 			Pad.SetActive(false);

@@ -30,6 +30,8 @@ public class playerHealth : MonoBehaviour
 			transform.position = startPoint;
 			//anaNode.SendMessage("AddDeath", SendMessageOptions.DontRequireReceiver);
 			weaponTransform = GameObject.Find("weaponTrans");
+			transform.GetChild(5).SendMessage("CheckPointDeath", SendMessageOptions.DontRequireReceiver);
+
 			if(gravityGun.isHolding)
 				weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
 		}

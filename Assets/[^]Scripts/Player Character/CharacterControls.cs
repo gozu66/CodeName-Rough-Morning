@@ -90,7 +90,7 @@ public class CharacterControls : MonoBehaviour
 					jumpPressed = false;
 				}
 				
-				if(Input.GetAxis("R_XAxis_1") != 0 && !gravityGun.isHolding)	
+				if(Input.GetAxis("R_XAxis_1") != 0)	
 				{
 					float move = Input.GetAxis("R_XAxis_1");
 					

@@ -5,11 +5,13 @@ public class AnaliticsLumos : MonoBehaviour
 {
 	float timer;
 	int i;
+	int deaths;
 
 	void Start()
 	{
 		timer = 0;
 		i = 1;
+		deaths = 0;
 	}
 
 	void Update()
@@ -34,10 +36,16 @@ public class AnaliticsLumos : MonoBehaviour
 		{
 			LumosAnalytics.RecordEvent("TestLevel", "CheckPoint " + i.ToString("0"), timer);
 			i++;
-
 		}
 		else{
-			LumosAnalytics.RecordEvent("TestLevel", "Finish Time ", timer);
+			LumosAnalytics.RecordEvent("TestLevel", "Finishing Time ", timer);
 		}
+	}
+
+	void CheckPointDeath()
+	{
+		deaths++;
+
+		LumosAnalytics.RecordEvent("TestLevel", "Deaths at CheckPoint " + i.ToString("0"), deaths);
 	}
 }

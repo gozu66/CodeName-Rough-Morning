@@ -3,12 +3,12 @@ using System.Collections;
 
 public class TimeManager : MonoBehaviour 
 {
-	public timeGun TGun;
+	public TimeSlow TGun;
 	public CharacterControls CharCont;
 
 	void Start()
 	{
-		TGun = this.GetComponentInChildren<timeGun>();
+		TGun = this.GetComponentInChildren<TimeSlow>();
 		CharCont = this.GetComponentInChildren<CharacterControls>();
 	}
 

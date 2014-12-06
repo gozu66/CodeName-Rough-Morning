@@ -3,16 +3,16 @@ using System.Collections;
 
 public class weaponManager : MonoBehaviour 
 {
-	public enum Weapon {NoWeapon, gravityGun, timeGun, plasmaGun};		//	
+	public enum Weapon {NoWeapon, Telekinesis, TimeSlow, MindBullets};		//	
 	public Weapon weaponType;											//	enum for Weapon state public enum
 	Weapon highlightedWeaponType;										//
 
-	public GameObject gravGunSprite, TimeGunSprite, PlasmaGunSprite;	//	sprite Game Objects
+	public GameObject TeleKSprite, TimeSlowSprite, PlasmaGunSprite;	//	sprite Game Objects
 																		
-	gravityGun gravGun;													//
-	timeGun TimeGun;													// 	references for 
+	Telekinesis TeleK;													//
+	TimeSlow TimeSlow;													// 	references for 
 	playerAim reticule;													//	weapon scripts
-	plasmaGun plasGun;													//
+	MindBullets MindBullets;													//
 
 	TimeManager TM;														// referece for time manager
 
@@ -26,10 +26,10 @@ public class weaponManager : MonoBehaviour
 	{
 		TM = transform.parent.GetComponent<TimeManager>();
 
-		gravGun = GetComponent<gravityGun>();
-		TimeGun = GetComponent<timeGun>();
+		TeleK = GetComponent<Telekinesis>();
+		TimeSlow = GetComponent<TimeSlow>();
 		reticule = GetComponent<playerAim>();
-		plasGun = GetComponent<plasmaGun>();
+		MindBullets = GetComponent<MindBullets>();
 
 		selectWeapon(Weapon.NoWeapon);
 	}
@@ -44,16 +44,16 @@ public class weaponManager : MonoBehaviour
 				selectWeaponSwitch(Weapon.NoWeapon);
 				break;
 		
-			case Weapon.gravityGun:
-				selectWeaponSwitch(Weapon.gravityGun);
+			case Weapon.Telekinesis:
+				selectWeaponSwitch(Weapon.Telekinesis);
 				break;
 
-			case Weapon.timeGun:
-				selectWeaponSwitch(Weapon.timeGun);
+			case Weapon.TimeSlow:
+				selectWeaponSwitch(Weapon.TimeSlow);
 				break;
 
-			case Weapon.plasmaGun:
-				selectWeaponSwitch(Weapon.plasmaGun);
+			case Weapon.MindBullets:
+				selectWeaponSwitch(Weapon.MindBullets);
 				break;
 				
 			default:
@@ -62,15 +62,15 @@ public class weaponManager : MonoBehaviour
 		}
 	}
 
-	void switchWeapon(bool rendr, bool gravguntimegun, bool TGun, bool retic ,bool GGsprite, bool TGsprite, bool Pgun, bool PgunSprite)
+	void switchWeapon(bool rendr, bool gravgunTimeSlow, bool TGun, bool retic ,bool GGsprite, bool TGsprite, bool Pgun, bool PgunSprite)
 	{
 		renderer.enabled = rendr;
-		gravGun.enabled = gravguntimegun;
-		TimeGun.enabled = TGun;
+		TeleK.enabled = gravgunTimeSlow;
+		TimeSlow.enabled = TGun;
 		reticule.enabled = retic;
-		gravGunSprite.renderer.enabled = GGsprite;
-		TimeGunSprite.renderer.enabled = TGsprite;
-		plasGun.enabled = Pgun;
+		TeleKSprite.renderer.enabled = GGsprite;
+		TimeSlowSprite.renderer.enabled = TGsprite;
+		MindBullets.enabled = Pgun;
 		PlasmaGunSprite.renderer.enabled = PgunSprite;
 	}
 
@@ -84,15 +84,15 @@ public class weaponManager : MonoBehaviour
 
 				if(Input.GetAxis("R_YAxis_1") <= -0.9f)
 				{
-					highlightedWeaponType = Weapon.gravityGun;
+					highlightedWeaponType = Weapon.Telekinesis;
 				}
 				if(Input.GetAxis("R_XAxis_1") >= 0.9f)
 				{
-					highlightedWeaponType = Weapon.plasmaGun;
+					highlightedWeaponType = Weapon.MindBullets;
 				}
 				if(Input.GetAxis("R_XAxis_1") <= -0.9f)
 				{
-					highlightedWeaponType = Weapon.timeGun;
+					highlightedWeaponType = Weapon.TimeSlow;
 				}
 
 		}
@@ -110,14 +110,14 @@ public class weaponManager : MonoBehaviour
 		if(Input.GetAxisRaw("DPad_XAxis_1") != 0)
 		{
 			if(Input.GetAxisRaw("DPad_XAxis_1") > 0)
-				selectWeapon(Weapon.gravityGun);
+				selectWeapon(Weapon.Telekinesis);
 			else
-				selectWeapon(Weapon.plasmaGun);
+				selectWeapon(Weapon.MindBullets);
 		}
 		if(Input.GetAxisRaw("DPad_YAxis_1") != 0)
 		{
 			if(Input.GetAxisRaw("DPad_YAxis_1") > 0)
-				selectWeapon(Weapon.timeGun);
+				selectWeapon(Weapon.TimeSlow);
 			else
 				selectWeapon(Weapon.NoWeapon);
 		}	
@@ -131,17 +131,17 @@ public class weaponManager : MonoBehaviour
 			switchWeapon(false, false, false, false, false, false, false, false);
 			//anaNode.SendMessage("WeaponTimer", 0, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		}
-		if(w == Weapon.gravityGun)
+		if(w == Weapon.Telekinesis)
 		{
 			switchWeapon(true, true, false, true, true, false, false, false);
 			//anaNode.SendMessage("WeaponTimer", 1, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		}
-		if(w == Weapon.timeGun)
+		if(w == Weapon.TimeSlow)
 		{
 			switchWeapon(false, false, true, false, false, true, false, false);
 			//anaNode.SendMessage("WeaponTimer", 2, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		}
-		if(w == Weapon.plasmaGun)
+		if(w == Weapon.MindBullets)
 		{
 			switchWeapon(true, false, false, true, false, false, true, true);
 			//anaNode.SendMessage("WeaponTimer", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 

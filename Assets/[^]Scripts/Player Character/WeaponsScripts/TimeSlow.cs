@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class timeGun : MonoBehaviour 
+public class TimeSlow : MonoBehaviour 
 {
 	public static bool timeStopped = false;
 
 	public float amountToSlow = 0.2f, effectDuration = 5, cooldown = 10, maxCooldown = 10;
 	float timeSinceGunfired = 0;
-	
+
 	TimeManager TM;
 
 	public CharacterControls charCont;
@@ -50,6 +50,8 @@ public class timeGun : MonoBehaviour
 					cooldown = 0; 
 					TM.slowTime(amountToSlow, effectDuration);
 					blur.SetActive(true);
+//					LumosAnalytics.RecordEvent("Time Gun ", AnaliticsLumos.zone);
+					LogUse();
 				}
 			}
 		}
@@ -62,5 +64,11 @@ public class timeGun : MonoBehaviour
 		timeSinceGunfired = Time.timeSinceLevelLoad;
 		blur.SetActive(false);
 	}
-	
+
+	public static int timesUsedTS;
+	void LogUse()
+	{
+		timesUsedTS++;
+	}
+
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class plasmaGun : MonoBehaviour 
+public class MindBullets : MonoBehaviour 
 {
 	public enum fireType {semiAuto, fullAuto, Grenade};
 	public fireType currFireType;
@@ -86,6 +86,7 @@ public class plasmaGun : MonoBehaviour
 					ammo--;
 					SA_fireCooldown = 0;
 					isTrigger = true;
+					LogUse();
 				}
 			}	
 			else 
@@ -94,7 +95,7 @@ public class plasmaGun : MonoBehaviour
 					isTrigger = false;					
 			}
 
-			if(gravityGun.isHolding)
+			if(Telekinesis.isHolding)
 					isTrigger = true;				
 		}
 	}
@@ -162,4 +163,10 @@ public class plasmaGun : MonoBehaviour
 //		}
 //
 //	}
+	public static int timesUsedMB;
+	void LogUse()
+	{
+		timesUsedMB++;
+	}
+
 }

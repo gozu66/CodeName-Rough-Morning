@@ -32,7 +32,7 @@ public class playerHealth : MonoBehaviour
 			weaponTransform = GameObject.Find("weaponTrans");
 			SendMessageUpwards("CheckPointDeath", SendMessageOptions.DontRequireReceiver);
 
-			if(gravityGun.isHolding)
+			if(Telekinesis.isHolding)
 				weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
 		}
 	}

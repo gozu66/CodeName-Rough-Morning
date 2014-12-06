@@ -5,7 +5,7 @@ public class audioTimeSync : MonoBehaviour
 {
 	void Update()
 	{
-		if(timeGun.timeStopped)
+		if(TimeSlow.timeStopped)
 		{
 			if(audio.pitch > Time.timeScale)
 			{

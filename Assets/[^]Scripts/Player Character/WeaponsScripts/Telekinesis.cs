@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class gravityGun : MonoBehaviour 
+public class Telekinesis : MonoBehaviour 
 {
 	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f;
 	float maxRotSpeed, maxMoveSpeed;
@@ -30,7 +30,7 @@ public class gravityGun : MonoBehaviour
 		if(!isHolding)
 		{	
 			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1) && !isThrowing)
-			{																		
+			{			
 				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, 								//raycasting along the aim diretion
 				                    	new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, 
 				             				myTransform.right.y, myTransform.right.z), gravityGunRange);
@@ -42,6 +42,7 @@ public class gravityGun : MonoBehaviour
 						hit2D.collider.rigidbody2D.isKinematic = true;
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
+						LogUse();
 					}
 				}
 			}
@@ -145,4 +146,11 @@ public class gravityGun : MonoBehaviour
 		
 		isThrowing = false;
 	}
+
+	public static int timesUsedTK;
+	void LogUse()
+	{
+		timesUsedTK++;
+	}
+
 }

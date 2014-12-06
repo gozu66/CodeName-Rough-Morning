@@ -31,14 +31,12 @@ public class levelEnd : MonoBehaviour
 		yield return new WaitForSeconds(1.5f);
 		//anaNode.SendMessage("SendMail", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		//anaNode.SendMessage("WriteTxt", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
-		Time.timeScale = 0;
 		LumosFeedbackGUI.ShowDialog();
-		Application.LoadLevel(0);
 	}
 
 	
 	void OnWindowClosed ()
 	{
-		Time.timeScale = 1;
+		Application.LoadLevel(0);
 	}
 }

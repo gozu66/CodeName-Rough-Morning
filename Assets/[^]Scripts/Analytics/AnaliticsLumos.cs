@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class AnaliticsLumos : MonoBehaviour 
 {
-	float timer = 0.0f;
+	float timer = 0.0f, currTime;
 	int deaths, currCheckP, checkPdeath;
 	float[] checkpoints = new float[8];
 	float[] checkpointdeaths = new float[8];
@@ -26,35 +26,49 @@ public class AnaliticsLumos : MonoBehaviour
 		{
 			if(currCheckP >= 1)
 			{
-				checkpoints[currCheckP] = timer - checkpoints[currCheckP - 1];
+				checkpoints[currCheckP] = timer - currTime;
 			}
 			else{
 				checkpoints[currCheckP] = timer;
 			}
-
+			currTime = timer;
 			CheckPointDeathDataSend();
-			LumosAnalytics.RecordEvent(checkpointnames[currCheckP], checkpoints[currCheckP]);
+			LumosAnalytics.RecordEvent("Times", checkpointnames[currCheckP], checkpoints[currCheckP]);
+			Debug.Log(checkpointnames[currCheckP] + " Done");
 			currCheckP++;
+			LumosDataCall();
 
-			if(currCheckP == 8)
-			{
-				LumosAnalytics.RecordEvent("Finished @ ", timer);
-//				Debug.Log("FINISH?");
-			}
+		}else if(other.tag == "Finish")
+		{
+			LumosAnalytics.RecordEvent("Times", "Exit Time", timer);
+
+			LumosDataCall();
 		}
 	}
 
+//	void OnTriggerExit2D(Collider2D other)
+//	{
+//		if(other.name == "zone")
+//		{
+//			LumosAnalytics.RecordEvent("Time Slow Used", "zone : "+currCheckP.ToString("0"), TimeSlow.timesUsedTS);
+//			LumosAnalytics.RecordEvent("Telekinesis Used", "zone : "+currCheckP.ToString("0"), gravityGun.timesUsedTK);
+//			LumosAnalytics.RecordEvent("Shoot Used", "zone : "+currCheckP.ToString("0"), plasmaGun.timesUsedMB);
+//
+//			Debug.Log("DATAsent");
+//		}
+//	}
+
 	void LumosDataCall()
 	{
-		LumosAnalytics.RecordEvent(checkpointnames[0], checkpoints[0]);
-		LumosAnalytics.RecordEvent(checkpointnames[1], checkpoints[1]);
-		LumosAnalytics.RecordEvent(checkpointnames[2], checkpoints[2]);
-		LumosAnalytics.RecordEvent(checkpointnames[3], checkpoints[3]);
-		LumosAnalytics.RecordEvent(checkpointnames[4], checkpoints[4]);
-		LumosAnalytics.RecordEvent(checkpointnames[5], checkpoints[5]);
-		LumosAnalytics.RecordEvent(checkpointnames[6], checkpoints[6]);
-		LumosAnalytics.RecordEvent(checkpointnames[7], checkpoints[7]);
-		Debug.Log("Analytics Sent");
+//		LumosAnalytics.RecordEvent(checkpointnames[0], checkpoints[0]);
+//		LumosAnalytics.RecordEvent(checkpointnames[1], checkpoints[1]);
+//		LumosAnalytics.RecordEvent(checkpointnames[2], checkpoints[2]);
+//		LumosAnalytics.RecordEvent(checkpointnames[3], checkpoints[3]);
+//		LumosAnalytics.RecordEvent(checkpointnames[4], checkpoints[4]);
+//		LumosAnalytics.RecordEvent(checkpointnames[5], checkpoints[5]);
+//		LumosAnalytics.RecordEvent(checkpointnames[6], checkpoints[6]);
+//		LumosAnalytics.RecordEvent(checkpointnames[7], checkpoints[7]);
+//		Debug.Log("Analytics Sent");
 
 
 //		for(int x = 0; x < 8; x++)
@@ -62,19 +76,26 @@ public class AnaliticsLumos : MonoBehaviour
 //			LumosAnalytics.RecordEvent(checkpointnames[x], checkpoints[x]);
 //			Debug.Log("Analytics Sent " + checkpointnames[x]);
 //		}
-	}
 
+		LumosAnalytics.RecordEvent("Time Slow Used", "zone : "+currCheckP.ToString("0"), TimeSlow.timesUsedTS);
+		LumosAnalytics.RecordEvent("Telekinesis Used", "zone : "+currCheckP.ToString("0"), Telekinesis.timesUsedTK);
+		LumosAnalytics.RecordEvent("Shoot Used", "zone : "+currCheckP.ToString("0"), MindBullets.timesUsedMB);
+		
+		Debug.Log("DATAsent");
+
+	}
+	
 	void CheckPointDeath()
 	{
 		checkPdeath++;
 	}
 	void CheckPointDeathDataSend()
 	{
-		LumosAnalytics.RecordEvent("Died @ " + checkpointnames[currCheckP], checkPdeath);
+		LumosAnalytics.RecordEvent("Deaths", "Died @ " + checkpointnames[currCheckP], checkPdeath);
 		checkPdeath = 0;
-		Debug.Log(checkpointnames[currCheckP] + " DED");
 	}
-	
+
+
 	/*
 	float timer;
 	int i;

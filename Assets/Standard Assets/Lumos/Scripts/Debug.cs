@@ -19,9 +19,8 @@ namespace LumosUnity
 		/// </summary>
 		/// <param name="message">Message to log.</param>
 		/// <param name="alwaysShow">When true, always prints the message to console.</param>
-		public static void Log (object message, bool alwaysShow)
+		public static void Log (object message, bool alwaysShow = false)
 		{
-			alwaysShow = false;
 			LogMessage(UnityEngine.Debug.Log, message, alwaysShow);
 		}
 
@@ -30,9 +29,8 @@ namespace LumosUnity
 		/// </summary>
 		/// <param name="message">Message to log.</param>
 		/// <param name="alwaysShow">When true, always prints the message to console.</param>
-		public static void LogWarning (object message, bool alwaysShow)
+		public static void LogWarning (object message, bool alwaysShow = false)
 		{
-			alwaysShow = false;
 			LogMessage(UnityEngine.Debug.LogWarning, message, alwaysShow);
 		}
 
@@ -41,9 +39,8 @@ namespace LumosUnity
 		/// </summary>
 		/// <param name="message">Message to log.</param>
 		/// <param name="alwaysShow">When true, always prints the message to console.</param>
-		public static void LogError (object message, bool alwaysShow)
+		public static void LogError (object message, bool alwaysShow = false)
 		{
-			alwaysShow = false;
 			LogMessage(UnityEngine.Debug.LogError, message, alwaysShow);
 		}
 

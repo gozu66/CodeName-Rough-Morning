@@ -39,7 +39,7 @@ public class LumosCore : ILumosPowerup
 				var resp = success as Dictionary<string, object>;
 				Lumos.playerID = resp["player_id"].ToString();
 				PlayerPrefs.SetString(idPrefsKey, Lumos.playerID);
-			LumosUnity.Debug.Log("Using new player " + Lumos.playerID, false);
+				LumosUnity.Debug.Log("Using new player " + Lumos.playerID);
 			});
 	}
 
@@ -50,7 +50,7 @@ public class LumosCore : ILumosPowerup
 	{
 		return LumosRequest.Send(instance, "/ping", LumosRequest.Method.POST,
 			success => {
-			LumosUnity.Debug.Log("Returned Ping request with user " + Lumos.playerID, false);
+				LumosUnity.Debug.Log("Returned Ping request with user " + Lumos.playerID);
 				var resp = success as Dictionary<string, object>;
 				var powerupInfo = resp["powerups"] as IList;
 				LumosPowerups.LoadPowerupInfo(powerupInfo);

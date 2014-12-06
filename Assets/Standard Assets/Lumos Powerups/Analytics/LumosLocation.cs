@@ -33,10 +33,10 @@ public static class LumosLocation
 		LumosRequest.Send(LumosAnalytics.instance, endpoint, LumosRequest.Method.PUT, payload,
 			success => {
 				PlayerPrefs.SetString(prefsKey, System.DateTime.Now.ToString());
-				LumosUnity.Debug.Log("Location information successfully sent.", false);
+				LumosUnity.Debug.Log("Location information successfully sent.");
 			},
 			error => {
-				LumosUnity.Debug.LogError("Failed to send Location information.", false);
+				LumosUnity.Debug.LogError("Failed to send Location information.");
 			});
 	}
 }

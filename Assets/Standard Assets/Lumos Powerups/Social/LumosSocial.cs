@@ -46,7 +46,7 @@ public partial class LumosSocial : ISocialPlatform, ILumosPowerup
 
 				gameCenterPlatform.localUser.Authenticate(success => {
 					if (success) {
-						LumosUnity.Debug.Log("Authenticated with game center.", false);
+						LumosUnity.Debug.Log("Authenticated with game center.");
 					}
 				});
 			}

@@ -57,7 +57,7 @@ public static class LumosPackages
 				callback(text);
 			}
 		} catch (WebException e) {
-			LumosUnity.Debug.Log("Web exception: " + e.Message, true);
+			LumosUnity.Debug.Log("Web exception: " + e.Message);
 		} finally {
 			ServicePointManager.ServerCertificateValidationCallback -= failedSSLCallback;
 		}

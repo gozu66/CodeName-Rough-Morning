@@ -34,7 +34,7 @@ public static class LumosEvents
 		}
 
 		if (eventID == null || eventID == "") {
-			LumosUnity.Debug.LogWarning("An event ID and category must be supplied. Event not recorded.", false);
+			LumosUnity.Debug.LogWarning("An event ID and category must be supplied. Event not recorded.");
 			return;
 		}
 
@@ -96,7 +96,7 @@ public static class LumosEvents
 				unsentUniqueEvents.Clear();
 			},
 			error => {
-			LumosUnity.Debug.LogWarning("Events not sent. Will try again at next timer interval.", false);
+				LumosUnity.Debug.LogWarning("Events not sent. Will try again at next timer interval.");
 			});
 	}
 }

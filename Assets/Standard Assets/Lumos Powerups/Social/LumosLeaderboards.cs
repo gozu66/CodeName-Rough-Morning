@@ -195,7 +195,7 @@ public partial class LumosSocial
 	void ReportScoreToGameCenter (string leaderboardID, System.Int64 score)
 	{
 		LumosSocial.gameCenterPlatform.ReportScore(score, leaderboardID, delegate {
-			LumosUnity.Debug.Log("Reported leaderboard score to Game Center.", false);
+			LumosUnity.Debug.Log("Reported leaderboard score to Game Center.");
 		});
 	}
 

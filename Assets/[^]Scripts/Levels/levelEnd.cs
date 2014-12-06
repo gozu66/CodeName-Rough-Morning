@@ -8,6 +8,10 @@ public class levelEnd : MonoBehaviour
 
 //	public GameObject anaNode;		//ANALYTICS 
 
+	void Start ()
+	{
+		LumosFeedbackGUI.windowClosed += OnWindowClosed;
+	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
@@ -27,7 +31,14 @@ public class levelEnd : MonoBehaviour
 		yield return new WaitForSeconds(1.5f);
 		//anaNode.SendMessage("SendMail", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
 		//anaNode.SendMessage("WriteTxt", 3, SendMessageOptions.DontRequireReceiver);		//ANALYTICS 
+		Time.timeScale = 0;
+		LumosFeedbackGUI.ShowDialog();
 		Application.LoadLevel(0);
 	}
+
 	
+	void OnWindowClosed ()
+	{
+		Time.timeScale = 1;
+	}
 }

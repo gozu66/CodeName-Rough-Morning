@@ -26758,7 +26758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recordLogs: 0
   recordWarnings: 0
-  recordErrors: 1
+  recordErrors: 0
 --- !u!114 &1158830290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26771,7 +26771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8349abd2e09e04130af2e2f655521def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runWhileInEditor: 1
+  runWhileInEditor: 0
   debugSetting: 0
 --- !u!1 &1165688230
 GameObject:
@@ -41100,6 +41100,10 @@ Prefab:
     - target: {fileID: 100000, guid: 400cd3a57784041dfa82bb9532893312, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 400cd3a57784041dfa82bb9532893312, type: 2}
+      propertyPath: runWhileInEditor
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 400cd3a57784041dfa82bb9532893312, type: 2}

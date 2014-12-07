@@ -10,10 +10,12 @@ public class AnaliticsLumos : MonoBehaviour
 	float[] checkpointdeaths = new float[8];
 	string[] checkpointnames = {"CheckPoint 1", "CheckPoint 2", "CheckPoint 3", 
 		"CheckPoint 4", "CheckPoint 5", "CheckPoint 6", "CheckPoint 7", "Finished @ "};
+	string _InputType;
 
 	void Start()
 	{
 		deaths = 0; currCheckP = 0; checkPdeath = 0;
+
 	}
 	void Update()
 	{
@@ -33,14 +35,13 @@ public class AnaliticsLumos : MonoBehaviour
 			}
 			currTime = timer;
 			CheckPointDeathDataSend();
-			LumosAnalytics.RecordEvent("Times", checkpointnames[currCheckP], checkpoints[currCheckP]);
-			Debug.Log(checkpointnames[currCheckP] + " Done");
+			LumosAnalytics.RecordEvent(PlayerPrefs.GetString("CurrentInput"), checkpointnames[currCheckP], checkpoints[currCheckP]);
 			currCheckP++;
 			LumosDataCall();
 
 		}else if(other.tag == "Finish")
 		{
-			LumosAnalytics.RecordEvent("Times", "Exit Time", timer);
+			LumosAnalytics.RecordEvent(PlayerPrefs.GetString("CurrentInput"), "Exit Time", timer);
 
 			LumosDataCall();
 		}
@@ -91,7 +92,7 @@ public class AnaliticsLumos : MonoBehaviour
 	}
 	void CheckPointDeathDataSend()
 	{
-		LumosAnalytics.RecordEvent("Deaths", "Died @ " + checkpointnames[currCheckP], checkPdeath);
+		LumosAnalytics.RecordEvent(PlayerPrefs.GetString("CurrentInput"), "Died @ " + checkpointnames[currCheckP], checkPdeath);
 		checkPdeath = 0;
 	}
 

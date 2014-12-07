@@ -25,11 +25,14 @@ public class UIManager : MonoBehaviour
 		if(_input == UIManager.InputType.XboxPad)
 		{
 			MouseKB.SetActive(false);
+			PlayerPrefs.SetString("CurrentInput", "Xbox Controller");
 		}
 		if(_input == UIManager.InputType.MouseKBoard)
 		{
 			XBOX.SetActive(false);
+			PlayerPrefs.SetString("CurrentInput", "Mouse Keyboard");
 		}
+
 
 	}
 

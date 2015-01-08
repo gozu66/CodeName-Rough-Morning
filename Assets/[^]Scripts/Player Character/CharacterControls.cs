@@ -42,7 +42,7 @@ public class CharacterControls : MonoBehaviour
 
 				if(Input.GetAxis("Horizontal") != 0){isMoving = true;}else{isMoving = false;}
 				
-				if(Input.GetKey(KeyCode.Space))
+				if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
 				{
 					jump();
 				} 

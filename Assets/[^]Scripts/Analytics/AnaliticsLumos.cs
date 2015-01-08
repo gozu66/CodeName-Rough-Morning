@@ -13,14 +13,24 @@ public class AnaliticsLumos : MonoBehaviour
 	string _InputType;
 	int buffer1,buffer2,buffer3;
 
+	void Awake ()
+	{
+		Lumos.OnReady += OnLumosReady;
+	}
+
 	void Start()
 	{
 		deaths = 0; currCheckP = 0; checkPdeath = 0;
 		buffer1=0;
 		buffer2=0;
 		buffer3=0;
-
 	}
+	
+	void OnLumosReady ()
+	{
+		LumosAnalytics.RecordEvent("Lumos-Initialized");
+	}
+
 	void Update()
 	{
 		timer += Time.deltaTime * Time.timeScale;
@@ -54,8 +64,6 @@ public class AnaliticsLumos : MonoBehaviour
 				LumosAnalytics.RecordEvent(PlayerPrefs.GetString("CurrentInput"), checkpointnames[i], PlayerPrefs.GetFloat(checkpointnames[i]+" Value"));
 				Debug.Log("loop" + i.ToString("0"));
 			}
-//			currCheckP += 1;
-//			LumosDataCall();
 		}
 	}
 

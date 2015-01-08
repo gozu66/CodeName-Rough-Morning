@@ -6,4 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/[^]Scenes/Test Enviroments [TE]/Richie - TE/R.B_Test Env 1.unity
+    path: Assets/[^]Scenes/Alpha/Alpha_menu.unity
+  - enabled: 1
+    path: Assets/[^]Scenes/Alpha/Alpha_main.unity

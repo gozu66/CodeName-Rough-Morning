@@ -3,8 +3,8 @@ using System.Collections;
 
 public class CharacterControls : MonoBehaviour 
 {
-	public enum InputType {XboxPad, MouseKBoard}
-	public InputType _input;
+//	public enum InputType {XboxPad, MouseKBoard}
+//	public InputType _input;
 
 	public float maxSpeed, jumpForce;
 
@@ -25,20 +25,20 @@ public class CharacterControls : MonoBehaviour
 	{
 		anim = GetComponent<Animator>();
 
-		if(Input.GetJoystickNames().Length <= 0)
-		{
-			_input = InputType.MouseKBoard;
-		}
-		else{
-			_input = InputType.XboxPad;
-		}
+//		if(Input.GetJoystickNames().Length <= 0)
+//		{
+//			_input = InputType.MouseKBoard;
+//		}
+//		else{
+//			_input = InputType.XboxPad;
+//		}
 	}
 
 	void FixedUpdate ()
 	{
-		switch(_input)
+		switch(UIManager._input)
 		{
-			case InputType.MouseKBoard:
+			case UIManager.InputType.MouseKBoard:
 
 				if(Input.GetAxis("Horizontal") != 0){isMoving = true;}else{isMoving = false;}
 				
@@ -65,7 +65,7 @@ public class CharacterControls : MonoBehaviour
 
 			break;
 
-			case InputType.XboxPad:
+			case UIManager.InputType.XboxPad:
 
 				if(Input.GetAxis("L_XAxis_1") != 0){isMoving = true;}else{isMoving = false;}
 

@@ -27,17 +27,23 @@ public class Telekinesis : MonoBehaviour
 
 	void Update()
 	{
+		Debug.DrawRay(myTransform.position, new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, myTransform.right.y, myTransform.right.z), Color.green);
 		if(!isHolding)
 		{	
 			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1) && !isThrowing)
-			{			
+			{	
 				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, 								//raycasting along the aim diretion
 				                    	new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, 
 				             				myTransform.right.y, myTransform.right.z), gravityGunRange);
+
+
+
 				if(hit2D == true)																			//Raycasting for object pick-up
 				{
+
 					if(hit2D.collider.tag == "moveable")
 					{
+
 						isHolding = true;									
 						hit2D.collider.rigidbody2D.isKinematic = true;
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj

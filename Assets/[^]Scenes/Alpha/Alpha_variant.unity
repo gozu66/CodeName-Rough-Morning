@@ -92,6 +92,7 @@ GameObject:
   - 68: {fileID: 78631}
   - 68: {fileID: 78630}
   - 114: {fileID: 647133690}
+  - 114: {fileID: 78639}
   m_Layer: 2
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -263,6 +264,27 @@ SpriteRenderer:
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: e5dcb09547e75a34f9dc8b85780a47bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &78639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a44bee9f336e4f40ac83a93630a64c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startRect:
+    serializedVersion: 2
+    x: 10
+    y: 10
+    width: 75
+    height: 50
+  updateColor: 1
+  allowDrag: 1
+  frequency: 1
+  nbDecimal: 1
 --- !u!1001 &677782
 Prefab:
   m_ObjectHideFlags: 0
@@ -41141,7 +41163,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400022, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: runWhileInEditor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400020, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: recordLogs
@@ -43592,7 +43614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8349abd2e09e04130af2e2f655521def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runWhileInEditor: 0
+  runWhileInEditor: 1
   debugSetting: 0
 --- !u!1 &1158891222
 GameObject:

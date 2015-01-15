@@ -283,7 +283,7 @@ MonoBehaviour:
     height: 50
   updateColor: 1
   allowDrag: 1
-  frequency: 1
+  frequency: .5
   nbDecimal: 1
 --- !u!1001 &677782
 Prefab:
@@ -41163,7 +41163,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400022, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: runWhileInEditor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400020, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: recordLogs
@@ -43614,7 +43614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8349abd2e09e04130af2e2f655521def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runWhileInEditor: 1
+  runWhileInEditor: 0
   debugSetting: 0
 --- !u!1 &1158891222
 GameObject:

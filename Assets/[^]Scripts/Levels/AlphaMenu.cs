@@ -23,4 +23,9 @@ public class AlphaMenu : MonoBehaviour
 	{
 		Application.LoadLevel(0);
 	}
+
+	public void GoToCredits()
+	{
+		Application.LoadLevel(2);
+	}
 }

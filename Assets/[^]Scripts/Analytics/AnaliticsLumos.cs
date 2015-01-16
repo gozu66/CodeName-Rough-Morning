@@ -76,9 +76,6 @@ public class AnaliticsLumos : MonoBehaviour
 		buffer1 = TimeSlow.timesUsedTS;
 		buffer2 = Telekinesis.timesUsedTK;
 		buffer3 = MindBullets.timesUsedMB;
-
-		float SSch;
-		LumosAnalytics.RecordEvent("PC users", "ssHoPd", SSch);
 	}
 	
 	void CheckPointDeath()

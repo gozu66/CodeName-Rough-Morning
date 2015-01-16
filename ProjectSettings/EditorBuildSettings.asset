@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[^]Scenes/Alpha/Alpha_menu.unity
   - enabled: 1
-    path: Assets/[^]Scenes/Alpha/Alpha_variant.unity
+    path: Assets/[^]Scenes/Alpha/Alpha_main.unity
+  - enabled: 1
+    path: Assets/[^]Scenes/Alpha/Alpha_credits.unity

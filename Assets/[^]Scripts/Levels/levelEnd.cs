@@ -37,6 +37,6 @@ public class levelEnd : MonoBehaviour
 	
 	void OnWindowClosed ()
 	{
-		Application.LoadLevel(0);
+		Application.LoadLevel(2);
 	}
 }

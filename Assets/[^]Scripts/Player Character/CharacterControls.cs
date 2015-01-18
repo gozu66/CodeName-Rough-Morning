@@ -25,13 +25,13 @@ public class CharacterControls : MonoBehaviour
 	{
 		anim = GetComponent<Animator>();
 
-//		if(Input.GetJoystickNames().Length <= 0)
-//		{
-//			_input = InputType.MouseKBoard;
-//		}
-//		else{
-//			_input = InputType.XboxPad;
-//		}
+		if(Input.GetJoystickNames().Length <= 0)
+		{
+			UIManager._input = UIManager.InputType.MouseKBoard;
+		}
+		else{
+			UIManager._input = UIManager.InputType.XboxPad;
+		}
 	}
 
 	void FixedUpdate ()

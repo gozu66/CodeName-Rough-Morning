@@ -10,44 +10,44 @@ public class UIManager : MonoBehaviour
 
 	void Start()
 	{
-		Debug.Log(PlayerPrefs.GetString("CurrentInput"));
-
-		string ppinput = PlayerPrefs.GetString("CurrentInput");
-		
-		if(ppinput == "Xbox Controller") 
-		{
-			_input = InputType.XboxPad;
-			MouseKB.SetActive(false);
-		}
-
-		else if(ppinput == "Mouse Keyboard") 
-		{
-			_input = InputType.MouseKBoard;
-			XBOX.SetActive(false);
-		}
-
+//		Debug.Log(PlayerPrefs.GetString("CurrentInput"));
+//		PlayerPrefs.DeleteAll();
+//		string ppinput = PlayerPrefs.GetString("CurrentInput");
+//		
+//		if(ppinput == "Xbox Controller") 
+//		{
+//			_input = InputType.XboxPad;
+//			MouseKB.SetActive(false);
+//		}
+//
+//		else if(ppinput == "Mouse Keyboard") 
+//		{
+//			_input = InputType.MouseKBoard;
+//			XBOX.SetActive(false);
+//		}
+//
 //		else
 //		{
-//			if(Input.GetJoystickNames().Length > 0)			//Input detection if player input null
-//			{
-//				_input = InputType.XboxPad;
-//			}
-//			else
-//				{
-//					_input = InputType.MouseKBoard;
-//				}
-//
-//					if(_input == UIManager.InputType.XboxPad)
-//					{
-//						MouseKB.SetActive(false);
-//						PlayerPrefs.SetString("CurrentInput", "Xbox Controller");
-//					}
-//
-//						if(_input == UIManager.InputType.MouseKBoard)
-//						{
-//							XBOX.SetActive(false);
-//							PlayerPrefs.SetString("CurrentInput", "Mouse Keyboard");
-//						}
+			if(Input.GetJoystickNames().Length > 0)			//Input detection if player input null
+			{
+				_input = InputType.XboxPad;
+			}
+			else
+			{
+				_input = InputType.MouseKBoard;
+			}
+
+			if(_input == UIManager.InputType.XboxPad)
+			{
+				MouseKB.SetActive(false);
+				PlayerPrefs.SetString("CurrentInput", "Xbox Controller");
+			}
+
+			if(_input == UIManager.InputType.MouseKBoard)
+			{
+				XBOX.SetActive(false);
+				PlayerPrefs.SetString("CurrentInput", "Mouse Keyboard");
+			}
 //		}
 	}
 

@@ -13,7 +13,8 @@ TagManager:
   - GamePadUI
   - M+KB_UI
   - portal
-  - SP
+  - snapPoint
+  - endSnapPoint
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

@@ -9,6 +9,7 @@ public class SmartPipes : MonoBehaviour
 	Transform myT;
 
 	float i = Mathf.Infinity;
+	float rotOffset;
 
 	public float MinSnapDistance = 0.2f, MinRotDistance = 5f;
 
@@ -17,9 +18,9 @@ public class SmartPipes : MonoBehaviour
 		myT = transform;
 		endSnapPoint = GameObject.FindGameObjectsWithTag("endSnapPoint");
 
-		localSnapPoint = this.transform.GetChild(0).gameObject;
+		localSnapPoint = myT.GetChild(0).gameObject;
 		if(localSnapPoint.tag == "endSnapPoint")
-			localSnapPoint = this.transform.GetChild(1).gameObject;
+			localSnapPoint = myT.GetChild(1).gameObject;
 	}
 
 	void SnapPipe()
@@ -37,26 +38,37 @@ public class SmartPipes : MonoBehaviour
 		{
 			rigidbody2D.isKinematic = true;
 			collider2D.isTrigger = true;
+
+			myT.position += AdjustPosition();
+			myT.parent = CurrEndSnap.transform.parent;
 		}
 	}
 
 	bool Compare()
 	{
 		float dist = Vector2.Distance(localSnapPoint.transform.position, CurrEndSnap.transform.position);
+
 		if(dist <= MinSnapDistance)
 		{
-			float rotOffset = Quaternion.Angle(CurrEndSnap.transform.rotation, localSnapPoint.transform.rotation);
-			Debug.Log(rotOffset);
+			rotOffset = Quaternion.Angle(CurrEndSnap.transform.rotation, localSnapPoint.transform.rotation);
 
-			if(rotOffset < MinRotDistance)
-			{
+			if(rotOffset < MinRotDistance)	{
 				return true;
-			}else
-			{
+			}	else {
 				return false;
 			}
-		}else{
-		return false;
+		}	else {
+			return false;
 		}
 	}
+
+	Vector3 AdjustPosition()
+	{
+		float x = CurrEndSnap.transform.position.x - localSnapPoint.transform.position.x;
+		float y = CurrEndSnap.transform.position.y - localSnapPoint.transform.position.y;
+
+		Vector3 offset = new Vector3(x, y, 0);
+		return offset;
+	}
+
 }

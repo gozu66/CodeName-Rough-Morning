@@ -3,10 +3,12 @@ using System.Collections;
 
 public class Telekinesis : MonoBehaviour 
 {
-	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f;
+	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, 
+					MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f;
 	float maxRotSpeed, maxMoveSpeed;
 
 	public static bool isHolding = false;
+
 	public bool isThrowing = false;
 	bool heldObjTooFar;
 
@@ -90,9 +92,6 @@ public class Telekinesis : MonoBehaviour
 			offset.x += Input.GetAxis("R_XAxis_1")* Time.deltaTime * moveSpeed;			//While holding obj, V3 offset adjusted by R-Stick input
 			offset.y += -Input.GetAxis("R_YAxis_1")* Time.deltaTime * moveSpeed;		
 
-//			offset.x = Mathf.Clamp(offset.x, -TKlimit, TKlimit);
-//			offset.y = Mathf.Clamp(offset.y, -TKlimit, TKlimit);
-
 			offset = Vector3.ClampMagnitude(offset, TKlimit);
 		}
 		else if(UIManager._input == UIManager.InputType.MouseKBoard)		//TELEKINESIS CONTROLS FOR GAMEPAD____________________________________
@@ -109,9 +108,6 @@ public class Telekinesis : MonoBehaviour
 			offset.x += Input.GetAxis("Mouse X")* Time.deltaTime * MKmoveSpeed;			//While holding obj, V3 offset adjusted by mouse X+Y input
 			offset.y += Input.GetAxis("Mouse Y")* Time.deltaTime * MKmoveSpeed;	
 
-//			offset.x = Mathf.Clamp(offset.x, -10, 10);
-//			offset.y = Mathf.Clamp(offset.y, -10, 10);
-
 			offset = Vector3.ClampMagnitude(offset, TKlimit);
 
 		}
@@ -120,7 +116,9 @@ public class Telekinesis : MonoBehaviour
 	public void dropObject()								//called to drop current held object
 	{
 		heldObj.gameObject.layer = 11;						//reset object layer
-		heldObj.rigidbody2D.isKinematic = false;	
+		heldObj.rigidbody2D.isKinematic = false;			
+		heldObj.collider2D.isTrigger = false;				//PIPES : Making pipes !isTrigger after placement	
+		heldObj.parent = null;								//PIPES : Un Parenting Pipes after placement
 		isHolding = false;						
 		offset = Vector3.zero;								//reset offset
 		rotSpeed = maxRotSpeed;								//reset speeds
@@ -142,10 +140,6 @@ public class Telekinesis : MonoBehaviour
 		
 		dropObject();										//drop obj
 		
-//		obj.rigidbody2D.AddForce(new Vector2(obj.transform.position.x - myTransform.position.x, 
-//		                                     obj.transform.position.y - myTransform.position.y) * throwForce, ForceMode2D.Impulse);
-//		obj.rigidbody2D.AddForce(new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, 
-//		                                      myTransform.right.y, myTransform.right.z));
 		obj.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * throwForce, ForceMode2D.Impulse);
 
 		yield return new WaitForSeconds (1);

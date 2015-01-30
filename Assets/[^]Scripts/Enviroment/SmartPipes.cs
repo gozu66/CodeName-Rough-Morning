@@ -4,7 +4,7 @@ using System.Collections;
 public class SmartPipes : MonoBehaviour 
 {
 	GameObject[] endSnapPoint;
-	GameObject localSnapPoint, CurrEndSnap;
+	GameObject localSnapPoint, CurrEndSnap, myParent, myChild;
 
 	Transform myT;
 
@@ -37,10 +37,19 @@ public class SmartPipes : MonoBehaviour
 		if(Compare() == true)
 		{
 			rigidbody2D.isKinematic = true;
-			collider2D.isTrigger = true;
+			gameObject.layer = 10;
+
+//			float rotOffset = transform.rotation.z - localSnapPoint.transform.rotation.z;
+//			transform.Rotate(0,0,rotOffset);
+//			float dist = Vector2.Distance(localSnapPoint.transform.position, CurrEndSnap.transform.position);
+//			if(dist > 0.1 || dist < -0.1){transform.Rotate(0,0,-rotOffset*2);}
 
 			myT.position += AdjustPosition();
-			myT.parent = CurrEndSnap.transform.parent;
+
+			GameObject newParent = CurrEndSnap.transform.parent.gameObject;
+			myParent = newParent;
+			if(newParent.GetComponent<SmartPipes>() != null)
+				newParent.GetComponent<SmartPipes>().SetChild(gameObject);
 		}
 	}
 
@@ -71,4 +80,18 @@ public class SmartPipes : MonoBehaviour
 		return offset;
 	}
 
+	public void SetChild(GameObject _child)
+	{
+		myChild = _child;
+	}
+
+	public void Drop()
+	{
+		if(myChild != null){
+			myChild.gameObject.layer = 11;	
+			myChild.rigidbody2D.isKinematic = false;
+			SmartPipes myChildPipes = myChild.GetComponent<SmartPipes>();
+			if(myChildPipes != null)myChildPipes.Drop();
+		}
+	}
 }

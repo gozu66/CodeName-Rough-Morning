@@ -19,7 +19,6 @@ public class Telekinesis : MonoBehaviour
 
 	void Start()
 	{
-
 		myTransform = transform;														//cached transform
 		myTransformParent = transform.parent;											//cached transform.parent
 
@@ -39,14 +38,16 @@ public class Telekinesis : MonoBehaviour
 				             				myTransform.right.y, myTransform.right.z), gravityGunRange);
 				if(hit2D == true)																			//Raycasting for object pick-up
 				{
-
 					if(hit2D.collider.tag == "moveable")
 					{
-
 						isHolding = true;									
 						hit2D.collider.rigidbody2D.isKinematic = true;
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
+
+						if(heldObj.GetComponent<SmartPipes>() != null)
+							heldObj.GetComponent<SmartPipes>().Drop();
+
 						LogUse();
 					}
 				}
@@ -113,18 +114,18 @@ public class Telekinesis : MonoBehaviour
 		}
 	}
 
-	public void dropObject()								//called to drop current held object
+	public void dropObject()														//called to drop current held object
 	{
-		heldObj.gameObject.layer = 11;						//reset object layer
-		heldObj.rigidbody2D.isKinematic = false;			
-		heldObj.collider2D.isTrigger = false;				//PIPES : Making pipes !isTrigger after placement	
-		heldObj.parent = null;								//PIPES : Un Parenting Pipes after placement
+		heldObj.gameObject.layer = 11;												//reset object layer
+		heldObj.rigidbody2D.isKinematic = false;
+		heldObj.rigidbody2D.velocity = Vector2.zero;
+
 		isHolding = false;						
 		offset = Vector3.zero;								//reset offset
 		rotSpeed = maxRotSpeed;								//reset speeds
 		moveSpeed = maxMoveSpeed;
 
-		if(heldObj.GetComponent<SmartPipes>() != null || heldObj.GetComponent<Pipes>() != null)
+		if(heldObj.GetComponent<SmartPipes>() != null)
 			heldObj.SendMessage("SnapPipe");
 	}
 	

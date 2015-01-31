@@ -27,7 +27,7 @@ public class SmartPipes : MonoBehaviour
 	{
 		foreach(GameObject point in endSnapPoint)
 		{
-			float dist = Vector2.Distance(localSnapPoint.transform.position, point.transform.position);
+			float dist = Vector3.Distance(localSnapPoint.transform.position, point.transform.position);
 			if(dist < i)
 			{
 				i = dist;
@@ -60,6 +60,7 @@ public class SmartPipes : MonoBehaviour
 		if(dist <= MinSnapDistance)
 		{
 			rotOffset = Quaternion.Angle(CurrEndSnap.transform.rotation, localSnapPoint.transform.rotation);
+			print (dist);
 
 			if(rotOffset < MinRotDistance)	{
 				return true;
@@ -67,6 +68,7 @@ public class SmartPipes : MonoBehaviour
 				return false;
 			}
 		}	else {
+			print (dist);
 			return false;
 		}
 	}
@@ -92,6 +94,17 @@ public class SmartPipes : MonoBehaviour
 			myChild.rigidbody2D.isKinematic = false;
 			SmartPipes myChildPipes = myChild.GetComponent<SmartPipes>();
 			if(myChildPipes != null)myChildPipes.Drop();
+		}
+	}
+
+	[ContextMenu("Align pipe values")]
+	public void SetValues()
+	{
+		SmartPipes[] currentPipes = GameObject.FindObjectsOfType<SmartPipes>();
+		foreach(SmartPipes pipe in currentPipes)
+		{
+			pipe.GetComponent<SmartPipes>().MinSnapDistance = MinSnapDistance;
+			pipe.GetComponent<SmartPipes>().MinRotDistance = MinRotDistance;
 		}
 	}
 }

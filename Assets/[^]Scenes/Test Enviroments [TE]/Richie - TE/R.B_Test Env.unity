@@ -1268,8 +1268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb4d840d74d0384f9bce5cc9bddce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSnapDistance: 3
-  MinRotDistance: 10
+  MinSnapDistance: .200000003
+  MinRotDistance: 5
 --- !u!60 &50074150
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50074148}
-  m_Mass: 1
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -1836,8 +1836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb4d840d74d0384f9bce5cc9bddce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSnapDistance: 3
-  MinRotDistance: 10
+  MinSnapDistance: .200000003
+  MinRotDistance: 5
 --- !u!60 &126496547
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1882,7 +1882,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 126496545}
-  m_Mass: 50
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -1971,8 +1971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb4d840d74d0384f9bce5cc9bddce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSnapDistance: 3
-  MinRotDistance: 10
+  MinSnapDistance: .200000003
+  MinRotDistance: 5
 --- !u!60 &138698942
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2017,7 +2017,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138698939}
-  m_Mass: 50
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -2766,7 +2766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &264581944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3865,8 +3865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb4d840d74d0384f9bce5cc9bddce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSnapDistance: 3
-  MinRotDistance: 10
+  MinSnapDistance: .200000003
+  MinRotDistance: 5
 --- !u!60 &663752633
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3891,7 +3891,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663752630}
-  m_Mass: 1
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -4688,7 +4688,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863495347}
-  m_Mass: 1
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -4744,8 +4744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb4d840d74d0384f9bce5cc9bddce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSnapDistance: 3
-  MinRotDistance: 10
+  MinSnapDistance: .200000003
+  MinRotDistance: 5
 --- !u!1 &880296744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5037,7 +5037,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 0
-  m_FillOrigin: 2
+  m_FillOrigin: 1
 --- !u!222 &933960090
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6360,7 +6360,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1257126557}
-  m_Mass: 50
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -6416,8 +6416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb4d840d74d0384f9bce5cc9bddce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSnapDistance: 3
-  MinRotDistance: 10
+  MinSnapDistance: .200000003
+  MinRotDistance: 5
 --- !u!1 &1278022090
 GameObject:
   m_ObjectHideFlags: 0
@@ -10105,8 +10105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb4d840d74d0384f9bce5cc9bddce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSnapDistance: 3
-  MinRotDistance: 10
+  MinSnapDistance: .200000003
+  MinRotDistance: 5
 --- !u!60 &2119382732
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10131,7 +10131,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119382729}
-  m_Mass: 1
+  m_Mass: 25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1

@@ -27,10 +27,11 @@ public class playerHealth : MonoBehaviour
 		}
 		if(col.tag == "playerHazard")
 		{
+			print("<Color=red>HIT</color>");
 			transform.position = startPoint;
 			//anaNode.SendMessage("AddDeath", SendMessageOptions.DontRequireReceiver);
 			weaponTransform = GameObject.Find("weaponTrans");
-			SendMessageUpwards("CheckPointDeath", SendMessageOptions.DontRequireReceiver);
+//			SendMessageUpwards("CheckPointDeath", SendMessageOptions.DontRequireReceiver);
 
 			if(Telekinesis.isHolding)
 				weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);

@@ -6,6 +6,7 @@ public class Telekinesis : MonoBehaviour
 	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, 
 					MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f;
 	float maxRotSpeed, maxMoveSpeed;
+	public LayerMask telekinesisIgnore;
 
 	public static bool isHolding = false;
 
@@ -28,7 +29,7 @@ public class Telekinesis : MonoBehaviour
 
 	void Update()
 	{
-		Debug.DrawRay(myTransform.position, new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, myTransform.right.y, myTransform.right.z), Color.green);
+		//Debug.DrawRay(myTransform.position, new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, myTransform.right.y, myTransform.right.z), Color.green);
 		if(!isHolding)
 		{	
 			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1) && !isThrowing)
@@ -46,7 +47,7 @@ public class Telekinesis : MonoBehaviour
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 
 						if(heldObj.GetComponent<SmartPipes>() != null){
-							heldObj.GetComponent<SmartPipes>().Drop();
+							heldObj.GetComponent<SmartPipes>().Drop(false);
 
 						}
 						LogUse();

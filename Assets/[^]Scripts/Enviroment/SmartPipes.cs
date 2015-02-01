@@ -4,10 +4,13 @@ using System.Collections;
 public class SmartPipes : MonoBehaviour 
 {
 	GameObject[] endSnapPoint;
-	GameObject localSnapPoint, CurrEndSnap, myParent, myChild, steam;
+	GameObject localSnapPoint, CurrEndSnap, myChild;
+	SmartPipes myParent;
 	Transform myT;
+	ParticleSystem _steam;
 	float i = Mathf.Infinity;
 	float rotOffset;
+	public bool inSitute, isOccupied;
 
 	public float MinSnapDistance = 0.2f, MinRotDistance = 5f;
 
@@ -15,15 +18,35 @@ public class SmartPipes : MonoBehaviour
 	void Start()
 	{
 		myT = transform;
-		endSnapPoint = GameObject.FindGameObjectsWithTag("endSnapPoint");
-		steam.GetComponentInChildren<Steam>();
-		localSnapPoint = myT.GetChild(0).gameObject;
-		if(localSnapPoint.tag == "endSnapPoint")
-			localSnapPoint = myT.GetChild(1).gameObject;
+
+		Transform[] children = GetComponentsInChildren<Transform>();
+		foreach(Transform child in children)
+		{
+			if(child.tag == "SP"){
+				localSnapPoint = child.gameObject;
+			}
+			else if(child.tag == "endSnapPoint"){
+				endSnapPoint = GameObject.FindGameObjectsWithTag("endSnapPoint");
+			}
+			else if(child.tag == "Steam"){
+				_steam = child.gameObject.GetComponent<ParticleSystem>();
+			}
+		}
+	}
+
+	void Update()
+	{
+		if(inSitute && !isOccupied && _steam.emissionRate < 50){
+			_steam.emissionRate = 100;
+		}	else {
+			_steam.emissionRate = 0;
+		}
 	}
 
 	void SnapPipe()
 	{	
+//		inSitute = !inSitute;0
+
 		foreach(GameObject point in endSnapPoint)
 		{
 			if(point != null){
@@ -37,22 +60,30 @@ public class SmartPipes : MonoBehaviour
 		}
 		if(Compare() == true)
 		{
-			rigidbody2D.isKinematic = true;
-			gameObject.layer = 10;
+			myParent = CurrEndSnap.transform.parent.GetComponent<SmartPipes>();
+			if(!myParent.isOccupied)
+			{
+				myParent.SetChild(gameObject);
+				myParent.Occupy(true);
 
-			myT.position += AdjustPosition();
+				rigidbody2D.isKinematic = true;
+				gameObject.layer = 10;
 
-			Vector3 vec = transform.eulerAngles;
-			vec.z = Mathf.Round(vec.z / 90) * 90;
-			transform.eulerAngles = vec;
+				myT.position += AdjustPosition();
 
-			myT.position += AdjustPosition();
+				Vector3 vec = transform.eulerAngles;
+				vec.z = Mathf.Round(vec.z / 90) * 90;
+				transform.eulerAngles = vec;
 
-			GameObject newParent = CurrEndSnap.transform.parent.gameObject;
-			myParent = newParent;
-			if(newParent.GetComponent<SmartPipes>() != null)
-				newParent.GetComponent<SmartPipes>().SetChild(gameObject);
+				myT.position += AdjustPosition();
 
+
+				myParent.SteamSwitch();
+				SteamSwitch();
+				inSitute = true;
+			}else{
+				myParent = null;
+			}
 		}
 	}
 
@@ -88,14 +119,37 @@ public class SmartPipes : MonoBehaviour
 		myChild = _child;
 	}
 
-	public void Drop()
+	public void Drop(bool occupied)
 	{
+		inSitute = false;
+		if(myParent != null){
+			myParent.Occupy(false);
+		}
 		if(myChild != null){
 			myChild.gameObject.layer = 11;	
 			myChild.rigidbody2D.isKinematic = false;
 			SmartPipes myChildPipes = myChild.GetComponent<SmartPipes>();
-			if(myChildPipes != null)myChildPipes.Drop();
+			if(myChildPipes != null)myChildPipes.Drop(true);
 		}
+	}
+
+	public void SteamSwitch()
+	{
+		float emission = _steam.emissionRate;
+		_steam.emissionRate = (emission >= 50) ? 0 : 100;
+
+		BoxCollider2D[] myBox = GetComponentsInChildren<BoxCollider2D>();
+		foreach(BoxCollider2D box in myBox)
+		{
+			if(box.tag == "playerHazard"){
+				box.enabled = !box.enabled;
+				break;
+			}
+		}
+	}
+	public void Occupy(bool _occupy)
+	{
+		isOccupied = _occupy;
 	}
 
 	[ContextMenu("Align pipe values")]

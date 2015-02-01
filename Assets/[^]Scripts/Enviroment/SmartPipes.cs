@@ -4,19 +4,19 @@ using System.Collections;
 public class SmartPipes : MonoBehaviour 
 {
 	GameObject[] endSnapPoint;
-	GameObject localSnapPoint, CurrEndSnap, myParent, myChild;
+	GameObject localSnapPoint, CurrEndSnap, myParent, myChild, steam;
 	Transform myT;
 	float i = Mathf.Infinity;
 	float rotOffset;
 
 	public float MinSnapDistance = 0.2f, MinRotDistance = 5f;
-//	public GameObject steam;
+
 
 	void Start()
 	{
 		myT = transform;
 		endSnapPoint = GameObject.FindGameObjectsWithTag("endSnapPoint");
-
+		steam.GetComponentInChildren<Steam>();
 		localSnapPoint = myT.GetChild(0).gameObject;
 		if(localSnapPoint.tag == "endSnapPoint")
 			localSnapPoint = myT.GetChild(1).gameObject;
@@ -107,10 +107,5 @@ public class SmartPipes : MonoBehaviour
 			pipe.GetComponent<SmartPipes>().MinSnapDistance = MinSnapDistance;
 			pipe.GetComponent<SmartPipes>().MinRotDistance = MinRotDistance;
 		}
-	}
-
-	public void SteamToggle()
-	{
-
 	}
 }

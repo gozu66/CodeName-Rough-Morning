@@ -133,8 +133,9 @@ GameObject:
   - 198: {fileID: 44523454}
   - 199: {fileID: 44523453}
   - 114: {fileID: 44523452}
+  - 114: {fileID: 44523455}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Steam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1238,6 +1239,17 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!114 &44523455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44523450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab1a8aee7b0b574ab3e952a964af5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &50074148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1344,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50074148}
   m_LocalRotation: {x: 0, y: 0, z: .707338214, w: .706875324}
-  m_LocalPosition: {x: -7.28000021, y: -6.61999989, z: 0}
+  m_LocalPosition: {x: -7.27710009, y: -11.0869999, z: 0}
   m_LocalScale: {x: .5, y: -.5, z: 1}
   m_Children:
   - {fileID: 1529194641}
@@ -1890,7 +1902,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138698939}
   m_LocalRotation: {x: 0, y: 0, z: -.999988198, w: -.00486529153}
-  m_LocalPosition: {x: -18.7900009, y: -11.7399998, z: 0}
+  m_LocalPosition: {x: -13.5310001, y: -11.7910004, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 1329020913}
@@ -2695,8 +2707,8 @@ GameObject:
   m_Component:
   - 224: {fileID: 264581944}
   - 223: {fileID: 264581947}
-  - 114: {fileID: 264581946}
   - 114: {fileID: 264581945}
+  - 114: {fileID: 264581946}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged

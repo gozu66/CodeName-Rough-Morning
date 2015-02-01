@@ -45,9 +45,10 @@ public class Telekinesis : MonoBehaviour
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 
-						if(heldObj.GetComponent<SmartPipes>() != null)
+						if(heldObj.GetComponent<SmartPipes>() != null){
 							heldObj.GetComponent<SmartPipes>().Drop();
 
+						}
 						LogUse();
 					}
 				}

@@ -5,13 +5,12 @@ public class SmartPipes : MonoBehaviour
 {
 	GameObject[] endSnapPoint;
 	GameObject localSnapPoint, CurrEndSnap, myParent, myChild;
-
 	Transform myT;
-
 	float i = Mathf.Infinity;
 	float rotOffset;
 
 	public float MinSnapDistance = 0.2f, MinRotDistance = 5f;
+//	public GameObject steam;
 
 	void Start()
 	{
@@ -24,14 +23,16 @@ public class SmartPipes : MonoBehaviour
 	}
 
 	void SnapPipe()
-	{
+	{	
 		foreach(GameObject point in endSnapPoint)
 		{
-			float dist = Vector3.Distance(localSnapPoint.transform.position, point.transform.position);
-			if(dist < i)
-			{
-				i = dist;
-				CurrEndSnap = point;
+			if(point != null){
+				float dist = Vector2.Distance(localSnapPoint.transform.position, point.transform.position);
+				if(dist < i)
+				{
+					i = dist;
+					CurrEndSnap = point;
+				}
 			}
 		}
 		if(Compare() == true)
@@ -39,10 +40,11 @@ public class SmartPipes : MonoBehaviour
 			rigidbody2D.isKinematic = true;
 			gameObject.layer = 10;
 
-//			float rotOffset = transform.rotation.z - localSnapPoint.transform.rotation.z;
-//			transform.Rotate(0,0,rotOffset);
-//			float dist = Vector2.Distance(localSnapPoint.transform.position, CurrEndSnap.transform.position);
-//			if(dist > 0.1 || dist < -0.1){transform.Rotate(0,0,-rotOffset*2);}
+			myT.position += AdjustPosition();
+
+			Vector3 vec = transform.eulerAngles;
+			vec.z = Mathf.Round(vec.z / 90) * 90;
+			transform.eulerAngles = vec;
 
 			myT.position += AdjustPosition();
 
@@ -50,6 +52,7 @@ public class SmartPipes : MonoBehaviour
 			myParent = newParent;
 			if(newParent.GetComponent<SmartPipes>() != null)
 				newParent.GetComponent<SmartPipes>().SetChild(gameObject);
+
 		}
 	}
 
@@ -60,7 +63,6 @@ public class SmartPipes : MonoBehaviour
 		if(dist <= MinSnapDistance)
 		{
 			rotOffset = Quaternion.Angle(CurrEndSnap.transform.rotation, localSnapPoint.transform.rotation);
-			print (dist);
 
 			if(rotOffset < MinRotDistance)	{
 				return true;
@@ -68,7 +70,6 @@ public class SmartPipes : MonoBehaviour
 				return false;
 			}
 		}	else {
-			print (dist);
 			return false;
 		}
 	}
@@ -106,5 +107,10 @@ public class SmartPipes : MonoBehaviour
 			pipe.GetComponent<SmartPipes>().MinSnapDistance = MinSnapDistance;
 			pipe.GetComponent<SmartPipes>().MinRotDistance = MinRotDistance;
 		}
+	}
+
+	public void SteamToggle()
+	{
+
 	}
 }

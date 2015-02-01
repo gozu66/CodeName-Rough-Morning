@@ -1,65 +1,66 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class TimeSlow : MonoBehaviour 
 {
 	public static bool timeStopped = false;
 
-	public float amountToSlow = 0.2f, effectDuration = 5, cooldown = 10, maxCooldown = 10;
+	public float amountToSlow = 0.2f, effectDuration = 5, timer = 10, maxTimer = 10;
 	float timeSinceGunfired = 0;
 
 	TimeManager TM;
 
-	public CharacterControls charCont;
-
 	public GameObject blur;
+	public CharacterControls CharCont;
+
+	public Image timerSprite;
+
 
 	void Start()
 	{
 		TM = transform.parent.GetComponent<TimeManager>();
-		charCont = transform.parent.GetComponent<CharacterControls>();
-	}
+		CharCont = GameObject.FindObjectOfType<CharacterControls>();
+		CharCont.GetComponentInChildren<CharacterControls>();
 
-	void OnEnable()
-	{
-		if(Time.timeSinceLevelLoad - timeSinceGunfired >= 10)
-		{
-			cooldown = maxCooldown;
-		}	
-		else if(timeSinceGunfired > 0)
-		{
-			cooldown = Time.timeSinceLevelLoad - timeSinceGunfired;
-		}
 	}
-
+	
 	void Update () 
 	{
-
-		if(!timeStopped)
+		if(Input.GetButtonDown("Y_1") || Input.GetMouseButtonDown(2))
 		{
-			if(cooldown < maxCooldown)
+			if(timeStopped)
 			{
-				cooldown += Time.deltaTime;
-			}
-
-			else{
-
-				if(Input.GetButtonDown("Y_1") || Input.GetMouseButtonDown(2))
-				{
-					timeStopped = true;
-					cooldown = 0; 
-					TM.slowTime(amountToSlow, effectDuration);
-					blur.SetActive(true);
-//					LumosAnalytics.RecordEvent("Time Gun ", AnaliticsLumos.zone);
-					LogUse();
-				}
+				returnTimeScale();
+			}else
+			{
+				SlowTimeScale();
 			}
 		}
+//		float timeScaleOffset = Mathf.Abs(0 - Time.timeScale);
+
+		if(timeStopped){timer -= Time.deltaTime / Time.timeScale;}else{timer += Time.deltaTime;}
+
+		if(timer < 0.01f)returnTimeScale();
+
+		timer = Mathf.Clamp(timer, 0, maxTimer);
+
+		timerSprite.fillAmount = timer / 10;
+	}
+
+	public void SlowTimeScale()
+	{
+		timeStopped = true;
+		CharCont.TimeAdjust(true);
+		TM.slowTime(amountToSlow, effectDuration);
+		blur.SetActive(true);
+		LogUse();
 	}
 
 	public void returnTimeScale()
 	{
 		Time.timeScale = 1.0f;
+		CharCont.TimeAdjust(false);
 		timeStopped = false;
 		timeSinceGunfired = Time.timeSinceLevelLoad;
 		blur.SetActive(false);

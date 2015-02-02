@@ -14,7 +14,7 @@ public class weaponManager : MonoBehaviour
 	playerAim reticule;													//	weapon scripts
 	MindBullets MindBullets;													//
 
-	TimeManager TM;														// referece for time manager
+//	TimeManager TM;														// referece for time manager
 
 	public static bool weaponWheelActive;
 
@@ -24,7 +24,7 @@ public class weaponManager : MonoBehaviour
 
 	void Start()
 	{
-		TM = transform.parent.GetComponent<TimeManager>();
+//		TM = transform.parent.GetComponent<TimeManager>();
 
 		TeleK = GetComponent<Telekinesis>();
 		TimeSlow = GetComponent<TimeSlow>();

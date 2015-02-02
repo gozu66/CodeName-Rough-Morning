@@ -7,7 +7,7 @@ public class TimeSlow : MonoBehaviour
 	public static bool timeStopped = false;
 
 	public float amountToSlow = 0.2f, effectDuration = 5, timer = 10, maxTimer = 10;
-	float timeSinceGunfired = 0;
+//	float timeSinceGunfired = 0;
 
 	TimeManager TM;
 
@@ -62,7 +62,7 @@ public class TimeSlow : MonoBehaviour
 		Time.timeScale = 1.0f;
 		CharCont.TimeAdjust(false);
 		timeStopped = false;
-		timeSinceGunfired = Time.timeSinceLevelLoad;
+//		timeSinceGunfired = Time.timeSinceLevelLoad;
 		blur.SetActive(false);
 	}
 

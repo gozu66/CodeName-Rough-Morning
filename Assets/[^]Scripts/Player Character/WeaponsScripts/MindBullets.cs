@@ -8,7 +8,7 @@ public class MindBullets : MonoBehaviour
 
 
 	public float SA_fireRate, SA_force, FA_fireRate, FA_force, G_fireRate, G_force;
-	float SA_fireCooldown = 0, FA_fireCooldown, G_fireCooldown;
+//	float SA_fireCooldown = 0, FA_fireCooldown, G_fireCooldown;
 	bool isTrigger;
 
 	public float ammo, G_ammo;
@@ -21,9 +21,9 @@ public class MindBullets : MonoBehaviour
 	{
 		currFireType = fireType.semiAuto;
 
-		FA_fireCooldown = FA_fireRate;
-		G_fireCooldown = G_fireRate;
-		SA_fireCooldown = SA_fireRate;
+//		FA_fireCooldown = FA_fireRate;
+//		G_fireCooldown = G_fireRate;
+//		SA_fireCooldown = SA_fireRate;
 
 		ammo = 50;
 
@@ -84,7 +84,7 @@ public class MindBullets : MonoBehaviour
 					GameObject newBullet = Instantiate(plasmaBullet, transform.position, transform.rotation)as GameObject;
 					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (SA_force*1000));
 					ammo--;
-					SA_fireCooldown = 0;
+//					SA_fireCooldown = 0;
 					isTrigger = true;
 					LogUse();
 				}

@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class AnaliticsLumos : MonoBehaviour 
 {
 	float timer = 0.0f, currTime;
-	int deaths, currCheckP, checkPdeath;
+	int currCheckP, checkPdeath;
 	float[] checkpoints = new float[8];
-	float[] checkpointdeaths = new float[8];
+//	float[] checkpointdeaths = new float[8];
 	string[] checkpointnames = {"CheckPoint 1", "CheckPoint 2", "CheckPoint 3", 
 		"CheckPoint 4", "CheckPoint 5", "CheckPoint 6", "CheckPoint 7", "CheckPoint 8"};
 	string _InputType;
@@ -20,7 +20,7 @@ public class AnaliticsLumos : MonoBehaviour
 
 	void Start()
 	{
-		deaths = 0; currCheckP = 0; checkPdeath = 0;
+		currCheckP = 0; checkPdeath = 0;
 		buffer1=0;
 		buffer2=0;
 		buffer3=0;

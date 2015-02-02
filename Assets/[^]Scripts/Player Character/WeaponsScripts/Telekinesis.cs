@@ -13,7 +13,7 @@ public class Telekinesis : MonoBehaviour
 	public bool isThrowing = false;
 	bool heldObjTooFar;
 
-	Transform heldObj, myTransform, myTransformParent;
+	Transform heldObj, myTransform;
 	
 	public Vector3 offset, objRotation;
 	Vector3 refV3 = Vector3.one;
@@ -21,7 +21,7 @@ public class Telekinesis : MonoBehaviour
 	void Start()
 	{
 		myTransform = transform;														//cached transform
-		myTransformParent = transform.parent;											//cached transform.parent
+																						//cached transform.parent
 
 		maxRotSpeed = rotSpeed;
 		maxMoveSpeed = moveSpeed;

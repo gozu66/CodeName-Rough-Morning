@@ -131,6 +131,7 @@ public class SmartPipes : MonoBehaviour
 			SmartPipes myChildPipes = myChild.GetComponent<SmartPipes>();
 			if(myChildPipes != null)myChildPipes.Drop(true);
 		}
+		SwitchColliders();
 	}
 
 	public void SteamSwitch()
@@ -147,6 +148,20 @@ public class SmartPipes : MonoBehaviour
 			}
 		}
 	}
+
+	public void SwitchColliders()
+	{
+		BoxCollider2D[] myBox = GetComponentsInChildren<BoxCollider2D>();
+		foreach(BoxCollider2D box in myBox)
+		{
+			if(box.tag == "playerHazard"){
+				box.enabled = (inSitute && !isOccupied) ? true : false;
+				break;
+			}
+		}
+		if(myParent != null){myParent.SwitchColliders();}
+	}
+
 	public void Occupy(bool _occupy)
 	{
 		isOccupied = _occupy;

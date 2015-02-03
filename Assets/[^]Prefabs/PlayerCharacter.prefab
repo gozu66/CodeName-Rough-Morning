@@ -339,10 +339,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountToSlow: .5
   effectDuration: 5
-  cooldown: 0
-  maxCooldown: 0
-  charCont: {fileID: 0}
+  timer: 10
+  maxTimer: 10
   blur: {fileID: 0}
+  CharCont: {fileID: 0}
+  timerSprite: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,6 +375,9 @@ MonoBehaviour:
   throwForce: 2500
   gravityGunRange: 100
   TKlimit: 7.5
+  telekinesisIgnore:
+    serializedVersion: 2
+    m_Bits: 4294967275
   isThrowing: 0
   offset: {x: .629999995, y: .839999974, z: 0}
   objRotation: {x: 0, y: 0, z: 0}
@@ -414,8 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12527ceb3727a2e4e8b8ac10fdde2f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TGun: {fileID: 0}
-  CharCont: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1

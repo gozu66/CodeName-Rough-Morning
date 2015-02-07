@@ -1,73 +1,66 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Scales : MonoBehaviour 
 {
-//	GameObject[] allWeightItems;
-//	GameObject[] usedWeightItems;
-//
-//	float weight;
-//
-//	void Start()
-//	{
-//		allWeightItems = GameObject.FindGameObjectsWithTag("moveable");
-//
-//	}
-//	void OnTriggerStay2D(Collider2D other)
-//	{
-//
-//	}
+	public Transform minHeightTransform, maxHeightTransform;
+	private float _minHeight, _maxHeight, _normalHeight;
+	public float _targetHeight;
 
-//	float massToAdd = 0;
-//	bool move = false;
-//	Rigidbody2D currRbody;
-//	float newY;
-//
-//	void OnCollisionEnter2D(Collision2D other)
-//	{
-//		if(other.collider.tag == "moveable" && other.gameObject.layer != 10)
-//		{
-//			currRbody = other.collider.GetComponent<Rigidbody2D>();
-//			massToAdd =  other.collider.rigidbody2D.mass;
-//			newY = transform.position.y - massToAdd/2;
-//			move = true;
-//		}
-//	}
-//
-//	void OnTriggerExit2D(Collider2D other)
-//	{
-//		if(other.tag == "moveable" && other.gameObject.layer != 10)
-//		{
-//			currRbody = other.GetComponent<Rigidbody2D>();
-//			massToAdd =  other.rigidbody2D.mass;
-//			newY = transform.position.y + massToAdd;
-//			move = true;
-//		}
-//	}
-//
-//	void FixedUpdate()
-//	{
-//		if(move)
-//		{
-//			float zOffset = Mathf.Lerp(transform.position.y, newY, Time.deltaTime/2);
-//			Vector2 moveVector = new Vector3(transform.position.x, zOffset);
-//			rigidbody2D.MovePosition(moveVector);
-//		}
-//	}
-//}
-//	public Transform _max, _min;
-//	public float _maxf, _minf;
-//	public float range;
-//
-//	void Start()
-//	{
-//		_minf = _min.position.y;
-//		_maxf = _max.position.y;
-//	}
-//
-//	void Update()
-//	{
-//		range = Mathf.Clamp(range, _min.position.y, _max.position.y);
-//
-//	}
+	public float maxWeight;
+	private float currWeight = 0;
+	private float _normalWeight;
+
+	float refFloat = 1.0f;
+	
+	Transform myT;
+
+	void Awake()
+	{
+		_minHeight = minHeightTransform.position.y;
+		_maxHeight = maxHeightTransform.position.y;
+		Debug.Log(_minHeight +"    "+ _maxHeight);
+		_targetHeight = _maxHeight;
+	}
+
+	void Start()
+	{
+		InvokeRepeating("CheckWeight", 0.1f, 0.25f);
+		myT = this.transform;
+	
+	
+	}
+
+	void FixedUpdate()
+	{
+		float smoothMove = Mathf.SmoothDamp(transform.position.y, _targetHeight, ref refFloat, 1.0f);
+		rigidbody2D.MovePosition(new Vector2(transform.position.x, smoothMove));
+
+		_targetHeight = Mathf.Clamp(_targetHeight, _minHeight, _maxHeight);
+	}
+
+	void CheckWeight()
+	{
+		Collider2D[] _weightsArray = new Collider2D[10];
+		Physics2D.OverlapAreaNonAlloc(collider2D.bounds.max, collider2D.bounds.min, _weightsArray);
+
+		currWeight = 0;
+		foreach(Collider2D col in _weightsArray)
+		{
+			if(col != null)
+			{
+				if(col.gameObject.layer == 11)
+				{
+					currWeight += col.GetComponent<Weight>().weight;
+				}
+			}
+		}
+//		currWeight = newCurrWeight;
+		Debug.Log("<color=green>"+ currWeight +"</color>");
+
+		_normalWeight = currWeight/maxWeight;			//get normailzed weight value
+		_normalWeight = 1 - _normalWeight;
+		_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
+//		_targetHeight = -_targetHeight;
+	}
 }

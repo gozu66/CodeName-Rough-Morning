@@ -43,6 +43,7 @@ public class Telekinesis : MonoBehaviour
 					{
 						isHolding = true;									
 						hit2D.collider.rigidbody2D.isKinematic = true;
+//						hit2D.collider.enabled = false;
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 
@@ -89,7 +90,7 @@ public class Telekinesis : MonoBehaviour
 
 			if(Input.GetButton("LB_1"))
 			{
-				obj.Rotate(new Vector3(0,0,rotSpeed) * (Time.deltaTime), Space.Self);					
+				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, rotSpeed);
 			}
 
 			offset.x += Input.GetAxis("R_XAxis_1")* Time.deltaTime * moveSpeed;			//While holding obj, V3 offset adjusted by R-Stick input
@@ -105,7 +106,7 @@ public class Telekinesis : MonoBehaviour
 
 			if(Input.GetAxis("QE") != 0)
 			{
-				obj.Rotate(new Vector3(0,0,rotSpeed * Input.GetAxis("QE")) * (Time.deltaTime), Space.Self);					
+				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, Input.GetAxis("QE"));
 			}
 			
 			offset.x += Input.GetAxis("Mouse X")* Time.deltaTime * MKmoveSpeed;			//While holding obj, V3 offset adjusted by mouse X+Y input
@@ -119,6 +120,10 @@ public class Telekinesis : MonoBehaviour
 	public void dropObject()														//called to drop current held object
 	{
 		heldObj.gameObject.layer = 11;												//reset object layer
+
+		heldObj.collider2D.enabled = false;
+		heldObj.collider2D.enabled = true;
+
 		heldObj.rigidbody2D.isKinematic = false;
 		heldObj.rigidbody2D.velocity = Vector2.zero;
 

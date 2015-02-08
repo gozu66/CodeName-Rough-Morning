@@ -13,7 +13,7 @@ public class Telekinesis : MonoBehaviour
 	public bool isThrowing = false;
 	bool heldObjTooFar;
 
-	Transform heldObj, myTransform;
+	public Transform heldObj, myTransform;
 	
 	public Vector3 offset, objRotation;
 	Vector3 refV3 = Vector3.one;

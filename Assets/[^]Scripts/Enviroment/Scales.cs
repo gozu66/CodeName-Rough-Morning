@@ -4,12 +4,14 @@ using System.Collections;
 public class Scales : MonoBehaviour 
 {
 	public Transform minHeightTransform, maxHeightTransform;
-	private float _minHeight, _maxHeight, _normalHeight;
+	public float _minHeight, _maxHeight, _normalHeight;
 	public float _targetHeight;
 
 	public float maxWeight;
 	private float currWeight = 0;
 	private float _normalWeight;
+
+	public CounterWeight counterWeight;
 
 	float refFloat = 1.0f;
 	
@@ -19,7 +21,6 @@ public class Scales : MonoBehaviour
 	{
 		_minHeight = minHeightTransform.position.y;
 		_maxHeight = maxHeightTransform.position.y;
-		Debug.Log(_minHeight +"    "+ _maxHeight);
 		_targetHeight = _maxHeight;
 	}
 
@@ -27,8 +28,6 @@ public class Scales : MonoBehaviour
 	{
 		InvokeRepeating("CheckWeight", 0.1f, 0.25f);
 		myT = this.transform;
-	
-	
 	}
 
 	void FixedUpdate()
@@ -49,18 +48,30 @@ public class Scales : MonoBehaviour
 		{
 			if(col != null)
 			{
-				if(col.gameObject.layer == 11)
+				if(col.gameObject.layer == 11 && GameObject.FindObjectOfType<Telekinesis>().heldObj != col.gameObject)
 				{
 					currWeight += col.GetComponent<Weight>().weight;
 				}
+				if(col.gameObject.tag == "Player")
+				{
+					currWeight += col.transform.parent.GetComponent<Weight>().weight;
+				}
+
 			}
 		}
-//		currWeight = newCurrWeight;
-		Debug.Log("<color=green>"+ currWeight +"</color>");
 
 		_normalWeight = currWeight/maxWeight;			//get normailzed weight value
 		_normalWeight = 1 - _normalWeight;
 		_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
-//		_targetHeight = -_targetHeight;
+
+		if(counterWeight != null)
+		{
+//			Debug.Log(_targetHeight);
+			_normalWeight = 1 - _normalWeight;
+			float _newTargetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
+			counterWeight.SetWeightByCounter(_newTargetHeight);
+		}
 	}
+
+
 }

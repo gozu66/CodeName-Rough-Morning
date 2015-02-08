@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: 6bad8c9bafc04ea4ea53a4ea293065e9
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Basement_props_atlas_0
+    21300002: Basement_props_atlas_1
+    21300004: Basement_props_atlas_2
+    21300006: Basement_props_atlas_3
+    21300008: Basement_props_atlas_4
+    21300010: Basement_props_atlas_5
+    21300012: Basement_props_atlas_6
+    21300014: Basement_props_atlas_7
+    21300016: Basement_props_atlas_8
+    21300018: Basement_props_atlas_9
+    21300020: Basement_props_atlas_10
+    21300022: Basement_props_atlas_11
+    21300024: Basement_props_atlas_12
+    21300026: Basement_props_atlas_13
+    21300028: Basement_props_atlas_14
+    21300030: Basement_props_atlas_15
+    21300032: Basement_props_atlas_16
+    21300034: Basement_props_atlas_17
+    21300036: Basement_props_atlas_18
+    21300038: Basement_props_atlas_19
+    21300040: Basement_props_atlas_20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Basement_props_atlas_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1685
+        width: 332
+        height: 352
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_1
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1675
+        width: 319
+        height: 352
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_2
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1635
+        width: 376
+        height: 390
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_3
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1777
+        width: 184
+        height: 242
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_4
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1647
+        width: 89
+        height: 380
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_5
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 1648
+        width: 116
+        height: 391
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_6
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1653
+        width: 129
+        height: 388
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_7
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 1648
+        width: 105
+        height: 389
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1143
+        width: 1161
+        height: 466
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_9
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 1423
+        width: 49
+        height: 305
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_10
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 823
+        width: 404
+        height: 820
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_11
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 807
+        width: 324
+        height: 289
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_12
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 23
+        width: 35
+        height: 896
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_13
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 881
+        width: 386
+        height: 470
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_14
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 407
+        width: 194
+        height: 329
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_15
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 551
+        width: 384
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_16
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 13
+        width: 495
+        height: 788
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_17
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 23
+        width: 364
+        height: 328
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_18
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 311
+        width: 193
+        height: 185
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_19
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 15
+        width: 348
+        height: 258
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Basement_props_atlas_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 639
+        height: 1127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

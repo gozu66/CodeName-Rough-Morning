@@ -1,0 +1,586 @@
+fileFormatVersion: 2
+guid: fd593eaf3b3d49d4480d17e1c467f9a6
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Props_pipes_atlas_0
+    21300002: Props_pipes_atlas_1
+    21300004: Props_pipes_atlas_2
+    21300006: Props_pipes_atlas_3
+    21300008: Props_pipes_atlas_4
+    21300010: Props_pipes_atlas_5
+    21300012: Props_pipes_atlas_6
+    21300014: Props_pipes_atlas_7
+    21300016: Props_pipes_atlas_8
+    21300018: Props_pipes_atlas_9
+    21300020: Props_pipes_atlas_10
+    21300022: Props_pipes_atlas_11
+    21300024: Props_pipes_atlas_12
+    21300026: Props_pipes_atlas_13
+    21300028: Props_pipes_atlas_14
+    21300030: Props_pipes_atlas_15
+    21300032: Props_pipes_atlas_16
+    21300034: Props_pipes_atlas_17
+    21300036: Props_pipes_atlas_18
+    21300038: Props_pipes_atlas_19
+    21300040: Props_pipes_atlas_20
+    21300042: Props_pipes_atlas_21
+    21300044: Props_pipes_atlas_22
+    21300046: Props_pipes_atlas_23
+    21300048: Props_pipes_atlas_24
+    21300050: Props_pipes_atlas_25
+    21300052: Props_pipes_atlas_26
+    21300054: Props_pipes_atlas_27
+    21300056: Props_pipes_atlas_28
+    21300058: Props_pipes_atlas_29
+    21300060: Props_pipes_atlas_30
+    21300062: Props_pipes_atlas_31
+    21300064: Props_pipes_atlas_32
+    21300066: Props_pipes_atlas_33
+    21300068: Props_pipes_atlas_34
+    21300070: Props_pipes_atlas_35
+    21300072: Props_pipes_atlas_36
+    21300074: Props_pipes_atlas_37
+    21300076: Props_pipes_atlas_38
+    21300078: Props_pipes_atlas_39
+    21300080: Props_pipes_atlas_40
+    21300082: Props_pipes_atlas_41
+    21300084: Props_pipes_atlas_42
+    21300086: Props_pipes_atlas_43
+    21300088: Props_pipes_atlas_44
+    21300090: Props_pipes_atlas_45
+    21300092: Props_pipes_atlas_46
+    21300094: Props_pipes_atlas_47
+    21300096: Props_pipes_atlas_48
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Props_pipes_atlas_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1455
+        width: 200
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_1
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 1459
+        width: 200
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_2
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1459
+        width: 172
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_3
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1459
+        width: 175
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_4
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 985
+        width: 112
+        height: 1052
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_5
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 985
+        width: 112
+        height: 1052
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_6
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 985
+        width: 115
+        height: 1055
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_7
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 1927
+        width: 532
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_8
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 1925
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_9
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 1929
+        width: 42
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_10
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 1389
+        width: 110
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_11
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 1389
+        width: 112
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_12
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 1387
+        width: 112
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_13
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1419
+        width: 203
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1277
+        width: 215
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_15
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1175
+        width: 114
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_16
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1041
+        width: 193
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_17
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1045
+        width: 189
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_18
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 1096
+        width: 202
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_19
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1037
+        width: 110
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1045
+        width: 216
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_21
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 888
+        width: 308
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_22
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 891
+        width: 308
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_23
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 695
+        width: 344
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_24
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 621
+        width: 270
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_25
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 853
+        width: 532
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_26
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 319
+        width: 113
+        height: 542
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_27
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 377
+        width: 306
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_28
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 287
+        width: 272
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_29
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 291
+        width: 110
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_30
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 297
+        width: 113
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_31
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 304
+        width: 115
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_32
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 607
+        width: 160
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_33
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 659
+        width: 203
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_34
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 303
+        width: 307
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_35
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 415
+        width: 203
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_36
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 415
+        width: 161
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 57
+        width: 309
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_38
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 0
+        width: 308
+        height: 291
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_39
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 159
+        width: 534
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_40
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 243
+        width: 201
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_41
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 199
+        width: 160
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_42
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 29
+        width: 314
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_43
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 7
+        width: 160
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_44
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 5
+        width: 201
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_45
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 973
+        width: 115
+        height: 1075
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 13, z: 0, w: 11}
+    - name: Props_pipes_atlas_46
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 3
+        width: 115
+        height: 307
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_47
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 3
+        width: 119
+        height: 305
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Props_pipes_atlas_48
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 20
+        width: 303
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

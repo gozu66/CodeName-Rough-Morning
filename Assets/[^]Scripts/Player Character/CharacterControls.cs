@@ -102,6 +102,10 @@ public class CharacterControls : MonoBehaviour
 
 			break;
 		}
+
+		float inputFloat = Mathf.Abs(Input.GetAxis("L_XAxis_1") + Input.GetAxis("Horizontal"));
+		if(inputFloat <= 0 && groundCheck.isGrounded && !Input.GetButton("A_1"))rigidbody2D.Sleep();
+//		if(!Input.anyKey && groundCheck.isGrounded)rigidbody2D.Sleep();
 	}
 
 	void Update()

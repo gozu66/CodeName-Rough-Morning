@@ -92,6 +92,7 @@ GameObject:
   - 68: {fileID: 78631}
   - 68: {fileID: 78630}
   - 114: {fileID: 647133690}
+  - 58: {fileID: 78639}
   m_Layer: 2
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -106,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 1091209038}
   m_GameObject: {fileID: 78628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 187.380005, y: -46.8800011, z: 0}
+  m_LocalPosition: {x: 3.55999994, y: 2.55999994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 797177363}
@@ -128,8 +129,8 @@ EdgeCollider2D:
   m_Material: {fileID: 6200000, guid: 8648f43f2be046b4190f7d2be0dcbf2d, type: 2}
   m_IsTrigger: 0
   m_Points:
-  - {x: -.426194668, y: 1.89697862}
-  - {x: -.423659801, y: .0385100394}
+  - {x: -.426194668, y: 1.89586997}
+  - {x: -.426194698, y: .0414157994}
 --- !u!68 &78631
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_Points:
   - {x: .42835331, y: 1.89586997}
-  - {x: .42507267, y: .0414158031}
+  - {x: .42835331, y: .0414158031}
 --- !u!61 &78632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,8 +154,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: ffe78bb7f187dca458ab0e640964db26, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .839999974, y: 1.91999996}
-  m_Center: {x: 0, y: .970000029}
+  m_Size: {x: .839999974, y: 1.25}
+  m_Center: {x: 0, y: 1.24000001}
 --- !u!114 &78633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +262,18 @@ SpriteRenderer:
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: e5dcb09547e75a34f9dc8b85780a47bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &78639
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5897844, guid: 1616c698e1bd2ce4f9e74a1725285eb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1091209038}
+  m_GameObject: {fileID: 78628}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 26de01256e2ec79478da7fc4c8f11116, type: 2}
+  m_IsTrigger: 0
+  m_Radius: .419999987
+  m_Center: {x: 0, y: .479999989}
 --- !u!1001 &677782
 Prefab:
   m_ObjectHideFlags: 0
@@ -2592,6 +2605,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67d813a0e352541438c174793a73d991, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 67d813a0e352541438c174793a73d991, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -41235,11 +41252,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 187.380005
+      value: 3.55999994
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -46.8800011
+      value: 2.55999994
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -41297,6 +41314,10 @@ Prefab:
       propertyPath: timerSprite
       value: 
       objectReference: {fileID: 821800605}
+    - target: {fileID: 11400006, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
+      propertyPath: rotSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
   m_RootGameObject: {fileID: 78628}
@@ -42308,7 +42329,7 @@ MonoBehaviour:
   timer: 10
   maxTimer: 10
   blur: {fileID: 491113442}
-  CharCont: {fileID: 0}
+  CharCont: {fileID: 78635}
   timerSprite: {fileID: 821800605}
 --- !u!114 &1112735083
 MonoBehaviour:
@@ -42323,7 +42344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: .5
-  rotSpeed: 150
+  rotSpeed: 10
   moveSpeed: 7
   MKmoveSpeed: 25
   throwForce: 2500
@@ -42333,6 +42354,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967275
   isThrowing: 0
+  heldObj: {fileID: 0}
+  myTransform: {fileID: 0}
   offset: {x: .629999995, y: .839999974, z: 0}
   objRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1112735084
@@ -55595,7 +55618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1460048768
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67129,7 +67152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1768797649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -68311,6 +68334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winner: {fileID: 8300000, guid: 516db06a9f79b0449aa74dc19758d646, type: 3}
   winnerSprite: {fileID: 1857457185}
+  loadNextLevel: 0
 --- !u!61 &1805489547
 BoxCollider2D:
   m_ObjectHideFlags: 0

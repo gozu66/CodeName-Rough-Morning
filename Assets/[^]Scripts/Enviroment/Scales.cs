@@ -11,7 +11,7 @@ public class Scales : MonoBehaviour
 	private float currWeight = 0;
 	private float _normalWeight;
 
-	public CounterWeight counterWeight;
+//	public CounterWeight counterWeight;
 
 	float refFloat = 1.0f;
 	
@@ -64,13 +64,13 @@ public class Scales : MonoBehaviour
 		_normalWeight = 1 - _normalWeight;
 		_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
 
-		if(counterWeight != null)
-		{
+//		if(counterWeight != null)
+//		{
 //			Debug.Log(_targetHeight);
-			_normalWeight = 1 - _normalWeight;
-			float _newTargetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
-			counterWeight.SetWeightByCounter(_newTargetHeight);
-		}
+//			_normalWeight = 1 - _normalWeight;
+//			float _newTargetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
+//			counterWeight.SetWeightByCounter(_newTargetHeight);
+//		}
 	}
 
 

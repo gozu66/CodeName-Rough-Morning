@@ -2,35 +2,35 @@ fileFormatVersion: 2
 guid: 2c668dd041c107c4fa909b970d2b8454
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walls+Sairs_pipes_atlas_0
-    21300002: Walls+Sairs_pipes_atlas_1
-    21300004: Walls+Sairs_pipes_atlas_2
-    21300006: Walls+Sairs_pipes_atlas_3
-    21300008: Walls+Sairs_pipes_atlas_4
-    21300010: Walls+Sairs_pipes_atlas_5
-    21300012: Walls+Sairs_pipes_atlas_6
-    21300014: Walls+Sairs_pipes_atlas_7
-    21300016: Walls+Sairs_pipes_atlas_8
-    21300018: Walls+Sairs_pipes_atlas_9
-    21300020: Walls+Sairs_pipes_atlas_10
-    21300022: Walls+Sairs_pipes_atlas_11
-    21300024: Walls+Sairs_pipes_atlas_12
-    21300026: Walls+Sairs_pipes_atlas_13
-    21300028: Walls+Sairs_pipes_atlas_14
-    21300030: Walls+Sairs_pipes_atlas_15
-    21300032: Walls+Sairs_pipes_atlas_16
-    21300034: Walls+Sairs_pipes_atlas_17
-    21300036: Walls+Sairs_pipes_atlas_18
-    21300038: Walls+Sairs_pipes_atlas_19
-    21300040: Walls+Sairs_pipes_atlas_20
-    21300042: Walls+Sairs_pipes_atlas_21
-    21300044: Walls+Sairs_pipes_atlas_22
-    21300046: Walls+Sairs_pipes_atlas_23
-    21300048: Walls+Sairs_pipes_atlas_24
-    21300050: Walls+Sairs_pipes_atlas_25
-    21300052: Walls+Sairs_pipes_atlas_26
-    21300054: Walls+Sairs_pipes_atlas_27
-    21300056: Walls+Sairs_pipes_atlas_28
+    21300000: Divider_Straight
+    21300002: Divider_Concave
+    21300004: Divider_Convex
+    21300006: Wall_Flat
+    21300008: Wall_Curved
+    21300010: Separator_BottomRight
+    21300012: Separator_BottonLeft
+    21300014: Separator_TopLeft
+    21300016: Separator_TopRight
+    21300018: Separator_RightMiddle
+    21300020: Separator_TopMiddle
+    21300022: Separator_LeftMiddle
+    21300024: Separator_BottomMiddle
+    21300026: Wall
+    21300028: WallFloor_Broken_variant_001
+    21300030: WallFloor_Broken_variant_002
+    21300032: WallFloor_Broken_variant_003
+    21300034: WallFloor_Broken_variant_004
+    21300036: WallFloor_Broken_variant_005
+    21300038: WallFloor_Broken_variant_006
+    21300040: WallFloor_Broken_variant_007
+    21300042: WallFloor_Broken_variant_008
+    21300044: WallFloor_Broken_variant_009
+    21300046: WallFloor_Broken_variant_010
+    21300048: Floor
+    21300050: Stairs_Top
+    21300052: Stairs_Bottom_Broken
+    21300054: Stairs_Top_Broken
+    21300056: Stairs_Bottom
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -72,295 +72,295 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Walls+Sairs_pipes_atlas_0
+    - name: Divider_Straight
       rect:
         serializedVersion: 2
-        x: 19
-        y: 1277
-        width: 122
-        height: 758
+        x: 22
+        y: 1278
+        width: 116
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_1
+    - name: Divider_Concave
       rect:
         serializedVersion: 2
-        x: 152
-        y: 1277
-        width: 125
-        height: 763
+        x: 158
+        y: 1278
+        width: 116
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_2
+    - name: Divider_Convex
       rect:
         serializedVersion: 2
-        x: 315
-        y: 1277
-        width: 122
-        height: 763
+        x: 318
+        y: 1280
+        width: 115
+        height: 754
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_3
+    - name: Wall_Flat
       rect:
         serializedVersion: 2
-        x: 465
-        y: 1277
-        width: 758
-        height: 758
+        x: 466
+        y: 1278
+        width: 756
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_4
+    - name: Wall_Curved
       rect:
         serializedVersion: 2
-        x: 1265
-        y: 1277
-        width: 758
-        height: 758
+        x: 1266
+        y: 1278
+        width: 756
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_5
+    - name: Separator_BottomRight
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Separator_BottonLeft
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Separator_TopLeft
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Separator_TopRight
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Separator_RightMiddle
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Separator_TopMiddle
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Separator_LeftMiddle
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Separator_BottomMiddle
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1125
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wall
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 1130
+        width: 756
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_001
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_002
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_003
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_004
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_005
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_006
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_007
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_008
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_009
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFloor_Broken_variant_010
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 958
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Floor
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 814
+        width: 756
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Stairs_Top
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 475
+        width: 320
+        height: 395
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Stairs_Bottom_Broken
       rect:
         serializedVersion: 2
         x: 23
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_6
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_7
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_8
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_9
-      rect:
-        serializedVersion: 2
-        x: 667
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_10
-      rect:
-        serializedVersion: 2
-        x: 811
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_11
-      rect:
-        serializedVersion: 2
-        x: 951
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_12
-      rect:
-        serializedVersion: 2
-        x: 1099
-        y: 1123
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_13
-      rect:
-        serializedVersion: 2
-        x: 1239
-        y: 1127
-        width: 758
-        height: 132
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_14
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 955
-        width: 158
-        height: 133
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_15
-      rect:
-        serializedVersion: 2
-        x: 472
-        y: 952
-        width: 161
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_16
-      rect:
-        serializedVersion: 2
-        x: 647
-        y: 952
-        width: 161
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_17
-      rect:
-        serializedVersion: 2
-        x: 823
-        y: 952
-        width: 161
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_18
-      rect:
-        serializedVersion: 2
-        x: 999
-        y: 955
-        width: 156
-        height: 134
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_19
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 952
-        width: 161
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_20
-      rect:
-        serializedVersion: 2
-        x: 1344
-        y: 952
-        width: 161
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_21
-      rect:
-        serializedVersion: 2
-        x: 1512
-        y: 952
-        width: 161
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_22
-      rect:
-        serializedVersion: 2
-        x: 1679
-        y: 952
-        width: 161
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_23
-      rect:
-        serializedVersion: 2
-        x: 1847
-        y: 952
-        width: 161
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_24
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 811
-        width: 760
-        height: 132
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_25
-      rect:
-        serializedVersion: 2
-        x: 869
-        y: 473
-        width: 324
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_26
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 31
-        width: 736
-        height: 740
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_27
-      rect:
-        serializedVersion: 2
-        x: 901
         y: 33
-        width: 278
-        height: 398
+        width: 732
+        height: 736
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Walls+Sairs_pipes_atlas_28
+    - name: Stairs_Top_Broken
       rect:
         serializedVersion: 2
-        x: 1295
-        y: 29
-        width: 736
-        height: 739
+        x: 904
+        y: 34
+        width: 273
+        height: 395
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Stairs_Bottom
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 30
+        width: 732
+        height: 736
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

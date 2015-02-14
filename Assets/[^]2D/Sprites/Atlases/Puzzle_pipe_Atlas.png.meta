@@ -51,52 +51,52 @@ TextureImporter:
     - name: Puzzle_pipe_Atlas_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 392
-        width: 362
-        height: 115
+        x: 19
+        y: 393
+        width: 358
+        height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Puzzle_pipe_Atlas_1
       rect:
         serializedVersion: 2
-        x: 424
-        y: 76
-        width: 76
-        height: 361
+        x: 425
+        y: 77
+        width: 72
+        height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Puzzle_pipe_Atlas_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 184
-        width: 208
-        height: 136
+        x: 25
+        y: 186
+        width: 206
+        height: 133
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Puzzle_pipe_Atlas_3
       rect:
         serializedVersion: 2
-        x: 279
-        y: 156
-        width: 137
-        height: 209
+        x: 280
+        y: 159
+        width: 132
+        height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Puzzle_pipe_Atlas_4
       rect:
         serializedVersion: 2
-        x: 14
-        y: 5
-        width: 367
-        height: 134
+        x: 15
+        y: 6
+        width: 365
+        height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

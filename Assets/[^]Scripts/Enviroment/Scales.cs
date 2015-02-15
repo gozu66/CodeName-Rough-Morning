@@ -54,7 +54,7 @@ public class Scales : MonoBehaviour
 				}
 				if(col.gameObject.tag == "Player")
 				{
-					currWeight += col.transform.parent.GetComponent<Weight>().weight;
+					currWeight += col.transform.GetComponent<Weight>().weight;
 				}
 			}
 		}

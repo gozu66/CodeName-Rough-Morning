@@ -4,8 +4,8 @@ using System.Collections;
 
 public class Telekinesis : MonoBehaviour 
 {
-	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, 
-					MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f;
+	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, MKmoveSpeed = 100, 
+					throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f, gravityScale;
 	float maxRotSpeed, maxMoveSpeed;
 	public LayerMask telekinesisIgnore;
 
@@ -18,11 +18,13 @@ public class Telekinesis : MonoBehaviour
 	
 	public Vector3 offset, objRotation;
 	Vector3 refV3 = Vector3.one;
+	Vector2 refV2 = Vector2.one;
 
 	void Start()
 	{
 		myTransform = transform;														//cached transform
 																						//cached transform.parent
+
 
 		maxRotSpeed = rotSpeed;
 		maxMoveSpeed = moveSpeed;
@@ -43,7 +45,9 @@ public class Telekinesis : MonoBehaviour
 					if(hit2D.collider.tag == "moveable")
 					{
 						isHolding = true;									
-						hit2D.collider.rigidbody2D.isKinematic = true;
+//						hit2D.collider.rigidbody2D.isKinematic = true;
+						gravityScale = hit2D.collider.rigidbody2D.gravityScale;
+						hit2D.collider.rigidbody2D.gravityScale = 0.0f;
 //						hit2D.collider.enabled = false;
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
@@ -108,7 +112,9 @@ public class Telekinesis : MonoBehaviour
 		{	
 			Vector2 mousePos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset; 
 
-			obj.position = Vector3.SmoothDamp(obj.position, mousePos, ref refV3, followSpeed); 		
+			obj.position = Vector3.SmoothDamp(obj.position, mousePos, ref refV3, followSpeed); 
+//			obj.rigidbody2D.AddForce(Vector2.SmoothDamp(new Vector2(obj.position.x, obj.position.y), mousePos, ref refV2, followSpeed)* throwForce, ForceMode2D.Force);
+//			obj.rigidbody2D.MovePosition(new Vector2(obj.position.x, obj.position.y) - mousePos);
 
 			float newZ = 0;
 			obj.position = new Vector3(obj.position.x, obj.position.y, newZ);
@@ -133,7 +139,8 @@ public class Telekinesis : MonoBehaviour
 		heldObj.collider2D.enabled = false;
 		heldObj.collider2D.enabled = true;
 
-		heldObj.rigidbody2D.isKinematic = false;
+//		heldObj.rigidbody2D.isKinematic = false;
+		heldObj.rigidbody2D.gravityScale = gravityScale;
 		heldObj.rigidbody2D.velocity = Vector2.zero;
 
 		isHolding = false;						

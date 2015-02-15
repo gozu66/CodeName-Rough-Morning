@@ -56,7 +56,6 @@ public class Scales : MonoBehaviour
 				{
 					currWeight += col.transform.parent.GetComponent<Weight>().weight;
 				}
-
 			}
 		}
 
@@ -64,13 +63,6 @@ public class Scales : MonoBehaviour
 		_normalWeight = 1 - _normalWeight;
 		_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
 
-//		if(counterWeight != null)
-//		{
-//			Debug.Log(_targetHeight);
-//			_normalWeight = 1 - _normalWeight;
-//			float _newTargetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
-//			counterWeight.SetWeightByCounter(_newTargetHeight);
-//		}
 	}
 
 

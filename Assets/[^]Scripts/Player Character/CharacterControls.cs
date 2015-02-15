@@ -104,7 +104,8 @@ public class CharacterControls : MonoBehaviour
 		}
 
 		float inputFloat = Mathf.Abs(Input.GetAxis("L_XAxis_1") + Input.GetAxis("Horizontal"));
-		if(inputFloat <= 0 && groundCheck.isGrounded && !Input.GetButton("A_1"))rigidbody2D.Sleep();
+//		bool isTrue = (Input.GetButton("A_1") && Input.GetButton(KeyCode.W)) ? true : false;
+		if(inputFloat <= 0 && groundCheck.isGrounded && !Input.GetButton("A_1") && !Input.GetKey(KeyCode.W))rigidbody2D.Sleep();
 //		if(!Input.anyKey && groundCheck.isGrounded)rigidbody2D.Sleep();
 	}
 

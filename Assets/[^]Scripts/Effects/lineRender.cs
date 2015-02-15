@@ -10,11 +10,13 @@ public class lineRender : MonoBehaviour
 	void Start ()
 	{
 		LR = GetComponent<LineRenderer>();
-		LR.SetPosition(0, transform.position);
+		LR.renderer.sortingLayerName = "Foreground";
+		LR.renderer.sortingOrder = 10;
 	}
 
 	void Update ()
 	{
+		LR.SetPosition(0, transform.position);
 		LR.SetPosition(1, chandelier.transform.position);
 	}
 }

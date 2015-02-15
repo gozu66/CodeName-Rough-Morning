@@ -85,9 +85,14 @@ public class Telekinesis : MonoBehaviour
 	{																					
 		if(UIManager._input == UIManager.InputType.XboxPad)					//TELEKINESIS CONTROLS FOR GAMEPAD__________________________________
 		{
+
 			Vector2 newPos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset;   //creating desired position and adding offset            				
 
+
 			obj.position = Vector3.SmoothDamp(obj.position, newPos, ref refV3, followSpeed); 											//moving held object to desired postion + offset
+			float newZ = obj.position.z;
+			newZ = 0;
+			obj.position = new Vector3(obj.position.x, obj.position.y, newZ);
 
 			if(Input.GetButton("LB_1"))
 			{
@@ -104,6 +109,9 @@ public class Telekinesis : MonoBehaviour
 			Vector2 mousePos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset; 
 
 			obj.position = Vector3.SmoothDamp(obj.position, mousePos, ref refV3, followSpeed); 		
+
+			float newZ = 0;
+			obj.position = new Vector3(obj.position.x, obj.position.y, newZ);
 
 			if(Input.GetAxis("QE") != 0)
 			{

@@ -20,6 +20,8 @@ public class Telekinesis : MonoBehaviour
 	Vector3 refV3 = Vector3.one;
 	Vector2 refV2 = Vector2.one;
 
+	ParticleSystem particle;
+
 	void Start()
 	{
 		myTransform = transform;														//cached transform
@@ -32,7 +34,6 @@ public class Telekinesis : MonoBehaviour
 
 	void Update()
 	{
-		//Debug.DrawRay(myTransform.position, new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, myTransform.right.y, myTransform.right.z), Color.green);
 		if(!isHolding)
 		{	
 			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1) && !isThrowing)
@@ -45,12 +46,14 @@ public class Telekinesis : MonoBehaviour
 					if(hit2D.collider.tag == "moveable")
 					{
 						isHolding = true;									
-//						hit2D.collider.rigidbody2D.isKinematic = true;
 						gravityScale = hit2D.collider.rigidbody2D.gravityScale;
 						hit2D.collider.rigidbody2D.gravityScale = 0.0f;
-//						hit2D.collider.enabled = false;
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
+//						particle = heldObj.GetChild(0).gameObject;
+						particle = heldObj.transform.GetChild(0).GetComponent<ParticleSystem>();
+//						particle.SetActive(true);
+						particle.enableEmission = true;
 
 						if(heldObj.GetComponent<SmartPipes>() != null){
 							heldObj.GetComponent<SmartPipes>().Drop(false);
@@ -108,13 +111,11 @@ public class Telekinesis : MonoBehaviour
 
 			offset = Vector3.ClampMagnitude(offset, TKlimit);
 		}
-		else if(UIManager._input == UIManager.InputType.MouseKBoard)		//TELEKINESIS CONTROLS FOR GAMEPAD____________________________________
+		else if(UIManager._input == UIManager.InputType.MouseKBoard)		//TELEKINESIS CONTROLS FOR MOUSE+KEYBOARD____________________________________
 		{	
 			Vector2 mousePos = new Vector3(myTransform.position.x + (Mathf.Abs(obj.localScale.x)), myTransform.position.y, 0) + offset; 
 
 			obj.position = Vector3.SmoothDamp(obj.position, mousePos, ref refV3, followSpeed); 
-//			obj.rigidbody2D.AddForce(Vector2.SmoothDamp(new Vector2(obj.position.x, obj.position.y), mousePos, ref refV2, followSpeed)* throwForce, ForceMode2D.Force);
-//			obj.rigidbody2D.MovePosition(new Vector2(obj.position.x, obj.position.y) - mousePos);
 
 			float newZ = 0;
 			obj.position = new Vector3(obj.position.x, obj.position.y, newZ);
@@ -139,9 +140,11 @@ public class Telekinesis : MonoBehaviour
 		heldObj.collider2D.enabled = false;
 		heldObj.collider2D.enabled = true;
 
-//		heldObj.rigidbody2D.isKinematic = false;
 		heldObj.rigidbody2D.gravityScale = gravityScale;
 		heldObj.rigidbody2D.velocity = Vector2.zero;
+
+//		particle.enableEmission = false;
+		if(isHolding)StartCoroutine("DisableParticle");
 
 		isHolding = false;						
 		offset = Vector3.zero;								//reset offset
@@ -169,6 +172,12 @@ public class Telekinesis : MonoBehaviour
 		yield return new WaitForSeconds (1);
 		
 		isThrowing = false;
+	}
+
+	IEnumerator DisableParticle()
+	{
+		yield return new WaitForSeconds(0.5f);
+		particle.enableEmission = false;
 	}
 
 	public static int timesUsedTK;

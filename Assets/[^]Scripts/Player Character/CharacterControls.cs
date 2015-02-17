@@ -103,14 +103,13 @@ public class CharacterControls : MonoBehaviour
 			break;
 		}
 
-		if(groundCheck.isGrounded)
-		{
-			float inputFloat = Mathf.Abs(Input.GetAxis("L_XAxis_1") + Input.GetAxis("Horizontal"));
-	//		bool isTrue = (Input.GetButton("A_1") && Input.GetButton(KeyCode.W)) ? true : false;
-			if(inputFloat <= 0 && !Input.GetButton("A_1") && !Input.GetKey(KeyCode.W))rigidbody2D.Sleep();
-	//		else{rigidbody2D.WakeUp();}
-//			if(groundCheck.isGrounded)rigidbody2D.WakeUp();
-		}
+		float inputFloat = Mathf.Abs(Input.GetAxis("L_XAxis_1") + Input.GetAxis("Horizontal"));
+		bool isTrue = (Input.GetButton("A_1") || Input.GetKey(KeyCode.W)) ? true : false;
+		bool grounded = groundCheck.isGrounded;
+		if(inputFloat <= 0 && !isTrue && grounded)rigidbody2D.Sleep();
+		if(rigidbody2D.IsSleeping() && !grounded)rigidbody2D.WakeUp();
+
+
 	}
 
 	void Update()

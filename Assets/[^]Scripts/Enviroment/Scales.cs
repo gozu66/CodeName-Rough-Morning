@@ -7,7 +7,7 @@ public class Scales : MonoBehaviour
 	public float _minHeight, _maxHeight, _normalHeight;
 	public float _targetHeight;
 
-	public float maxWeight;
+	public float maxWeight, minWeight;
 	private float currWeight = 0;
 	private float _normalWeight;
 
@@ -59,10 +59,17 @@ public class Scales : MonoBehaviour
 			}
 		}
 
-		_normalWeight = currWeight/maxWeight;			//get normailzed weight value
-		_normalWeight = 1 - _normalWeight;
-		_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));
+		if(currWeight > 0 && minWeight < currWeight)
+		{
+			_normalWeight = currWeight/maxWeight;												//get normailzed weight value
+			_normalWeight = 1 - _normalWeight;													//invert value to match scale
+			_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));			//set Target height to normal value, realsied in worldSpace
+		}else if(currWeight == 0){
+			_normalWeight = currWeight/maxWeight;												
+			_normalWeight = 1 - _normalWeight;													//As above
+			_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));			
 
+		}
 	}
 
 

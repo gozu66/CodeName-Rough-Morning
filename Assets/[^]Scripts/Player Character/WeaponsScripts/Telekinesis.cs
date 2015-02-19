@@ -48,11 +48,10 @@ public class Telekinesis : MonoBehaviour
 						isHolding = true;									
 						gravityScale = hit2D.collider.rigidbody2D.gravityScale;
 						hit2D.collider.rigidbody2D.gravityScale = 0.0f;
+						hit2D.collider.rigidbody2D.velocity = Vector2.zero;
 						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
-//						particle = heldObj.GetChild(0).gameObject;
 						particle = heldObj.transform.GetChild(0).GetComponent<ParticleSystem>();
-//						particle.SetActive(true);
 						particle.enableEmission = true;
 
 						if(heldObj.GetComponent<SmartPipes>() != null){

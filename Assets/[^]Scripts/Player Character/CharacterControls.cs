@@ -102,6 +102,14 @@ public class CharacterControls : MonoBehaviour
 
 			break;
 		}
+
+		float inputFloat = Mathf.Abs(Input.GetAxis("L_XAxis_1") + Input.GetAxis("Horizontal"));
+		bool isTrue = (Input.GetButton("A_1") || Input.GetKey(KeyCode.W)) ? true : false;
+		bool grounded = groundCheck.isGrounded;
+		if(inputFloat <= 0 && !isTrue && grounded)rigidbody2D.Sleep();
+		if(rigidbody2D.IsSleeping() && !grounded)rigidbody2D.WakeUp();
+
+
 	}
 
 	void Update()

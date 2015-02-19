@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: 6bad8c9bafc04ea4ea53a4ea293065e9
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Grammaphone_Side
+    21300002: Grammaphone_Front
+    21300004: Radiator
+    21300006: Phone
+    21300008: Broom
+    21300010: Dustpan_Straight
+    21300012: Dustpan_Slanted
+    21300014: Mop
+    21300016: Platform
+    21300018: light
+    21300020: Wardrobe_01
+    21300022: Light_W/Shade
+    21300024: Rope
+    21300026: Hoover
+    21300028: Bell
+    21300030: Coatrack
+    21300032: Wardrobe_02
+    21300034: Also ??
+    21300036: Bucket
+    21300038: ??
+    21300040: Boiler
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Grammaphone_Side
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1687
+        width: 325
+        height: 349
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Grammaphone_Front
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1677
+        width: 310
+        height: 349
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Radiator
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1639
+        width: 369
+        height: 382
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Phone
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1779
+        width: 179
+        height: 238
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Broom
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 1649
+        width: 81
+        height: 376
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dustpan_Straight
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 1653
+        width: 114
+        height: 384
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dustpan_Slanted
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 1656
+        width: 121
+        height: 383
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mop
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 1653
+        width: 97
+        height: 383
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Platform
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1146
+        width: 1150
+        height: 456
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: light
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 1427
+        width: 38
+        height: 294
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wardrobe_01
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 828
+        width: 399
+        height: 814
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Light_W/Shade
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 810
+        width: 318
+        height: 279
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rope
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 25
+        width: 30
+        height: 890
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hoover
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 881
+        width: 386
+        height: 470
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bell
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 411
+        width: 188
+        height: 320
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coatrack
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 556
+        width: 373
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wardrobe_02
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 15
+        width: 490
+        height: 782
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Also ??
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 25
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bucket
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 317
+        width: 185
+        height: 173
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ??
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 18
+        width: 346
+        height: 253
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Boiler
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 17
+        width: 621
+        height: 1096
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

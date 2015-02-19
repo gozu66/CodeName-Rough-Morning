@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: 112b2629e882557438c165729e3ece39
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Mine_walls_02
+    21300002: Mine_walls_03
+    21300004: Mine_walls_Quarter
+    21300006: Mine_Support_Quarter
+    21300008: Mine_Divider_Quarter_01
+    21300010: Mine_Divider_Quarter_02
+    21300012: Mine_walls_01
+    21300014: Mine_walls_Tunnel
+    21300016: Mine_Support_Brace
+    21300018: Mine_Support_Concave
+    21300020: Mine_Support_Convex
+    21300022: CanaryCage_Open
+    21300024: CanaryCage_Closed
+    21300026: Animal_Cage
+    21300028: Mine_Support_Brace_Solo
+    21300030: Mine_Divider_01
+    21300032: Mine_Divider_02
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Mine_walls_02
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1284
+        width: 756
+        height: 756
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_walls_03
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1282
+        width: 756
+        height: 756
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_walls_Quarter
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 1660
+        width: 378
+        height: 378
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Support_Quarter
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 1660
+        width: 121
+        height: 380
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Divider_Quarter_01
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1472
+        width: 508
+        height: 185
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Divider_Quarter_02
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 1282
+        width: 501
+        height: 183
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_walls_01
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 518
+        width: 756
+        height: 756
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_walls_Tunnel
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 518
+        width: 756
+        height: 756
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Support_Brace
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 508
+        width: 136
+        height: 756
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Support_Concave
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 508
+        width: 121
+        height: 756
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Support_Convex
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 508
+        width: 129
+        height: 756
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CanaryCage_Open
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 10
+        width: 307
+        height: 483
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CanaryCage_Closed
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 12
+        width: 241
+        height: 484
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Animal_Cage
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 30
+        width: 645
+        height: 426
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Support_Brace_Solo
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 387
+        width: 141
+        height: 109
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Divider_01
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 212
+        width: 725
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mine_Divider_02
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 16
+        width: 728
+        height: 161
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

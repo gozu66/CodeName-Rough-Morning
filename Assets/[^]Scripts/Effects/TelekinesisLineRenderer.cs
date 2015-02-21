@@ -21,7 +21,8 @@ public class TelekinesisLineRenderer : MonoBehaviour
 	{
 		if(target){
 			float Dist = Vector2.Distance(transform.position, target.transform.position);
-			waveHeight = Dist/3;
+			waveHeight = Dist/5;
+
 			float incrementX = ((target.transform.position.x - transform.position.x) / (verts - 1)*transform.parent.localScale.x);
 			float incrementY = (target.transform.position.y - transform.position.y) / (verts - 1);
 
@@ -43,6 +44,8 @@ public class TelekinesisLineRenderer : MonoBehaviour
 					}
 
 					myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight * newi), (waveHeight * newi)), 0));
+//					myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (newi), (1-newi)), 0));
+//					myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight), (waveHeight)), 0));
 				}
 			}
 		}

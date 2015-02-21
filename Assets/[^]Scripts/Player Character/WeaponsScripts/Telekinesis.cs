@@ -1,4 +1,4 @@
-﻿
+
 using UnityEngine;
 using System.Collections;
 
@@ -21,6 +21,7 @@ public class Telekinesis : MonoBehaviour
 	Vector2 refV2 = Vector2.one;
 
 	ParticleSystem particle;
+	public GameObject LineRendererObject;
 
 	void Start()
 	{
@@ -30,6 +31,8 @@ public class Telekinesis : MonoBehaviour
 
 		maxRotSpeed = rotSpeed;
 		maxMoveSpeed = moveSpeed;
+
+//		LineRendererObject = transform.GetChild(0).gameObject;
 	}
 
 	void Update()
@@ -58,7 +61,10 @@ public class Telekinesis : MonoBehaviour
 							heldObj.GetComponent<SmartPipes>().Drop(false);
 
 						}
-						LogUse();
+
+						LineRendererObject.SetActive(true);
+						LineRendererObject.GetComponent<TelekinesisLineRenderer>().SetTarget(heldObj.gameObject);
+//						LogUse();
 					}
 				}
 			}
@@ -149,6 +155,7 @@ public class Telekinesis : MonoBehaviour
 		offset = Vector3.zero;								//reset offset
 		rotSpeed = maxRotSpeed;								//reset speeds
 		moveSpeed = maxMoveSpeed;
+		LineRendererObject.SetActive(false);
 
 		if(heldObj.GetComponent<SmartPipes>() != null)
 			heldObj.SendMessage("SnapPipe");
@@ -185,4 +192,8 @@ public class Telekinesis : MonoBehaviour
 		timesUsedTK++;
 	}
 
+//	public Transform GetHeldObj()
+//	{
+//		return heldObj;
+//	}
 }

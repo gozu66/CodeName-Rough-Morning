@@ -5,13 +5,26 @@ public class groundCheck : MonoBehaviour {
 
 	public static bool isGrounded = false;
 
-	void OnTriggerStay2D(Collider2D col)
+	void Start()
 	{
-		isGrounded = true;
+		InvokeRepeating("checkGround", 0.0025f, 0.0025f);
 	}
 
-	void OnTriggerExit2D(Collider2D col)
+	void checkGround()
 	{
-		isGrounded = false;
+		Collider2D[] _ground = new Collider2D[1];
+		Physics2D.OverlapAreaNonAlloc(collider2D.bounds.max, collider2D.bounds.min, _ground);
+
+		foreach(Collider2D col in _ground)
+		{
+			if(col != null && !col.isTrigger)
+			{
+				isGrounded = true;
+			}else{
+				isGrounded = false;
+			}
+		}
 	}
+
+
 }

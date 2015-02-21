@@ -11233,10 +11233,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  verts: 200
+  verts: 100
   waveHeight: 1
   timeMultiplier: 11
   WeaponTrans: {fileID: 1579061396}
+  Daline: 3
 --- !u!120 &911023880
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -11246,7 +11247,7 @@ LineRenderer:
   m_GameObject: {fileID: 911023877}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
@@ -11566,7 +11567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19faedfe6572a1540b52bcfd5ed85031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 25
+  weight: 50
 --- !u!1 &941725467
 GameObject:
   m_ObjectHideFlags: 0
@@ -13047,6 +13048,22 @@ Prefab:
       propertyPath: timerSprite
       value: 
       objectReference: {fileID: 732296950}
+    - target: {fileID: 11415426, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
+      propertyPath: verts
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
+      propertyPath: rotSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 12015426, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415426, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
+      propertyPath: Daline
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
   m_RootGameObject: {fileID: 116064408}
@@ -17681,7 +17698,7 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 2528381234
+          rgba: 2158036108
         key1:
           serializedVersion: 2
           rgba: 1275003005
@@ -17712,7 +17729,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 18697
+        atime1: 26600
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -24765,7 +24782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: .5
-  rotSpeed: 25
+  rotSpeed: 1
   moveSpeed: 7
   MKmoveSpeed: 25
   throwForce: 2500

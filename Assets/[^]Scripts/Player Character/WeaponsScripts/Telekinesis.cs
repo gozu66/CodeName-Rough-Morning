@@ -35,7 +35,7 @@ public class Telekinesis : MonoBehaviour
 //		LineRendererObject = transform.GetChild(0).gameObject;
 	}
 
-	void Update()
+	void LateUpdate()
 	{
 		if(!isHolding)
 		{	
@@ -48,18 +48,20 @@ public class Telekinesis : MonoBehaviour
 				{
 					if(hit2D.collider.tag == "moveable")
 					{
-						isHolding = true;									
-						gravityScale = hit2D.collider.rigidbody2D.gravityScale;
-						hit2D.collider.rigidbody2D.gravityScale = 0.0f;
-						hit2D.collider.rigidbody2D.velocity = Vector2.zero;
-						heldObj = hit2D.collider.transform;													//cache selected object as heldobj
+						isHolding = true;	
+						heldObj = hit2D.collider.transform;
+
+						gravityScale = heldObj.rigidbody2D.gravityScale;
+						heldObj.rigidbody2D.gravityScale = 0.0f;
+						heldObj.rigidbody2D.velocity = Vector2.zero;
+//						heldObj.rigidbody2D.isKinematic = true;
+
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 						particle = heldObj.transform.GetChild(0).GetComponent<ParticleSystem>();
 						particle.enableEmission = true;
 
 						if(heldObj.GetComponent<SmartPipes>() != null){
 							heldObj.GetComponent<SmartPipes>().Drop(false);
-
 						}
 
 						LineRendererObject.SetActive(true);
@@ -71,25 +73,18 @@ public class Telekinesis : MonoBehaviour
 		}	
 		else
 		{
-			if(isHolding && !isThrowing)
-			{	
+			if(isHolding && !isThrowing){	
 				grabObject(heldObj);													//calling grab object function every frame the obj is held and RT is pressed
 			} 
-
-			else
-			{	
-				dropObject();															//calling drop object if object is held an RT is no longer being pressed
-			}
-
-			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1))
-			{
-				dropObject();															//calling drop object if object is held an RT is no longer being pressed
-			}
-
-			if(Input.GetAxisRaw("RTrigger_1") > 0 || Input.GetMouseButtonDown(0))
-			{
-				StartCoroutine("throwObject", heldObj);									//Throwing coroutine
-			}
+				else{	
+					dropObject();															//calling drop object if object is held an RT is no longer being pressed
+				}
+					if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1)){
+						dropObject();															//calling drop object if object is held an RT is no longer being pressed
+					}
+						if(Input.GetAxisRaw("RTrigger_1") > 0 || Input.GetMouseButtonDown(0)){
+							StartCoroutine("throwObject", heldObj);									//Throwing coroutine
+						}
 		}
 	}
 
@@ -102,8 +97,7 @@ public class Telekinesis : MonoBehaviour
 
 
 			obj.position = Vector3.SmoothDamp(obj.position, newPos, ref refV3, followSpeed); 											//moving held object to desired postion + offset
-			float newZ = obj.position.z;
-			newZ = 0;
+			float newZ = 0;
 			obj.position = new Vector3(obj.position.x, obj.position.y, newZ);
 
 			if(Input.GetButton("LB_1"))

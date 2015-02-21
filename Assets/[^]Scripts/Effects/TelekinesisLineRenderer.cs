@@ -7,8 +7,10 @@ public class TelekinesisLineRenderer : MonoBehaviour
 	public GameObject target;
 	public int verts;
 	public float waveHeight = 10, timeMultiplier;
-	float offset;
+	float offset, xDist, yDist;
 	public GameObject WeaponTrans;
+	public enum lines {a,b,c,d};
+	public lines Daline;
 
 	void Start()
 	{
@@ -20,8 +22,12 @@ public class TelekinesisLineRenderer : MonoBehaviour
 	void Update()
 	{
 		if(target){
-			float Dist = Vector2.Distance(transform.position, target.transform.position);
-			waveHeight = Dist/5;
+//			float Dist = Vector2.Distance(transform.position, target.transform.position);
+//			waveHeight = Dist/5;
+			xDist = Mathf.Abs(transform.position.x - target.transform.position.x)/10;
+			yDist = 1 - xDist;
+
+			Debug.Log(" y = " + yDist + " x = " + xDist);
 
 			float incrementX = ((target.transform.position.x - transform.position.x) / (verts - 1)*transform.parent.localScale.x);
 			float incrementY = (target.transform.position.y - transform.position.y) / (verts - 1);
@@ -43,9 +49,12 @@ public class TelekinesisLineRenderer : MonoBehaviour
 						newi = newi / 0.5f;
 					}
 
-					myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight * newi), (waveHeight * newi)), 0));
-//					myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (newi), (1-newi)), 0));
-//					myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight), (waveHeight)), 0));
+//					if(Daline == lines.a)myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight * newi), (waveHeight * newi)), 0));
+					if(Daline == lines.a)myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight * newi * xDist), (waveHeight * newi * xDist)), 0));
+					if(Daline == lines.b)myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (newi), (-newi)), 0));
+					if(Daline == lines.c)myLine.SetPosition(i, new Vector3(i * incrementX, (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight), (waveHeight)), 0));
+					if(Daline == lines.d)myLine.SetPosition(i, new Vector3((i * incrementX) + PingPong(Time.time * timeMultiplier, (-waveHeight * newi * yDist), (waveHeight * newi * yDist)), (i * incrementY) + PingPong(Time.time * timeMultiplier, (-waveHeight * newi *xDist), (waveHeight * newi*xDist)), 0));
+
 				}
 			}
 		}

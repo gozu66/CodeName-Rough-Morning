@@ -64,8 +64,9 @@ public class Telekinesis : MonoBehaviour
 							heldObj.GetComponent<SmartPipes>().Drop(false);
 						}
 
-						LineRendererObject.SetActive(true);
+
 						LineRendererObject.GetComponent<TelekinesisLineRenderer>().SetTarget(heldObj.gameObject);
+						LineRendererObject.SetActive(true);
 //						LogUse();
 					}
 				}
@@ -142,8 +143,8 @@ public class Telekinesis : MonoBehaviour
 		heldObj.rigidbody2D.gravityScale = gravityScale;
 		heldObj.rigidbody2D.velocity = Vector2.zero;
 
-//		particle.enableEmission = false;
-		if(isHolding)StartCoroutine("DisableParticle");
+		particle.enableEmission = false;
+//		if(isHolding)StartCoroutine("DisableParticle");
 
 		isHolding = false;						
 		offset = Vector3.zero;								//reset offset
@@ -174,11 +175,11 @@ public class Telekinesis : MonoBehaviour
 		isThrowing = false;
 	}
 
-	IEnumerator DisableParticle()
-	{
-		yield return new WaitForSeconds(0.5f);
-		particle.enableEmission = false;
-	}
+//	IEnumerator DisableParticle()
+//	{
+//		yield return new WaitForSeconds(0.0f);
+//		particle.enableEmission = false;
+//	}
 
 	public static int timesUsedTK;
 	void LogUse()

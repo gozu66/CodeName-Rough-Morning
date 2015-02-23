@@ -3,13 +3,16 @@ using System.Collections;
 
 public class TelekinesisPtl : MonoBehaviour 
 {
-//	void Update()
-//	{
-//		if(particleSystem.enableEmission)
-//		{
-//			float myRot = transform.parent.eulerAngles.z;
-//			print(myRot);
-//			particleSystem.startRotation = myRot;
-//		}
-//	}
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if(col.collider2D.gameObject.layer == 12){
+			particleSystem.enableEmission = true;
+			Invoke("StopPing", 0.5f);
+		}
+	}
+
+	void StopPing()
+	{
+		particleSystem.enableEmission = false;
+	}
 }

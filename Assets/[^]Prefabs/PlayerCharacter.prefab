@@ -144,6 +144,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &117038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 417038}
+  - 58: {fileID: 5817038}
+  - 114: {fileID: 11417038}
+  m_Layer: 12
+  m_Name: Ping Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -199,7 +216,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.7700005, y: -12.1009998, z: 0}
+  m_LocalPosition: {x: -7.46999979, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -209,6 +226,7 @@ Transform:
   - {fileID: 400010}
   - {fileID: 400002}
   - {fileID: 400012}
+  - {fileID: 417038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400010
@@ -247,6 +265,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400008}
   m_RootOrder: 1
+--- !u!4 &417038
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400008}
+  m_RootOrder: 7
 --- !u!50 &5000000
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -262,6 +292,17 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5817038
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117038}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: .5
+  m_Center: {x: 0, y: 0}
 --- !u!58 &5897844
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -367,7 +408,6 @@ MonoBehaviour:
   G_ammo: 5
   plasmaBullet: {fileID: 100000, guid: 2d6baad89413ccd4e8f7f290fc43cd14, type: 2}
   plasmaGrenade: {fileID: 100000, guid: d532db736f1676b43916b7fe8284caa0, type: 2}
-  mySkin: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,6 +467,7 @@ MonoBehaviour:
   offset: {x: .629999995, y: .839999974, z: 0}
   objRotation: {x: 0, y: 0, z: 0}
   LineRendererObject: {fileID: 115426}
+  TKpingObject: {fileID: 117038}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,6 +594,19 @@ MonoBehaviour:
   waveHeight: 1
   timeMultiplier: 11
   WeaponTrans: {fileID: 100004}
+  Daline: 0
+--- !u!114 &11417038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84c3bfd612016645bde426e98d50169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
 --- !u!120 &12015426
 LineRenderer:
   m_ObjectHideFlags: 1

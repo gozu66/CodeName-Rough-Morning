@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections;
 
@@ -21,7 +20,7 @@ public class Telekinesis : MonoBehaviour
 	Vector2 refV2 = Vector2.one;
 
 	ParticleSystem particle;
-	public GameObject LineRendererObject;
+	public GameObject LineRendererObject, TKpingObject;
 
 	void Start()
 	{
@@ -68,7 +67,11 @@ public class Telekinesis : MonoBehaviour
 						LineRendererObject.GetComponent<TelekinesisLineRenderer>().SetTarget(heldObj.gameObject);
 						LineRendererObject.SetActive(true);
 //						LogUse();
+					}else{
+						TKpingObject.SetActive(true);
 					}
+				}else{
+					TKpingObject.SetActive(true);
 				}
 			}
 		}	

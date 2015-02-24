@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ptl: {fileID: 100000, guid: 35a77025ed79bbe45b448e0eda59165c, type: 2}
-  ShakeOnIvisible: 0
+  ShakeOnIvisible: 1
 --- !u!114 &11409248
 MonoBehaviour:
   m_ObjectHideFlags: 1

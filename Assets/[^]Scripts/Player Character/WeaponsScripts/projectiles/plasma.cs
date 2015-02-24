@@ -13,12 +13,12 @@ public class plasma : MonoBehaviour
 		//Instantiate(ptl, col.contacts[0].otherCollider.transform.position, transform.rotation);   //col.contacts[0].otherCollider  TOO EXPENSIVE??
 		Instantiate(ptl, transform.position, transform.rotation);
 
-//		if(ShakeOnIvisible){
-//			CameraShake.instance.CamShake(0.2f,0.2f);
-//		}else{
-//			if(!invisible)
-//				CameraShake.instance.CamShake(0.2f,0.2f);
-//		}
+		if(ShakeOnIvisible){
+			CameraShake.instance.CamShake(0.2f,0.2f);
+		}else{
+			if(!invisible)
+				CameraShake.instance.CamShake(0.2f,0.2f);
+		}
 
 		Destroy(gameObject);
 	}

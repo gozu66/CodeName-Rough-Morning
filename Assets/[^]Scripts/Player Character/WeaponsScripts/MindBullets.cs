@@ -45,7 +45,7 @@ public class MindBullets : MonoBehaviour
 					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (SA_force*1000));
 					ammo--;
 					isTrigger = true;
-					CameraShake.instance.CamShake(0.2f,0.2f);
+//					CameraShake.instance.CamShake(0.2f,0.2f);
 					LogUse();
 				}
 			}	

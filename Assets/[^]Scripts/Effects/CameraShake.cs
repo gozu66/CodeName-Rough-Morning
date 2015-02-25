@@ -38,6 +38,11 @@ public class CameraShake : MonoBehaviour
 		Invoke("StopCamShake", _duration);
 	}
 
+	public void CamKick(Vector3 Direction)
+	{
+		transform.localPosition += (-Direction) * 2;
+	}
+
 	void StopCamShake()
 	{
 		isShaking = false;

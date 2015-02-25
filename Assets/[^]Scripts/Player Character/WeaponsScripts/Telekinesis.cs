@@ -169,9 +169,13 @@ public class Telekinesis : MonoBehaviour
 	{
 		isThrowing = true;			
 		
-		dropObject();										//drop obj
+		dropObject();
+
+		Vector3 shootDirection = new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z);
 		
-		obj.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * throwForce, ForceMode2D.Impulse);
+		obj.rigidbody2D.AddForce(shootDirection * throwForce, ForceMode2D.Impulse);
+
+		CameraShake.instance.CamKick(-shootDirection);
 
 		yield return new WaitForSeconds (1);
 		

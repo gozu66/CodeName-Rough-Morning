@@ -42,10 +42,11 @@ public class MindBullets : MonoBehaviour
 				if(Input.GetAxisRaw("RTrigger_1") != 0 || Input.GetMouseButtonDown(0))
 				{
 					GameObject newBullet = Instantiate(plasmaBullet, transform.position, transform.rotation)as GameObject;
-					newBullet.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * (SA_force*1000));
+					Vector3 shootVector = new Vector3(transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z);
+					newBullet.rigidbody2D.AddForce(shootVector * (SA_force*1000));
 					ammo--;
 					isTrigger = true;
-//					CameraShake.instance.CamShake(0.2f,0.2f);
+					CameraShake.instance.CamKick(shootVector);
 					LogUse();
 				}
 			}	

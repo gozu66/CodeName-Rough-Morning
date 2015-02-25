@@ -22,13 +22,13 @@ public class playerHealth : MonoBehaviour
 		{
 			startPoint = col.transform.position;
 			col.enabled = false;
-			//anaNode.SendMessage("AddCheckpoint", SendMessageOptions.DontRequireReceiver);
 //			transform.GetChild(5).SendMessage("CheckPointHit", col.gameObject.name, SendMessageOptions.DontRequireReceiver);
 		}
 		if(col.tag == "playerHazard")
 		{
 			transform.position = startPoint;
 			weaponTransform = GameObject.Find("weaponTrans");
+			print("Hazard");
 //			SendMessageUpwards("CheckPointDeath", SendMessageOptions.DontRequireReceiver);
 
 			if(Telekinesis.isHolding)

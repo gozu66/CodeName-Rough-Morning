@@ -45,8 +45,6 @@ public class SmartPipes : MonoBehaviour
 
 	void SnapPipe()
 	{	
-//		inSitute = !inSitute;0
-
 		foreach(GameObject point in endSnapPoint)
 		{
 			if(point != null){
@@ -58,6 +56,7 @@ public class SmartPipes : MonoBehaviour
 				}
 			}
 		}
+
 		if(Compare() == true)
 		{
 			myParent = CurrEndSnap.transform.parent.GetComponent<SmartPipes>();
@@ -76,7 +75,6 @@ public class SmartPipes : MonoBehaviour
 				transform.eulerAngles = vec;
 
 				myT.position += AdjustPosition();
-
 
 				myParent.SteamSwitch();
 				SteamSwitch();

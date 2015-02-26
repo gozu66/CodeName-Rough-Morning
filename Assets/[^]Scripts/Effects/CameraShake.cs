@@ -40,7 +40,7 @@ public class CameraShake : MonoBehaviour
 
 	public void CamKick(Vector3 Direction)
 	{
-		transform.localPosition += (-Direction) * 2;
+		transform.localPosition += (-Direction) * 1;
 	}
 
 	void StopCamShake()

@@ -11,10 +11,10 @@ public class TimeSlow : MonoBehaviour
 
 	TimeManager TM;
 
-	public GameObject blur;
+	public GameObject trail;
 	public CharacterControls CharCont;
 
-	public Image timerSprite;
+	public Image timerSprite, blur;
 
 
 	void Start()
@@ -37,15 +37,13 @@ public class TimeSlow : MonoBehaviour
 				SlowTimeScale();
 			}
 		}
-//		float timeScaleOffset = Mathf.Abs(0 - Time.timeScale);
-
 		if(timeStopped){timer -= Time.deltaTime / Time.timeScale;}else{timer += Time.deltaTime;}
 
 		if(timer < 0.01f)returnTimeScale();
 
 		timer = Mathf.Clamp(timer, 0, maxTimer);
 
-		timerSprite.fillAmount = timer / 10;
+		timerSprite.fillAmount = timer / maxTimer;
 	}
 
 	public void SlowTimeScale()
@@ -53,8 +51,9 @@ public class TimeSlow : MonoBehaviour
 		timeStopped = true;
 		CharCont.TimeAdjust(true);
 		TM.slowTime(amountToSlow, effectDuration);
-		blur.SetActive(true);
-		LogUse();
+		StopAllCoroutines();
+		StartCoroutine("Blurr");
+		trail.SetActive(true);
 	}
 
 	public void returnTimeScale()
@@ -62,14 +61,32 @@ public class TimeSlow : MonoBehaviour
 		Time.timeScale = 1.0f;
 		CharCont.TimeAdjust(false);
 		timeStopped = false;
-//		timeSinceGunfired = Time.timeSinceLevelLoad;
-		blur.SetActive(false);
+		StopAllCoroutines();
+		StartCoroutine("DeBlurr");
+		trail.SetActive(false);
 	}
 
-	public static int timesUsedTS;
-	void LogUse()
+	IEnumerator Blurr()
 	{
-		timesUsedTS++;
+		float alpha = 0.0f;
+		while(blur.color.a < 0.5f){
+
+			alpha += Time.deltaTime;
+			blur.color = new Color(blur.color.r, blur.color.g, blur.color.b, alpha);
+			yield return null;
+		}
+
+	}
+	IEnumerator DeBlurr()
+	{
+		float alpha = 0.5f;
+		while(blur.color.a > 0.0f){
+			
+			alpha -= Time.deltaTime;
+			blur.color = new Color(blur.color.r, blur.color.g, blur.color.b, alpha);
+			yield return null;
+		}
+		
 	}
 
 }

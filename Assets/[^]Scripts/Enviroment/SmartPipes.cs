@@ -11,9 +11,7 @@ public class SmartPipes : MonoBehaviour
 	float i = Mathf.Infinity;
 	float rotOffset;
 	public bool inSitute, isOccupied;
-
 	public float MinSnapDistance = 0.2f, MinRotDistance = 5f;
-
 
 	void Start()
 	{

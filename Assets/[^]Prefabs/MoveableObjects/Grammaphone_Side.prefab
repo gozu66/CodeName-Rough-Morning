@@ -27,12 +27,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 488856}
-  - 61: {fileID: 6188856}
   - 199: {fileID: 19988856}
   - 198: {fileID: 19888856}
   - 114: {fileID: 11488858}
   - 114: {fileID: 11488856}
-  m_Layer: 0
+  - 58: {fileID: 5805716}
+  m_Layer: 12
   m_Name: ptl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.0859461, y: 19.5860958, z: 0}
+  m_LocalPosition: {x: 6.48999977, y: -10.7299995, z: 0}
   m_LocalScale: {x: .4999668, y: .49996689, z: .49996689}
   m_Children:
   - {fileID: 488856}
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 188856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0001328, y: 2.00013256, z: 2.00013256}
+  m_LocalScale: {x: -.0660148561, y: -.066014871, z: -.066014871}
   m_Children: []
   m_Father: {fileID: 470688}
   m_RootOrder: 0
@@ -79,6 +79,17 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
+--- !u!58 &5805716
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188856}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: 8.44999981
+  m_Center: {x: 0, y: 0}
 --- !u!60 &6070688
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -173,17 +184,6 @@ PolygonCollider2D:
       - {x: 1.11500001, y: -.785000026}
       - {x: 1.005, y: -.86500001}
       - {x: .875, y: -.855000019}
---- !u!61 &6188856
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188856}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
 --- !u!114 &11470688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,13 +229,13 @@ ParticleSystem:
   speed: 1
   randomSeed: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
-  moveWithTransform: 0
+  moveWithTransform: 1
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: .5
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -268,7 +268,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 5
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -395,7 +395,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 2
+      scalar: 3.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -466,30 +466,25 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 2
     enabled: 1
-    type: 0
+    type: 6
     radius: 1
     angle: 25
     length: 5
-    boxX: 1
-    boxY: 1
-    boxZ: 1
-    placementMode: 0
-    m_Mesh: {fileID: 0}
+    boxX: .100000001
+    boxY: .100000001
+    boxZ: .100000001
+    placementMode: 1
+    m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
     randomDirection: 0
   EmissionModule:
     enabled: 0
     m_Type: 0
     rate:
-      scalar: 50
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -529,11 +524,16 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: .982698977
+        - time: .442695946
+          value: 1
+          inSlope: -0
+          outSlope: -0
+          tangentMode: 0
+        - time: .991987169
           value: 0
           inSlope: 0
           outSlope: 0
@@ -1282,13 +1282,13 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4974fe1abbd6cce4bbcec0f78611b3fe, type: 2}
+  - {fileID: 2100000, guid: 6f417f86c748df84582a0ad218f30511, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1404451337
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MaxParticleSize: .5

@@ -1,7 +1,23 @@
 fileFormatVersion: 2
 guid: 34a28477ef179d74d81dd8de577c2034
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Bat Side and front_0
+    21300002: Bat Side and front_1
+    21300004: Bat Side and front_2
+    21300006: Bat Side and front_3
+    21300008: Bat Side and front_4
+    21300010: Bat Side and front_5
+    21300012: Bat Side and front_6
+    21300014: Bat Side and front_7
+    21300016: Bat Side and front_8
+    21300018: Bat Side and front_9
+    21300020: Bat Side and front_10
+    21300022: Bat Side and front_11
+    21300024: Bat Side and front_12
+    21300026: Bat Side and front_13
+    21300028: Bat Side and front_14
+    21300030: Bat Side and front_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +41,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +58,156 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Bat Side and front_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 396
+        width: 35
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 394
+        width: 156
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 394
+        width: 93
+        height: 117
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_3
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 412
+        width: 88
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 282
+        width: 101
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_5
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 271
+        width: 125
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 276
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_7
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 271
+        width: 110
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 154
+        width: 83
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_9
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 138
+        width: 88
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_10
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 138
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_11
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 138
+        width: 136
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 12
+        width: 171
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_13
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 13
+        width: 106
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bat Side and front_14
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 12
+        width: 137
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

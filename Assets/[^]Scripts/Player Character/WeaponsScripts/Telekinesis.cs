@@ -165,7 +165,7 @@ public class Telekinesis : MonoBehaviour
 		
 		obj.rigidbody2D.AddForce(shootDirection * throwForce, ForceMode2D.Impulse);
 
-		CameraShake.instance.CamKick(-shootDirection);
+		CameraShake.instance.CamKick(shootDirection);
 
 		yield return new WaitForSeconds (1);
 		

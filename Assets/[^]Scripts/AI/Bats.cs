@@ -25,6 +25,8 @@ public class Bats : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		currWPi = 0;
 
+		anim.speed = Random.Range(0.75F, 1.5F);
+		speed = Random.Range(7, 30);
 	}
 
 	void Update()
@@ -70,7 +72,6 @@ public class Bats : MonoBehaviour
 		if(currWP != wanderPoints[currWPi])
 			currWP = wanderPoints[currWPi];
 
-//		myRigidbody2D.AddForce(myRigidbody2D.position + new Vector2(currWP.position.x-myRigidbody2D.position.x, currWP.position.y-myRigidbody2D.position.y)*Time.deltaTime*speed);
 		myRigidbody2D.AddForce(new Vector2(currWP.position.x-myRigidbody2D.position.x, currWP.position.y-myRigidbody2D.position.y)*Time.deltaTime*speed);
 
 		if(myRigidbody2D.velocity.x < 0){
@@ -88,13 +89,15 @@ public class Bats : MonoBehaviour
 			}else{
 				currWPi++;
 			}
-			print("hitWP");
+		}
+
+		if(other.tag == "projectile"){
+			Destroy(gameObject);
 		}
 	}
 
 	void IdleUpdate()
 	{
-//		Ray PlayerCheck;
 		RaycastHit2D playerCheck = Physics2D.Raycast(myTransform.position, player.position-myTransform.position, checkDist, lyrMsk);
 		if(playerCheck)
 			_state = States.wander;

@@ -4,14 +4,12 @@ using System.Collections;
 public class Scales : MonoBehaviour 
 {
 	public Transform minHeightTransform, maxHeightTransform;
-	public float _minHeight, _maxHeight, _normalHeight;
+	public float _minHeight, _maxHeight;
 	public float _targetHeight;
 
-	public float maxWeight, minWeight;
+	public float maxWeight;
 	private float currWeight = 0;
 	private float _normalWeight;
-
-//	public CounterWeight counterWeight;
 
 	float refFloat = 1.0f;
 	
@@ -59,18 +57,8 @@ public class Scales : MonoBehaviour
 			}
 		}
 
-		if(currWeight > 0 && minWeight < currWeight)
-		{
-			_normalWeight = currWeight/maxWeight;												//get normailzed weight value
-			_normalWeight = 1 - _normalWeight;													//invert value to match scale
-			_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));			//set Target height to normal value, realsied in worldSpace
-		}else if(currWeight == 0){
-			_normalWeight = currWeight/maxWeight;												
-			_normalWeight = 1 - _normalWeight;													//As above
-			_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));			
-
-		}
+		_normalWeight = currWeight/maxWeight;													//get normailzed weight value
+		_normalWeight = 1 - _normalWeight;													//invert value to match scale
+		_targetHeight = (_minHeight + (_normalWeight * (_maxHeight - _minHeight)));			//set Target height to normal value, realsied in worldSpace
 	}
-
-
 }

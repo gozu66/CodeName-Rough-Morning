@@ -11,9 +11,7 @@ public class SmartPipes : MonoBehaviour
 	float i = Mathf.Infinity;
 	float rotOffset;
 	public bool inSitute, isOccupied;
-
 	public float MinSnapDistance = 0.2f, MinRotDistance = 5f;
-
 
 	void Start()
 	{
@@ -45,8 +43,6 @@ public class SmartPipes : MonoBehaviour
 
 	void SnapPipe()
 	{	
-//		inSitute = !inSitute;0
-
 		foreach(GameObject point in endSnapPoint)
 		{
 			if(point != null){
@@ -58,6 +54,7 @@ public class SmartPipes : MonoBehaviour
 				}
 			}
 		}
+
 		if(Compare() == true)
 		{
 			myParent = CurrEndSnap.transform.parent.GetComponent<SmartPipes>();
@@ -76,7 +73,6 @@ public class SmartPipes : MonoBehaviour
 				transform.eulerAngles = vec;
 
 				myT.position += AdjustPosition();
-
 
 				myParent.SteamSwitch();
 				SteamSwitch();

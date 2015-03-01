@@ -64,7 +64,7 @@ public class SmartPipes : MonoBehaviour
 				myParent.Occupy(true);
 
 				rigidbody2D.isKinematic = true;
-				gameObject.layer = 10;
+				gameObject.layer = 11;
 
 				myT.position += AdjustPosition();
 

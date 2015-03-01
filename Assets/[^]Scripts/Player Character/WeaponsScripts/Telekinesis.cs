@@ -51,6 +51,7 @@ public class Telekinesis : MonoBehaviour
 
 						if(heldObj.GetComponent<SmartPipes>() != null){
 							heldObj.GetComponent<SmartPipes>().Drop(false);
+							if(heldObj.rigidbody2D.isKinematic)heldObj.rigidbody2D.isKinematic = false;
 						}
 
 

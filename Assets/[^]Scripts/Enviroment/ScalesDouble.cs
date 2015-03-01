@@ -63,8 +63,7 @@ public class ScalesDouble : MonoBehaviour
 				}
 				if(col.tag == "Player")
 				{
-					print("player");
-					currWeight1 += col.transform.GetComponent<Weight>().weight;
+//					currWeight1 += col.transform.GetComponent<Weight>().weight;
 				}
 			}
 		}
@@ -83,8 +82,7 @@ public class ScalesDouble : MonoBehaviour
 				}
 				if(col.tag == "Player")
 				{
-					print("player");
-					currWeight2 += col.transform.GetComponent<Weight>().weight;
+//					currWeight2 += col.transform.GetComponent<Weight>().weight;
 				}
 			}
 		}

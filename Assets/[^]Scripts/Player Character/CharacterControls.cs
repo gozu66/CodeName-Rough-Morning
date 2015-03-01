@@ -139,15 +139,15 @@ public class CharacterControls : MonoBehaviour
 	{
 		if(on_off)
 		{
-			maxSpeed += speedIncrease;
-			jumpForce += jumpIncrease;
-			rigidbody2D.gravityScale += gravityIncrease;
+			maxSpeed = 15;
+			jumpForce = 130000;
+//			rigidbody2D.gravityScale += gravityIncrease;
 		}
 		else if (!on_off)
 		{
-			maxSpeed -= speedIncrease;
-			jumpForce -= jumpIncrease;
-			rigidbody2D.gravityScale -= gravityIncrease;
+			maxSpeed = 10;
+			jumpForce = 125000;
+			//			rigidbody2D.gravityScale += gravityIncrease;
 		}
 	}
 

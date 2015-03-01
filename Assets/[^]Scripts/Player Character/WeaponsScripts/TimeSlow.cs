@@ -4,6 +4,8 @@ using System.Collections;
 
 public class TimeSlow : MonoBehaviour 
 {
+	public static TimeSlow instance;
+
 	public static bool timeStopped = false;
 
 	public float amountToSlow = 0.2f, effectDuration = 5, timer = 10, maxTimer = 10;

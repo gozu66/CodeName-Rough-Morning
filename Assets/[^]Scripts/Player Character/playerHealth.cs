@@ -30,6 +30,7 @@ public class playerHealth : MonoBehaviour
 
 			if(Telekinesis.isHolding)
 				weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
+
 		}
 	}
 }

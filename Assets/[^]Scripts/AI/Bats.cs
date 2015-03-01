@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class Bats : MonoBehaviour 
@@ -14,13 +15,16 @@ public class Bats : MonoBehaviour
 	Animator anim;
 	public bool isSideWays, isFrontWays, isIdle;
 	Rigidbody2D myRigidbody2D;
+	Transform myTransform, player;
 
 	void Start()
 	{
 		anim = GetComponent<Animator>();
 		myRigidbody2D = rigidbody2D;
+		myTransform = transform;
+		player = GameObject.FindGameObjectWithTag("Player").transform;
+		currWPi = 0;
 
-		currWP = wanderPoints[0];
 	}
 
 	void Update()
@@ -28,10 +32,16 @@ public class Bats : MonoBehaviour
 		switch(_state){
 
 		case States.idle:
+			isSideWays = false;
+			isFrontWays = false;
+			isIdle = true;
 			IdleUpdate();
 			break;
 
 		case States.wander:
+			isSideWays = true;
+			isFrontWays = false;
+			isIdle = false;
 			WanderUpdate();
 			break;
 
@@ -43,46 +53,61 @@ public class Bats : MonoBehaviour
 			ScatterUpdate();
 			break;
 		}
-	}
 
-	void IdleUpdate()
-	{
-
+		anim.SetBool("isIdle", isIdle);
+		anim.SetBool("isSideWays", isSideWays);
+		anim.SetBool("isFrontWays", isFrontWays);
 	}
 
 	public Transform[] wanderPoints;
+	public LayerMask lyrMsk;
+	public float checkDist, speed;
 	int currWPi = 0;
 	Transform currWP;
 
 	void WanderUpdate()
 	{
+		if(currWP != wanderPoints[currWPi])
+			currWP = wanderPoints[currWPi];
 
-//		myRigidbody2D.MovePosition((currWP.position - transform.position)*Time.deltaTime*0.1f);
-	}
+//		myRigidbody2D.AddForce(myRigidbody2D.position + new Vector2(currWP.position.x-myRigidbody2D.position.x, currWP.position.y-myRigidbody2D.position.y)*Time.deltaTime*speed);
+		myRigidbody2D.AddForce(new Vector2(currWP.position.x-myRigidbody2D.position.x, currWP.position.y-myRigidbody2D.position.y)*Time.deltaTime*speed);
 
-	void AttackUpdate()
-	{
-
-	}
-
-	void ScatterUpdate()
-	{
-
+		if(myRigidbody2D.velocity.x < 0){
+			transform.localScale = new Vector2(-1, transform.localScale.y);
+		}else{
+			transform.localScale = new Vector2(1, transform.localScale.y);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.tag == "pathNode"){
-			currWP = ChangeWanderPoint(currWPi);
-			print("hit");
+			if(currWPi >= wanderPoints.Length-1){
+				currWPi = 0;
+			}else{
+				currWPi++;
+			}
+			print("hitWP");
 		}
 	}
 
-	Transform ChangeWanderPoint(int _currWP)
+	void IdleUpdate()
 	{
-		if(currWPi >= wanderPoints.Length)
-			return wanderPoints[0];
-	
-		return null;
+//		Ray PlayerCheck;
+		RaycastHit2D playerCheck = Physics2D.Raycast(myTransform.position, player.position-myTransform.position, checkDist, lyrMsk);
+		if(playerCheck)
+			_state = States.wander;
 	}
+
+	void AttackUpdate()
+	{
+		
+	}
+	
+	void ScatterUpdate()
+	{
+		
+	}
+
 }

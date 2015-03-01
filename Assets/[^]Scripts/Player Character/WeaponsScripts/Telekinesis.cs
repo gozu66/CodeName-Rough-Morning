@@ -129,25 +129,27 @@ public class Telekinesis : MonoBehaviour
 
 	public void dropObject()														//called to drop current held object
 	{
-		heldObj.gameObject.layer = 11;												//reset object layer
+		if(heldObj != null){
+			heldObj.gameObject.layer = 11;												//reset object layer
 
-		heldObj.collider2D.enabled = false;
-		heldObj.collider2D.enabled = true;
+			heldObj.collider2D.enabled = false;
+			heldObj.collider2D.enabled = true;
 
-		heldObj.rigidbody2D.gravityScale = gravityScale;
-		heldObj.rigidbody2D.velocity = Vector2.zero;
+			heldObj.rigidbody2D.gravityScale = gravityScale;
+			heldObj.rigidbody2D.velocity = Vector2.zero;
 
-		particle.enableEmission = false;
-//		if(isHolding)StartCoroutine("DisableParticle");
+			particle.enableEmission = false;
+	//		if(isHolding)StartCoroutine("DisableParticle");
 
-		isHolding = false;						
-		offset = Vector3.zero;								//reset offset
-		rotSpeed = maxRotSpeed;								//reset speeds
-		moveSpeed = maxMoveSpeed;
-		LineRendererObject.SetActive(false);
+			isHolding = false;						
+			offset = Vector3.zero;								//reset offset
+			rotSpeed = maxRotSpeed;								//reset speeds
+			moveSpeed = maxMoveSpeed;
+			LineRendererObject.SetActive(false);
 
-		if(heldObj.GetComponent<SmartPipes>() != null)
-			heldObj.SendMessage("SnapPipe");
+			if(heldObj.GetComponent<SmartPipes>() != null)
+				heldObj.SendMessage("SnapPipe");
+		}
 	}
 	
 	void OnDisable()

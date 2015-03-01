@@ -115,7 +115,7 @@ public class Telekinesis : MonoBehaviour
 
 			if(Input.GetAxis("QE") != 0)
 			{
-				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, Input.GetAxis("QE"));
+				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, Input.GetAxis("QE")*rotSpeed);
 			}
 			
 			offset.x += Input.GetAxis("Mouse X")* Time.deltaTime * MKmoveSpeed;			//While holding obj, V3 offset adjusted by mouse X+Y input

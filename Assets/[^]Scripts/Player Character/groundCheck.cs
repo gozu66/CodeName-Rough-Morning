@@ -28,11 +28,11 @@ public class groundCheck : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-			isGrounded = true;
+		if(!other.isTrigger)isGrounded = true;
 	}
 
 	void OnTriggerExit2D(Collider2D other)
 	{
-		isGrounded = false;
+		if(!other.isTrigger)isGrounded = false;
 	}
 }

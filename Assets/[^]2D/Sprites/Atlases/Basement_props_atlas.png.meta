@@ -21,7 +21,7 @@ TextureImporter:
     21300032: Wardrobe_02
     21300034: Also ??
     21300036: Bucket
-    21300038: ??
+    21300038: Rope_harness
     21300040: Boiler
   serializedVersion: 2
   mipmaps:
@@ -254,7 +254,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ??
+    - name: Rope_harness
       rect:
         serializedVersion: 2
         x: 1138

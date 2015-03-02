@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ParticleSystemSortLayer : MonoBehaviour 
 {
-	void Start()
+	void Awake()
 	{
 		particleSystem.renderer.sortingLayerName = "Foreground";
 	}

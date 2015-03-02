@@ -59,10 +59,12 @@ public class Telekinesis : MonoBehaviour
 						LineRendererObject.SetActive(true);
 //						LogUse();
 					}else{
-						TKpingObject.SetActive(true);
+						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
+						else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
 					}
 				}else{
-					TKpingObject.SetActive(true);
+					if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
+					else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
 				}
 			}
 		}	

@@ -44,6 +44,7 @@ public class Telekinesis : MonoBehaviour
 						gravityScale = heldObj.rigidbody2D.gravityScale;
 						heldObj.rigidbody2D.gravityScale = 0.0f;
 						heldObj.rigidbody2D.velocity = Vector2.zero;
+						heldObj.rigidbody2D.angularVelocity = 0;
 
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 						particle = heldObj.transform.GetChild(0).GetComponent<ParticleSystem>();

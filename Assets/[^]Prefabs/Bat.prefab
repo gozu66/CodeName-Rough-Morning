@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 451864}
   - 212: {fileID: 21251864}
   - 95: {fileID: 9551864}
-  - 61: {fileID: 6151864}
   - 114: {fileID: 11451864}
   - 50: {fileID: 5051864}
-  m_Layer: 0
+  - 58: {fileID: 5862472}
+  m_Layer: 9
   m_Name: Bat
   m_TagString: playerHazard
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.3100004, y: -9.38000011, z: 0}
+  m_LocalPosition: {x: -10.1166153, y: 11.6802654, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,16 +47,16 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6151864
-BoxCollider2D:
+--- !u!58 &5862472
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151864}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: .930000007, y: 1.16999996}
+  m_IsTrigger: 0
+  m_Radius: .370000005
   m_Center: {x: 0, y: 0}
 --- !u!95 &9551864
 Animator:
@@ -91,8 +91,6 @@ MonoBehaviour:
   wanderPoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   lyrMsk:
     serializedVersion: 2
     m_Bits: 4
@@ -116,7 +114,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1404451337
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 34a28477ef179d74d81dd8de577c2034, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

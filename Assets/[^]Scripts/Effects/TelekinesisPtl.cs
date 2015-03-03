@@ -18,7 +18,6 @@ public class TelekinesisPtl : MonoBehaviour
 	{
 		if(col.collider2D.gameObject.layer == 12){
 			pSys.enableEmission = true;
-			Debug.Log("hit" + this.transform.parent.name);
 			Invoke("StopPing", 0.5f);
 		}
 	}

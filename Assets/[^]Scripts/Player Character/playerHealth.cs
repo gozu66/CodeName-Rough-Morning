@@ -26,10 +26,11 @@ public class playerHealth : MonoBehaviour
 		if(col.tag == "playerHazard")
 		{
 			transform.position = startPoint;
-			weaponTransform = GameObject.Find("weaponTrans");
 
+			weaponTransform = GameObject.Find("weaponTrans");
 			if(Telekinesis.isHolding)
 				weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
+
 
 		}
 	}

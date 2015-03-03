@@ -5,6 +5,7 @@ public class repsawnOnDropped : MonoBehaviour
 {
 	GameObject weaponTransform;
 	Vector3 spawnPosition;
+	public bool isReady = false;
 
 	void Start()
 	{
@@ -19,11 +20,11 @@ public class repsawnOnDropped : MonoBehaviour
 
 	public void respawn()
 	{
+
 		rigidbody2D.velocity = new Vector2(0, 0);
 		rigidbody2D.angularVelocity = 0;
 		transform.position = spawnPosition;
-		weaponTransform = GameObject.Find("weaponTrans");
-		weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
-
-	}
+		//weaponTransform = GameObject.Find("weaponTrans");
+		//weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
+	}	
 }

@@ -6,10 +6,11 @@ public class TelekinesisPtl : MonoBehaviour
 	Transform myP;
 	ParticleSystem pSys;
 
-	void Start()
+	void Awake()
 	{
 		myP = transform.parent;
 		pSys = GetComponent<ParticleSystem>();
+		pSys.renderer.sortingLayerName = "Foreground";
 		InvokeRepeating("UpdateRot", 0.5f, 0.5f);
 	}
 
@@ -17,6 +18,7 @@ public class TelekinesisPtl : MonoBehaviour
 	{
 		if(col.collider2D.gameObject.layer == 12){
 			pSys.enableEmission = true;
+			Debug.Log("hit" + this.transform.parent.name);
 			Invoke("StopPing", 0.5f);
 		}
 	}

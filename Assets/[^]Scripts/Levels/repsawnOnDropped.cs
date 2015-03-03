@@ -17,7 +17,7 @@ public class repsawnOnDropped : MonoBehaviour
 			respawn();
 	}
 
-	void respawn()
+	public void respawn()
 	{
 		rigidbody2D.velocity = new Vector2(0, 0);
 		rigidbody2D.angularVelocity = 0;

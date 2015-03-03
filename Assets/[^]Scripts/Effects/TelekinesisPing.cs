@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class TelekinesisPing : MonoBehaviour 
@@ -30,9 +31,9 @@ public class TelekinesisPing : MonoBehaviour
 		float multiplier = speed * Time.deltaTime;
 		timer += Time.deltaTime;
 
-		myCol.radius += multiplier/30;
+//		myCol.radius += multiplier/30;
 
-		myT.localScale += new Vector3(multiplier*4, multiplier*4, 0);
+		myT.localScale += new Vector3(multiplier, multiplier, 0);
 
 		if(timer >= 2){
 			Reset();
@@ -53,7 +54,7 @@ public class TelekinesisPing : MonoBehaviour
 
 	void OnEnable()
 	{
-		myCol.radius = 0.1f;
+		myCol.radius = 1f;
 		myT.localScale = myScale;
 		timer = 0f;
 	}

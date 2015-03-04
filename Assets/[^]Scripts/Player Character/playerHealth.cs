@@ -4,9 +4,7 @@ using System.Collections;
 public class playerHealth : MonoBehaviour 
 {
 	Vector3 startPoint;
-	public float playerHP;
-
-	public GameObject anaNode;
+	public float playerHP, delay;
 
 	GameObject weaponTransform;
 
@@ -25,7 +23,8 @@ public class playerHealth : MonoBehaviour
 		}
 		if(col.tag == "playerHazard")
 		{
-			transform.position = startPoint;
+			StopAllCoroutines();
+			StartCoroutine("RespawnPlayer");
 
 			weaponTransform = GameObject.Find("weaponTrans");
 			if(Telekinesis.isHolding)
@@ -34,4 +33,18 @@ public class playerHealth : MonoBehaviour
 
 		}
 	}
+
+	IEnumerator RespawnPlayer()
+	{
+		this.renderer.enabled = false;
+		rigidbody2D.isKinematic = true;
+		yield return new WaitForSeconds(delay);
+		transform.position = startPoint;
+		rigidbody2D.isKinematic = false;
+		this.renderer.enabled = true;
+//		this.gameObject.SetActive(false);
+//		yield return new WaitForSeconds(delay);
+//		this.gameObject.SetActive(true);
+	}
+
 }

@@ -10,7 +10,7 @@ public class CharacterControls : MonoBehaviour
 
 	public float speedIncrease, jumpIncrease, gravityIncrease;
 
-	bool isMoving, facingLeft, jumpPressed = false;
+	bool isMoving, facingLeft, jumpPressed = false, onSlope;
 
 	public LayerMask ground;
 	public Transform groundcheck, aimReticule;
@@ -90,7 +90,7 @@ public class CharacterControls : MonoBehaviour
 					jumpPressed = false;
 				}
 				
-				if(Input.GetAxis("R_XAxis_1") != 0)	
+				if(Input.GetAxis("R_XAxis_1") != 0 && !Telekinesis.isHolding)	
 				{
 					float move = Input.GetAxis("R_XAxis_1");
 					
@@ -99,16 +99,8 @@ public class CharacterControls : MonoBehaviour
 					else if (move < 0 && !facingLeft)
 						Flip();
 				}
-
 			break;
 		}
-
-		float inputFloat = Mathf.Abs(Input.GetAxis("L_XAxis_1") + Input.GetAxis("Horizontal"));
-		bool isTrue = (Input.GetButton("A_1") || Input.GetKey(KeyCode.W)) ? true : false;
-		bool grounded = groundCheck.isGrounded;
-		if(inputFloat <= 0 && !isTrue && grounded)rigidbody2D.Sleep();
-		if(rigidbody2D.IsSleeping() && !grounded)rigidbody2D.WakeUp();
-
 
 	}
 
@@ -116,6 +108,22 @@ public class CharacterControls : MonoBehaviour
 	{
 		anim.SetBool("isGrounded", groundCheck.isGrounded);
 		anim.SetBool("isMoving", isMoving);
+
+		RaycastHit2D ray2D = Physics2D.Raycast(transform.position, -Vector2.up, 2.0f, ground);
+		if(ray2D && ray2D.normal.y > 0.1f && ray2D.normal.y < 1f){
+			if(!onSlope)onSlope = true;
+		}else{
+			if(onSlope)onSlope = false;
+		}
+
+		if(onSlope){
+			float inputFloat = Mathf.Abs(Input.GetAxis("L_XAxis_1") + Input.GetAxis("Horizontal"));
+			bool isTrue = (Input.GetButton("A_1") || Input.GetKey(KeyCode.W) || Input.GetAxis("LTrigger_1") >= 0.1) ? true : false;
+			bool grounded = groundCheck.isGrounded;
+
+			if(inputFloat <= 0 && !isTrue && grounded)rigidbody2D.Sleep();
+			if(rigidbody2D.IsSleeping() && !grounded)rigidbody2D.WakeUp();
+		}
 	}
 
 	void Flip()

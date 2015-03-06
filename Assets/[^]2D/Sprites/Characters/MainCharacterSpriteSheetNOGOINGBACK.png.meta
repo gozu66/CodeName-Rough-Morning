@@ -79,8 +79,8 @@ TextureImporter:
         y: 1537
         width: 173
         height: 489
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .656223536, y: .00345441513}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CHAR_WALK_003
       rect:
@@ -89,8 +89,8 @@ TextureImporter:
         y: 1534
         width: 165
         height: 502
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .663798034, y: .0033649581}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CHAR_WALK_004
       rect:
@@ -109,8 +109,8 @@ TextureImporter:
         y: 1541
         width: 188
         height: 492
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .625788927, y: -.00343310344}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CHAR_WALK_006
       rect:
@@ -119,8 +119,8 @@ TextureImporter:
         y: 1536
         width: 168
         height: 498
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .650818586, y: .00339198601}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CHAR_PUSH_001
       rect:

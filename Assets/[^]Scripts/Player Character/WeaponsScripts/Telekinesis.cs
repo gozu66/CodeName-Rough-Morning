@@ -1,11 +1,9 @@
-
 using UnityEngine;
 using System.Collections;
 
 public class Telekinesis : MonoBehaviour 
 {
-	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, MKmoveSpeed = 100, 
-					throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f, gravityScale;
+	public float followSpeed = 1.0f, rotSpeed = 50, moveSpeed = 1.0f, MKmoveSpeed = 100, throwForce = 1000, gravityGunRange = 1.0f, TKlimit = 7.5f, gravityScale;
 	float maxRotSpeed, maxMoveSpeed;
 	public LayerMask telekinesisIgnore;
 
@@ -18,21 +16,15 @@ public class Telekinesis : MonoBehaviour
 	
 	public Vector3 offset, objRotation;
 	Vector3 refV3 = Vector3.one;
-	Vector2 refV2 = Vector2.one;
 
 	ParticleSystem particle;
-	public GameObject LineRendererObject;
+	public GameObject LineRendererObject, TKpingObject;
 
 	void Start()
 	{
-		myTransform = transform;														//cached transform
-																						//cached transform.parent
-
-
+		myTransform = transform;													//cached transform
 		maxRotSpeed = rotSpeed;
 		maxMoveSpeed = moveSpeed;
-
-//		LineRendererObject = transform.GetChild(0).gameObject;
 	}
 
 	void LateUpdate()
@@ -41,20 +33,19 @@ public class Telekinesis : MonoBehaviour
 		{	
 			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1) && !isThrowing)
 			{	
-				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, 								//raycasting along the aim diretion
-				                    	new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, 
-				            				 myTransform.right.y, myTransform.right.z), gravityGunRange, telekinesisIgnore);
-				if(hit2D == true)																			//Raycasting for object pick-up
+				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, myTransform.right.y, myTransform.right.z), gravityGunRange, telekinesisIgnore);
+				if(hit2D == true)													//Raycasting for object pick-up //raycasting along the aim diretion
 				{
 					if(hit2D.collider.tag == "moveable")
 					{
+
 						isHolding = true;	
 						heldObj = hit2D.collider.transform;
 
 						gravityScale = heldObj.rigidbody2D.gravityScale;
 						heldObj.rigidbody2D.gravityScale = 0.0f;
 						heldObj.rigidbody2D.velocity = Vector2.zero;
-//						heldObj.rigidbody2D.isKinematic = true;
+						heldObj.rigidbody2D.angularVelocity = 0;
 
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 						particle = heldObj.transform.GetChild(0).GetComponent<ParticleSystem>();
@@ -62,12 +53,22 @@ public class Telekinesis : MonoBehaviour
 
 						if(heldObj.GetComponent<SmartPipes>() != null){
 							heldObj.GetComponent<SmartPipes>().Drop(false);
+							if(heldObj.rigidbody2D.isKinematic)heldObj.rigidbody2D.isKinematic = false;
 						}
 
-						LineRendererObject.SetActive(true);
+
 						LineRendererObject.GetComponent<TelekinesisLineRenderer>().SetTarget(heldObj.gameObject);
+						LineRendererObject.SetActive(true);
 //						LogUse();
+					}else{
+						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
+						else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
+
+						Debug.Log(hit2D.collider.name);
 					}
+				}else{
+					if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
+					else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
 				}
 			}
 		}	
@@ -121,7 +122,7 @@ public class Telekinesis : MonoBehaviour
 
 			if(Input.GetAxis("QE") != 0)
 			{
-				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, Input.GetAxis("QE"));
+				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, Input.GetAxis("QE")*rotSpeed);
 			}
 			
 			offset.x += Input.GetAxis("Mouse X")* Time.deltaTime * MKmoveSpeed;			//While holding obj, V3 offset adjusted by mouse X+Y input
@@ -134,25 +135,27 @@ public class Telekinesis : MonoBehaviour
 
 	public void dropObject()														//called to drop current held object
 	{
-		heldObj.gameObject.layer = 11;												//reset object layer
+		if(heldObj != null){
+			heldObj.gameObject.layer = 11;												//reset object layer
 
-		heldObj.collider2D.enabled = false;
-		heldObj.collider2D.enabled = true;
+			heldObj.collider2D.enabled = false;
+			heldObj.collider2D.enabled = true;
 
-		heldObj.rigidbody2D.gravityScale = gravityScale;
-		heldObj.rigidbody2D.velocity = Vector2.zero;
+			heldObj.rigidbody2D.gravityScale = gravityScale;
+			heldObj.rigidbody2D.velocity = Vector2.zero;
 
-//		particle.enableEmission = false;
-		if(isHolding)StartCoroutine("DisableParticle");
+			particle.enableEmission = false;
+	//		if(isHolding)StartCoroutine("DisableParticle");
 
-		isHolding = false;						
-		offset = Vector3.zero;								//reset offset
-		rotSpeed = maxRotSpeed;								//reset speeds
-		moveSpeed = maxMoveSpeed;
-		LineRendererObject.SetActive(false);
+			isHolding = false;						
+			offset = Vector3.zero;								//reset offset
+			rotSpeed = maxRotSpeed;								//reset speeds
+			moveSpeed = maxMoveSpeed;
+			LineRendererObject.SetActive(false);
 
-		if(heldObj.GetComponent<SmartPipes>() != null)
-			heldObj.SendMessage("SnapPipe");
+			if(heldObj.GetComponent<SmartPipes>() != null)
+				heldObj.SendMessage("SnapPipe");
+		}
 	}
 	
 	void OnDisable()
@@ -165,20 +168,24 @@ public class Telekinesis : MonoBehaviour
 	{
 		isThrowing = true;			
 		
-		dropObject();										//drop obj
+		dropObject();
+
+		Vector3 shootDirection = new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z);
 		
-		obj.rigidbody2D.AddForce(new Vector3 (transform.right.x * transform.parent.localScale.x, transform.right.y, transform.right.z) * throwForce, ForceMode2D.Impulse);
+		obj.rigidbody2D.AddForce(shootDirection * throwForce, ForceMode2D.Impulse);
+
+		CameraShake.instance.CamKick(shootDirection);
 
 		yield return new WaitForSeconds (1);
 		
 		isThrowing = false;
 	}
 
-	IEnumerator DisableParticle()
-	{
-		yield return new WaitForSeconds(0.5f);
-		particle.enableEmission = false;
-	}
+//	IEnumerator DisableParticle()
+//	{
+//		yield return new WaitForSeconds(0.0f);
+//		particle.enableEmission = false;
+//	}
 
 	public static int timesUsedTK;
 	void LogUse()

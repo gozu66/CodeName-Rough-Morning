@@ -75,9 +75,9 @@ TextureImporter:
     - name: Divider_Straight
       rect:
         serializedVersion: 2
-        x: 22
+        x: 24
         y: 1278
-        width: 116
+        width: 113
         height: 756
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -85,9 +85,9 @@ TextureImporter:
     - name: Divider_Concave
       rect:
         serializedVersion: 2
-        x: 158
+        x: 159
         y: 1278
-        width: 116
+        width: 114
         height: 756
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -95,9 +95,9 @@ TextureImporter:
     - name: Divider_Convex
       rect:
         serializedVersion: 2
-        x: 318
+        x: 319
         y: 1280
-        width: 115
+        width: 114
         height: 754
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -177,7 +177,7 @@ TextureImporter:
         serializedVersion: 2
         x: 813
         y: 1125
-        width: 126
+        width: 125
         height: 126
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -195,9 +195,9 @@ TextureImporter:
     - name: Separator_BottomMiddle
       rect:
         serializedVersion: 2
-        x: 1101
+        x: 1102
         y: 1125
-        width: 126
+        width: 125
         height: 126
       alignment: 0
       pivot: {x: .5, y: .5}

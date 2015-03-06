@@ -38,6 +38,7 @@ public class Telekinesis : MonoBehaviour
 				{
 					if(hit2D.collider.tag == "moveable")
 					{
+
 						isHolding = true;	
 						heldObj = hit2D.collider.transform;
 
@@ -62,6 +63,8 @@ public class Telekinesis : MonoBehaviour
 					}else{
 						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
 						else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
+
+						Debug.Log(hit2D.collider.name);
 					}
 				}else{
 					if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}

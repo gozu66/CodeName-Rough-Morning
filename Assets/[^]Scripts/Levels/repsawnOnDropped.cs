@@ -5,6 +5,7 @@ public class repsawnOnDropped : MonoBehaviour
 {
 	GameObject weaponTransform;
 	Vector3 spawnPosition;
+	public static float timer = 0.5f;
 	public bool isReady, isInvisible;
 
 	void Start()
@@ -17,7 +18,7 @@ public class repsawnOnDropped : MonoBehaviour
 	void Update()
 	{
 		if(isReady && isInvisible){
-			respawn();
+			StartCoroutine("Respawn");
 		}
 	}
 
@@ -37,13 +38,16 @@ public class repsawnOnDropped : MonoBehaviour
 		isInvisible = false;
 	}
 
-	public void respawn()
+	IEnumerator Respawn()
 	{
-		isReady = false;
-		rigidbody2D.velocity = new Vector2(0, 0);
-		rigidbody2D.angularVelocity = 0;
-		transform.position = spawnPosition;
-		//weaponTransform = GameObject.Find("weaponTrans");
+		yield return new WaitForSeconds(timer);
+		if(isReady && isInvisible){
+			isReady = false;
+			rigidbody2D.velocity = new Vector2(0, 0);
+			rigidbody2D.angularVelocity = 0;
+			transform.position = spawnPosition;
+			//weaponTransform = GameObject.Find("weaponTrans");
 		//weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
+		}
 	}	
 }

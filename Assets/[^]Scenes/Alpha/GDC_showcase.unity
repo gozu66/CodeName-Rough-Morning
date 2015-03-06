@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b928492abe207c64b97f19f7a81ce9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 0
+  _state: 1
   isSideWays: 0
   isFrontWays: 0
   isIdle: 0
@@ -2764,7 +2764,7 @@ CircleCollider2D:
     type: 2}
   m_PrefabInternal: {fileID: 1222400831}
   m_GameObject: {fileID: 197520442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 6200000, guid: ffe78bb7f187dca458ab0e640964db26, type: 2}
   m_IsTrigger: 0
   m_Radius: .419999987
@@ -2805,8 +2805,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: ffe78bb7f187dca458ab0e640964db26, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .839999974, y: 1.89999998}
-  m_Center: {x: 0, y: 1.00999999}
+  m_Size: {x: .839999974, y: 1.96000004}
+  m_Center: {x: 0, y: 1}
 --- !u!114 &197520448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4792,6 +4792,10 @@ Prefab:
       objectReference: {fileID: 1941782639}
     - target: {fileID: 5862472, guid: 4271f94f697796c4e970396914b86357, type: 2}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451864, guid: 4271f94f697796c4e970396914b86357, type: 2}
+      propertyPath: _state
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15420,7 +15424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b928492abe207c64b97f19f7a81ce9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 0
+  _state: 1
   isSideWays: 0
   isFrontWays: 0
   isIdle: 0
@@ -15560,7 +15564,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11451864, guid: 4271f94f697796c4e970396914b86357, type: 2}
       propertyPath: _state
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5862472, guid: 4271f94f697796c4e970396914b86357, type: 2}
       propertyPath: m_IsTrigger
@@ -21790,7 +21794,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5897844, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6100002, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_Enabled
@@ -21814,11 +21818,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100002, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_Center.y
-      value: 1.00999999
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6100002, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_Size.y
-      value: 1.89999998
+      value: 1.96000004
       objectReference: {fileID: 0}
     - target: {fileID: 5897844, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
       propertyPath: m_Material
@@ -35172,7 +35176,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1698054783}
   - 61: {fileID: 1698054784}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Object Cull
   m_TagString: boundingBox
   m_Icon: {fileID: 0}
@@ -36170,7 +36174,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1780691121}
   - 61: {fileID: 1780691122}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Object Cull
   m_TagString: boundingBox
   m_Icon: {fileID: 0}

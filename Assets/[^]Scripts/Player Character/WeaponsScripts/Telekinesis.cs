@@ -8,7 +8,6 @@ public class Telekinesis : MonoBehaviour
 	public LayerMask telekinesisIgnore;
 
 	public static bool isHolding = false;
-
 	public bool isThrowing = false;
 	bool heldObjTooFar;
 
@@ -56,15 +55,11 @@ public class Telekinesis : MonoBehaviour
 							if(heldObj.rigidbody2D.isKinematic)heldObj.rigidbody2D.isKinematic = false;
 						}
 
-
 						LineRendererObject.GetComponent<TelekinesisLineRenderer>().SetTarget(heldObj.gameObject);
 						LineRendererObject.SetActive(true);
-//						LogUse();
 					}else{
 						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
 						else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
-
-						Debug.Log(hit2D.collider.name);
 					}
 				}else{
 					if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
@@ -181,20 +176,9 @@ public class Telekinesis : MonoBehaviour
 		isThrowing = false;
 	}
 
-//	IEnumerator DisableParticle()
-//	{
-//		yield return new WaitForSeconds(0.0f);
-//		particle.enableEmission = false;
-//	}
-
 	public static int timesUsedTK;
 	void LogUse()
 	{
 		timesUsedTK++;
 	}
-
-//	public Transform GetHeldObj()
-//	{
-//		return heldObj;
-//	}
 }

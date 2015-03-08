@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11499228}
   - 60: {fileID: 6099234}
   - 114: {fileID: 11499230}
+  - 114: {fileID: 11487002}
   m_Layer: 11
   m_Name: SmartPipe_3
   m_TagString: moveable
@@ -246,6 +247,19 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 5.11999989, y: 5.11999989}
   m_Center: {x: 2.55999994, y: 2.55999994}
+--- !u!114 &11487002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bdaee877c10644b9a1fcf6a4796f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReady: 0
+  isInvisible: 0
 --- !u!114 &11499228
 MonoBehaviour:
   m_ObjectHideFlags: 1

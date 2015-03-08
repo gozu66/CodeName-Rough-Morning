@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 184.399994, y: 23, z: 0}
+  m_LocalPosition: {x: 20.6999969, y: -12.3080025, z: 30.8999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 450038}
@@ -299,9 +299,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallCube: {fileID: 100000, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
   fallCubes:
-  - {fileID: 150038}
-  - {fileID: 150042}
-  - {fileID: 150040}
+  - {fileID: 181042, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
+  - {fileID: 181042, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
+  - {fileID: 181042, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
   respawnTime: 5
 --- !u!114 &11450032
 MonoBehaviour:

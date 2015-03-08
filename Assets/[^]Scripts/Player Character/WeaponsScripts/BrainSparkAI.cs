@@ -4,6 +4,7 @@ using System.Collections;
 public class BrainSparkAI : MonoBehaviour 
 {
 	public ParticleSystem ptl;
+	public float delay;
 	TrailRenderer myTrail;
 
 	void Start()
@@ -11,20 +12,21 @@ public class BrainSparkAI : MonoBehaviour
 		ptl = GetComponent<ParticleSystem>();
 		ptl.renderer.sortingLayerName = "Foreground";
 		myTrail = GetComponent<TrailRenderer>();
+		delay = 1.0f;
 	}
 
-	void OnTriggerEnter2D()
+	void OnCollisionEnter2D()
 	{
 		StartCoroutine("Impact");
-		Debug.Log("hit");
 	}
 	IEnumerator Impact()
 	{
 		ptl.Play();
 		BrainSpark.isFired = false;
 		rigidbody2D.isKinematic = true;
-		yield return new WaitForSeconds(0.1f);
-		myTrail.enabled = false;
+		myTrail.time = 0.0f;
+		yield return new WaitForSeconds(delay);
 		BrainSpark.isFired = false;
+		gameObject.SetActive(false);
 	}
 }

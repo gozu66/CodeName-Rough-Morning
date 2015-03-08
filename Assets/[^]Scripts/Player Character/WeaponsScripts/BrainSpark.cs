@@ -1,75 +1,60 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class BrainSpark : MonoBehaviour 
 {
-	public Rigidbody2D spark;
 	public static bool isFired = false;
+	public Rigidbody2D spark;
 	public float maxChargeTimer, speed;
-	TrailRenderer sparkTrail;
-	float chargeTimer;
-	Transform sparkT, myT;
+	GameObject sparkGO;
+	TrailRenderer myTrail;
+	Transform myT, sparkT;
 	bool isPrimed;
+	float chargeTimer;
 
 	void Start()
 	{
 		myT = transform;
 		sparkT = spark.transform;
-		sparkTrail = spark.gameObject.GetComponent<TrailRenderer>();
-		spark.isKinematic = true;
-		spark.gameObject.SetActive(false);
+		sparkGO = sparkT.gameObject;
+		myTrail = sparkGO.GetComponent<TrailRenderer>();
+		myTrail.time = 0;
+		sparkGO.SetActive(false);
 	}
 
 	void Update()
 	{
-		if(Input.GetMouseButton(0)){
-			chargeTimer += Time.deltaTime;
-		}
+		if(!isFired){
+			if(Input.GetMouseButton(0)){
+				chargeTimer += Time.deltaTime;
+			}
 
-		if(chargeTimer >= maxChargeTimer){
-			isPrimed = true;
-		}else{
-			isPrimed = false;
-		}
+			if(chargeTimer >= maxChargeTimer){
+				isPrimed = true;
+			}else{
+				isPrimed = false;
+			}
 
-		if(Input.GetMouseButtonUp(0)){
-			chargeTimer = 0;
-			if(isPrimed){
-				Fire();
+			if(Input.GetMouseButtonUp(0)){
+				chargeTimer = 0;
+				if(isPrimed){
+					sparkT = spark.transform;
+					sparkGO = sparkT.gameObject;
+					sparkGO.SetActive(false);
+					Fire();
+				}
 			}
 		}
-//		tempIsFired = isFired;
-//
-//		if(!isFired){	
-//			if(Input.GetMouseButtonDown(0)){
-//				StartCoroutine("Charge");
-//			}
-//			else if(Input.GetMouseButtonUp(0)){
-//				StopAllCoroutines();
-//			}
-//		}
 	}
 
 	void Fire()
 	{
-		Debug.Log("fire");
+//		float trailTime = myTrail.time; myTrail.time = 0;
+		sparkT.position = myT.position;
+		spark.isKinematic = false;
+		myTrail.time = 3; 
+		Vector2 shootVector = new Vector2(transform.right.x * transform.parent.localScale.x, transform.right.y);
+		sparkGO.SetActive(true);
+		spark.AddForce(shootVector*speed, ForceMode2D.Impulse);
 	}
-//	IEnumerator Charge()
-//	{
-//		chargeTimer = 0;
-//
-//		while(chargeTimer < maxChargeTimer){
-//			chargeTimer += Time.deltaTime;
-//			yield return null;
-//		}
-//
-//		isFired = true;
-//		sparkT.position = myT.position;
-//		spark.isKinematic = false;
-//		spark.AddForce((transform.right * myT.localScale.x)*speed, ForceMode2D.Impulse);
-//		sparkTrail.enabled = true;
-//		chargeTimer = 0;
-//
-//		yield return null;
-//	}
 }

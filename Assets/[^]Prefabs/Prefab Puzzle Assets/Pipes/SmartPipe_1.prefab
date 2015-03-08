@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11466484}
   - 60: {fileID: 6066490}
   - 114: {fileID: 11466486}
+  - 114: {fileID: 11487002}
   m_Layer: 11
   m_Name: SmartPipe_1
   m_TagString: moveable
@@ -279,6 +280,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbe812aa03e11d43a1f6969de80090a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11487002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bdaee877c10644b9a1fcf6a4796f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReady: 0
+  isInvisible: 0
 --- !u!198 &19825796
 ParticleSystem:
   m_ObjectHideFlags: 1

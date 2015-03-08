@@ -29,6 +29,8 @@ GameObject:
   - 50: {fileID: 5039538}
   - 114: {fileID: 11439532}
   - 114: {fileID: 11439534}
+  - 114: {fileID: 11487002}
+  - 60: {fileID: 6001692}
   m_Layer: 11
   m_Name: SmartPipe_5
   m_TagString: moveable
@@ -120,7 +122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.30999994, y: -10.0500002, z: 0}
+  m_LocalPosition: {x: 261.299988, y: -19.3799992, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 434106}
@@ -193,6 +195,30 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!60 &6001692
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139530}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: 1.78999996, y: -.194999993}
+      - {x: 1.78999996, y: .564999998}
+      - {x: 1.5, y: .564999998}
+      - {x: 1.49000001, y: .555000007}
+      - {x: -1.07000005, y: .535000026}
+      - {x: -1.37, y: .38499999}
+      - {x: -1.59000003, y: .264999986}
+      - {x: -1.78999996, y: -.104999997}
+      - {x: -1.78999996, y: -.564999998}
+      - {x: -1.16999996, y: -.564999998}
+      - {x: -.860000014, y: -.135000005}
+      - {x: 1.5, y: -.125}
+      - {x: 1.54999995, y: -.194999993}
 --- !u!61 &6139538
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -253,6 +279,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbe812aa03e11d43a1f6969de80090a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11487002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bdaee877c10644b9a1fcf6a4796f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReady: 0
+  isInvisible: 0
 --- !u!198 &19834106
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -9,48 +9,67 @@ public class BrainSpark : MonoBehaviour
 	TrailRenderer sparkTrail;
 	float chargeTimer;
 	Transform sparkT, myT;
-	bool tempIsFired;
+	bool isPrimed;
 
 	void Start()
 	{
 		myT = transform;
 		sparkT = spark.transform;
 		sparkTrail = spark.gameObject.GetComponent<TrailRenderer>();
-		sparkTrail.enabled = false;
 		spark.isKinematic = true;
+		spark.gameObject.SetActive(false);
 	}
 
 	void Update()
 	{
-		tempIsFired = isFired;
-
-		if(!isFired){	
-			if(Input.GetMouseButtonDown(0)){
-				StartCoroutine("Charge");
-			}
-			else if(Input.GetMouseButtonUp(0)){
-				StopAllCoroutines();
-			}
-		}
-	}
-
-
-	IEnumerator Charge()
-	{
-		chargeTimer = 0;
-
-		while(chargeTimer < maxChargeTimer){
+		if(Input.GetMouseButton(0)){
 			chargeTimer += Time.deltaTime;
-			yield return null;
 		}
 
-		isFired = true;
-		sparkT.position = myT.position;
-		spark.isKinematic = false;
-		spark.AddForce((transform.right * myT.localScale.x)*speed, ForceMode2D.Impulse);
-		sparkTrail.enabled = true;
-		chargeTimer = 0;
+		if(chargeTimer >= maxChargeTimer){
+			isPrimed = true;
+		}else{
+			isPrimed = false;
+		}
 
-		yield return null;
+		if(Input.GetMouseButtonUp(0)){
+			chargeTimer = 0;
+			if(isPrimed){
+				Fire();
+			}
+		}
+//		tempIsFired = isFired;
+//
+//		if(!isFired){	
+//			if(Input.GetMouseButtonDown(0)){
+//				StartCoroutine("Charge");
+//			}
+//			else if(Input.GetMouseButtonUp(0)){
+//				StopAllCoroutines();
+//			}
+//		}
 	}
+
+	void Fire()
+	{
+		Debug.Log("fire");
+	}
+//	IEnumerator Charge()
+//	{
+//		chargeTimer = 0;
+//
+//		while(chargeTimer < maxChargeTimer){
+//			chargeTimer += Time.deltaTime;
+//			yield return null;
+//		}
+//
+//		isFired = true;
+//		sparkT.position = myT.position;
+//		spark.isKinematic = false;
+//		spark.AddForce((transform.right * myT.localScale.x)*speed, ForceMode2D.Impulse);
+//		sparkTrail.enabled = true;
+//		chargeTimer = 0;
+//
+//		yield return null;
+//	}
 }

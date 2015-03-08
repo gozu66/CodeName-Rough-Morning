@@ -80,7 +80,7 @@ GameObject:
   - 114: {fileID: 11464114}
   m_Layer: 11
   m_Name: SmartPipe_static_5
-  m_TagString: moveable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,8 +141,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.78000021, y: -12.8719997, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: -3.28989563e-06}
+  m_LocalPosition: {x: 112.112999, y: 37.7330017, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 464114}
@@ -170,7 +170,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164116}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Poly:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inSitute: 1
-  isOccupied: 1
+  isOccupied: 0
   MinSnapDistance: 1
   MinRotDistance: 10
 --- !u!198 &19864116

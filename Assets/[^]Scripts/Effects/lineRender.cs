@@ -11,7 +11,7 @@ public class lineRender : MonoBehaviour
 	{
 		LR = GetComponent<LineRenderer>();
 		LR.renderer.sortingLayerName = "Foreground";
-		LR.renderer.sortingOrder = 10;
+//		LR.renderer.sortingOrder = 10;
 	}
 
 	void Update ()

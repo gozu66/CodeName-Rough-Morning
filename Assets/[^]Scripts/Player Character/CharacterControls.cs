@@ -107,6 +107,7 @@ public class CharacterControls : MonoBehaviour
 	void Update()
 	{
 		anim.SetBool("isGrounded", groundCheck.isGrounded);
+		anim.SetBool("isPushing", WallCheck.isPushing);
 		anim.SetBool("isMoving", isMoving);
 
 		RaycastHit2D ray2D = Physics2D.Raycast(transform.position, -Vector2.up, 2.0f, ground);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BrainSpark : MonoBehaviour 
@@ -6,6 +7,7 @@ public class BrainSpark : MonoBehaviour
 	public static bool isFired = false;
 	public Rigidbody2D spark;
 	public float maxChargeTimer, speed;
+	public Image SparkCharge;
 	GameObject sparkGO;
 	TrailRenderer myTrail;
 	Transform myT, sparkT;
@@ -45,12 +47,14 @@ public class BrainSpark : MonoBehaviour
 				}
 			}
 		}
+
+		SparkCharge.fillAmount = chargeTimer/maxChargeTimer;
 	}
 
 	void Fire()
 	{
-//		float trailTime = myTrail.time; myTrail.time = 0;
 		sparkT.position = myT.position;
+		spark.renderer.enabled = true;
 		spark.isKinematic = false;
 		myTrail.time = 3; 
 		Vector2 shootVector = new Vector2(transform.right.x * transform.parent.localScale.x, transform.right.y);

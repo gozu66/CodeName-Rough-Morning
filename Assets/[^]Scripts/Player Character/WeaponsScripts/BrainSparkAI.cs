@@ -15,14 +15,16 @@ public class BrainSparkAI : MonoBehaviour
 		delay = 1.0f;
 	}
 
-	void OnCollisionEnter2D()
+	void OnTriggerEnter2D(Collider2D other)
 	{
+		Debug.Log(other.name);
 		StartCoroutine("Impact");
 	}
 	IEnumerator Impact()
 	{
 		ptl.Play();
 		BrainSpark.isFired = false;
+		renderer.enabled = false;
 		rigidbody2D.isKinematic = true;
 		myTrail.time = 0.0f;
 		yield return new WaitForSeconds(delay);

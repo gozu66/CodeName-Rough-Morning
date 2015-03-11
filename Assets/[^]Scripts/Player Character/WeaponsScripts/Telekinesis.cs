@@ -32,7 +32,7 @@ public class Telekinesis : MonoBehaviour
 		{	
 			if(Input.GetButtonDown("RB_1") || Input.GetMouseButtonDown(1) && !isThrowing)
 			{	
-				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, new Vector3 (myTransform.right.x * myTransform.parent.localScale.x, myTransform.right.y, myTransform.right.z), gravityGunRange, telekinesisIgnore);
+				RaycastHit2D hit2D = Physics2D.Raycast(myTransform.position, new Vector3 (myTransform.right.x * (myTransform.parent.localScale.x), myTransform.right.y, myTransform.right.z), gravityGunRange, telekinesisIgnore);
 				if(hit2D == true)													//Raycasting for object pick-up //raycasting along the aim diretion
 				{
 					if(hit2D.collider.tag == "moveable")

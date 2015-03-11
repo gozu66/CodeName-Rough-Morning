@@ -39,7 +39,7 @@ public class playerAim : MonoBehaviour
 					mouse_pos.x = mouse_pos.x - player_pos.x;																	//MOUSE AND
 					mouse_pos.y = mouse_pos.y - player_pos.y;																	//KEYBOARD AIM
 
-					float angle = Mathf.Atan2 (mouse_pos.y, mouse_pos.x * transform.parent.localScale.x) * Mathf.Rad2Deg;
+					float angle = Mathf.Atan2 (mouse_pos.y, mouse_pos.x * (transform.parent.localScale.x * 2)) * Mathf.Rad2Deg;
 					this.transform.rotation = Quaternion.Euler (new Vector3(0, 0, angle));		
 
 			break;

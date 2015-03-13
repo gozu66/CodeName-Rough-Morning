@@ -18,7 +18,7 @@ RenderSettings:
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientLight: {r: .248688966, g: .304036528, b: .403921574, a: 1}
+  m_AmbientLight: {r: .458823532, g: .458823532, b: .458823532, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -2814,7 +2814,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: a2418dcd0b29c4b4b97b447b4bcced19, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4343,6 +4343,10 @@ Prefab:
     - target: {fileID: 22400000, guid: 67d813a0e352541438c174793a73d991, type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 67d813a0e352541438c174793a73d991, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67d813a0e352541438c174793a73d991, type: 2}
@@ -14215,15 +14219,15 @@ Prefab:
       objectReference: {fileID: 1443300248}
     - target: {fileID: 2000000, guid: f1f895fcd29f5154fbb5c31017f2dbff, type: 2}
       propertyPath: m_BackGroundColor.r
-      value: .101960786
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: f1f895fcd29f5154fbb5c31017f2dbff, type: 2}
       propertyPath: m_BackGroundColor.g
-      value: .101960786
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: f1f895fcd29f5154fbb5c31017f2dbff, type: 2}
       propertyPath: m_BackGroundColor.b
-      value: .101960786
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: f1f895fcd29f5154fbb5c31017f2dbff, type: 2}
       propertyPath: Loop
@@ -17320,7 +17324,7 @@ MonoBehaviour:
   lightRadius: 1
   coneStart: 0
   coneAngle: 360
-  lightColor: {r: .301960796, g: .235647842, b: .235647842, a: 0}
+  lightColor: {r: .540441155, g: .875, b: .722718, a: 0}
   lightDetail: 48
   lightMaterial: {fileID: 2100000, guid: 7f2be65d02f1b1740ae118214241e28e, type: 2}
   shadowLayer:
@@ -37614,6 +37618,10 @@ Prefab:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 21296278, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2418dcd0b29c4b4b97b447b4bcced19, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1616c698e1bd2ce4f9e74a1725285eb5, type: 2}
   m_RootGameObject: {fileID: 197520442}
@@ -46109,7 +46117,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .101960786, g: .101960786, b: .101960786, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

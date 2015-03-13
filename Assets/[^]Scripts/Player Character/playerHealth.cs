@@ -5,6 +5,7 @@ public class playerHealth : MonoBehaviour
 {
 	Vector3 startPoint;
 	public float playerHP, delay;
+	public GameObject playerSprite;
 
 	GameObject weaponTransform;
 
@@ -36,12 +37,12 @@ public class playerHealth : MonoBehaviour
 
 	IEnumerator RespawnPlayer()
 	{
-		this.renderer.enabled = false;
+		playerSprite.renderer.enabled = false;
 		rigidbody2D.isKinematic = true;
 		yield return new WaitForSeconds(delay);
 		transform.position = startPoint;
 		rigidbody2D.isKinematic = false;
-		this.renderer.enabled = true;
+		playerSprite.renderer.enabled = true;
 //		this.gameObject.SetActive(false);
 //		yield return new WaitForSeconds(delay);
 //		this.gameObject.SetActive(true);

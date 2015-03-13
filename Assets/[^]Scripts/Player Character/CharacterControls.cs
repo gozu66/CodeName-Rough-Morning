@@ -19,11 +19,11 @@ public class CharacterControls : MonoBehaviour
 	public Transform reticule; 
 	public float range;
 
-	Animator anim;
+	public Animator anim;
 
 	void Start ()
 	{
-		anim = GetComponent<Animator>();
+//		anim = GetComponent<Animator>();
 
 		if(Input.GetJoystickNames().Length <= 0)
 		{

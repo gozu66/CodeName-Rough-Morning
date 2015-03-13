@@ -20,6 +20,7 @@ public class CharacterControls : MonoBehaviour
 	public float range;
 
 	public Animator anim;
+	bool tempPush;
 
 	void Start ()
 	{
@@ -109,6 +110,7 @@ public class CharacterControls : MonoBehaviour
 		anim.SetBool("isGrounded", groundCheck.isGrounded);
 		anim.SetBool("isPushing", WallCheck.isPushing);
 		anim.SetBool("isMoving", isMoving);
+		tempPush = WallCheck.isPushing;
 
 		RaycastHit2D ray2D = Physics2D.Raycast(transform.position, -Vector2.up, 2.0f, ground);
 		if(ray2D && ray2D.normal.y > 0.1f && ray2D.normal.y < 1f){

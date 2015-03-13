@@ -17,7 +17,6 @@ public class BrainSparkAI : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log(other.name);
 		StartCoroutine("Impact");
 	}
 	IEnumerator Impact()

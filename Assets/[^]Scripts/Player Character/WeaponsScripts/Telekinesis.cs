@@ -58,7 +58,7 @@ public class Telekinesis : MonoBehaviour
 						LineRendererObject.GetComponent<TelekinesisLineRenderer>().SetTarget(heldObj.gameObject);
 						LineRendererObject.SetActive(true);
 					}else{
-						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
+						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);Debug.Log(hit2D.collider.name);}
 						else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
 					}
 				}else{
@@ -96,9 +96,9 @@ public class Telekinesis : MonoBehaviour
 			float newZ = 0;
 			obj.position = new Vector3(obj.position.x, obj.position.y, newZ);
 
-			if(Input.GetButton("LB_1"))
+			if(Input.GetAxisRaw("DPad_XAxis_1") != 0)
 			{
-				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, rotSpeed);
+				obj.RotateAround(obj.renderer.bounds.center, obj.transform.forward, rotSpeed * -Input.GetAxisRaw("DPad_XAxis_1"));
 			}
 
 			offset.x += Input.GetAxis("R_XAxis_1")* Time.deltaTime * moveSpeed;			//While holding obj, V3 offset adjusted by R-Stick input

@@ -26,29 +26,55 @@ public class BrainSpark : MonoBehaviour
 
 	void Update()
 	{
+		SparkCharge.fillAmount = chargeTimer/maxChargeTimer;
+
+
 		if(!isFired){
-			if(Input.GetMouseButton(0)){
-				chargeTimer += Time.deltaTime;
-			}
 
-			if(chargeTimer >= maxChargeTimer){
-				isPrimed = true;
-			}else{
-				isPrimed = false;
-			}
+			if(UIManager._input == UIManager.InputType.MouseKBoard){
 
-			if(Input.GetMouseButtonUp(0)){
-				chargeTimer = 0;
-				if(isPrimed){
-					sparkT = spark.transform;
-					sparkGO = sparkT.gameObject;
-					sparkGO.SetActive(false);
-					Fire();
+				if(Input.GetMouseButton(0)){
+					chargeTimer += Time.deltaTime;
+				}
+
+				if(chargeTimer >= maxChargeTimer){
+					isPrimed = true;
+				}else{
+					isPrimed = false;
+				}
+
+				if(Input.GetMouseButtonUp(0)){
+					chargeTimer = 0;
+					if(isPrimed){
+						sparkT = spark.transform;
+						sparkGO = sparkT.gameObject;
+						sparkGO.SetActive(false);
+						Fire();
+					}
+				}
+			}else if(UIManager._input == UIManager.InputType.XboxPad){
+
+				if(Input.GetAxisRaw("RTrigger_1") != 0){
+					chargeTimer += Time.deltaTime;
+				}
+				
+				if(chargeTimer >= maxChargeTimer){
+					isPrimed = true;
+				}else{
+					isPrimed = false;
+				}
+				
+				if(Input.GetAxisRaw("RTrigger_1") == 0){
+					chargeTimer = 0;
+					if(isPrimed){
+						sparkT = spark.transform;
+						sparkGO = sparkT.gameObject;
+						sparkGO.SetActive(false);
+						Fire();
+					}
 				}
 			}
 		}
-
-		SparkCharge.fillAmount = chargeTimer/maxChargeTimer;
 	}
 
 	void Fire()

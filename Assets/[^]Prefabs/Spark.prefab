@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ptl: {fileID: 0}
-  delay: 0
+  delay: 1
 --- !u!114 &11424900
 MonoBehaviour:
   m_ObjectHideFlags: 1

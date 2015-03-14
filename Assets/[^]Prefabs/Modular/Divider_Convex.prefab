@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21271150}
   m_Layer: 0
   m_Name: Divider_Convex
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_GameObject: {fileID: 171150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 141.830002, y: -60.9179993, z: 0}
-  m_LocalScale: {x: .769293308, y: .699999988, z: 1}
+  m_LocalScale: {x: .699999988, y: .699999988, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

@@ -17,6 +17,7 @@ TagManager:
   - endSnapPoint
   - Steam
   - SP
+  - Environment
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

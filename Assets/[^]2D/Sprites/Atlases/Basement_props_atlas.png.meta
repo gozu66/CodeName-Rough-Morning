@@ -19,7 +19,7 @@ TextureImporter:
     21300028: Bell
     21300030: Coatrack
     21300032: Wardrobe_02
-    21300034: Also ??
+    21300034: Wooden Crate
     21300036: Bucket
     21300038: Rope_harness
     21300040: Boiler
@@ -234,7 +234,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Also ??
+    - name: Wooden Crate
       rect:
         serializedVersion: 2
         x: 643

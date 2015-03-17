@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21288428}
   - 61: {fileID: 6153566}
   m_Layer: 0
-  m_Name: Animal_Cage_Static
+  m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

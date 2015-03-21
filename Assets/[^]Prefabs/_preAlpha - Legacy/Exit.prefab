@@ -16,7 +16,7 @@ GameObject:
   m_Layer: 4
   m_Name: Exit
   m_TagString: Finish
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.7099991, y: -7.86000013, z: 0}
-  m_LocalScale: {x: .418829799, y: .418829948, z: .418829948}
+  m_LocalPosition: {x: -24.6599998, y: 33.4500008, z: 0}
+  m_LocalScale: {x: .604538262, y: .604538679, z: .604538679}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: c2dfc24f12e375d4999dcabac2add22d, type: 2}
+  - {fileID: 2100000, guid: a2418dcd0b29c4b4b97b447b4bcced19, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

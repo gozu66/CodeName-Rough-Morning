@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.6999969, y: -12.3080025, z: 30.8999996}
+  m_LocalPosition: {x: 58.3699951, y: 140.119995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 450038}
@@ -214,7 +214,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150038}
-  m_Mass: 100
+  m_Mass: 100000
   m_LinearDrag: 5
   m_AngularDrag: 0
   m_GravityScale: 1.75
@@ -229,7 +229,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150040}
-  m_Mass: 100
+  m_Mass: 100000
   m_LinearDrag: 5
   m_AngularDrag: 0
   m_GravityScale: 1.5
@@ -244,7 +244,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150042}
-  m_Mass: 100
+  m_Mass: 100000
   m_LinearDrag: 5
   m_AngularDrag: 0
   m_GravityScale: 1.5
@@ -297,11 +297,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ac5d4c06abc894184ae245a42bec27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallCube: {fileID: 100000, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
+  fallCube: {fileID: 181042, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
   fallCubes:
-  - {fileID: 181042, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
-  - {fileID: 181042, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
-  - {fileID: 181042, guid: e2a2470f2f7e00244b52530947357dab, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   respawnTime: 5
 --- !u!114 &11450032
 MonoBehaviour:
@@ -351,14 +351,14 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: a2418dcd0b29c4b4b97b447b4bcced19, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3010793625
-  m_SortingOrder: 0
+  m_SortingLayerID: 1404451337
+  m_SortingOrder: 264
   m_Sprite: {fileID: 21300016, guid: 6bad8c9bafc04ea4ea53a4ea293065e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21250032
@@ -373,14 +373,14 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: a2418dcd0b29c4b4b97b447b4bcced19, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3010793625
-  m_SortingOrder: 0
+  m_SortingLayerID: 1404451337
+  m_SortingOrder: 264
   m_Sprite: {fileID: 21300016, guid: 6bad8c9bafc04ea4ea53a4ea293065e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21250034
@@ -395,14 +395,14 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: a2418dcd0b29c4b4b97b447b4bcced19, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3010793625
-  m_SortingOrder: 0
+  m_SortingLayerID: 1404451337
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300016, guid: 6bad8c9bafc04ea4ea53a4ea293065e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

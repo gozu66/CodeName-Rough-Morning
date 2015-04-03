@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 7e60b522829e3bb40afc2eb8d1939d85
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Portraits_0
+    21300002: Portraits_1
+    21300004: Portraits_2
+    21300006: Portraits_3
+    21300008: Portraits_4
+    21300010: Portraits_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +31,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +48,66 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Portraits_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 270
+        width: 160
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Portraits_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 270
+        width: 160
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Portraits_2
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 270
+        width: 160
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Portraits_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 6
+        width: 160
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Portraits_4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 6
+        width: 160
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Portraits_5
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 6
+        width: 160
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

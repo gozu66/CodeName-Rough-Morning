@@ -21,13 +21,14 @@ public class playerHealth : MonoBehaviour
 		{
 			startPoint = col.transform.position;
 			col.enabled = false;
+			weaponTransform = GameObject.Find("weaponTrans");
 		}
 		if(col.tag == "playerHazard")
 		{
 			StopAllCoroutines();
 			StartCoroutine("RespawnPlayer");
 
-			weaponTransform = GameObject.Find("weaponTrans");
+
 			if(Telekinesis.isHolding)
 				weaponTransform.SendMessage("dropObject", gameObject.transform , SendMessageOptions.DontRequireReceiver);
 

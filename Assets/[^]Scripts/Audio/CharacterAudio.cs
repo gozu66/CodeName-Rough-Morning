@@ -11,7 +11,7 @@ public class CharacterAudio : MonoBehaviour
 		int i = Random.Range(0,3);
 		if(i == lastClip){i += 1;}
 		if(i > 3){i = 0;}
-		AudioSource.PlayClipAtPoint(_footsteps[i], transform.position);
+		AudioSource.PlayClipAtPoint(_footsteps[i], transform.position, 0.5f);
 		lastClip = i;
 	}
 
@@ -23,7 +23,7 @@ public class CharacterAudio : MonoBehaviour
 		int i = Random.Range(0,3);
 		if(i == lastClipGrunt){i += 1;}
 		if(i > 2){i = 0;}
-		AudioSource.PlayClipAtPoint(grunts[i], transform.position);
+		AudioSource.PlayClipAtPoint(grunts[i], transform.position, 0.5f);
 		lastClipGrunt = i;
 	}
 

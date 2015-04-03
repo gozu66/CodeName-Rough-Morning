@@ -49,6 +49,7 @@ public class Telekinesis : MonoBehaviour
 						heldObj.gameObject.layer = 10;														//set layer to telekinesis layer
 						particle = heldObj.transform.GetChild(0).GetComponent<ParticleSystem>();
 						particle.enableEmission = true;
+						this.audio.Play();
 
 						if(heldObj.GetComponent<SmartPipes>() != null){
 							heldObj.GetComponent<SmartPipes>().Drop(false);
@@ -131,6 +132,7 @@ public class Telekinesis : MonoBehaviour
 	public void dropObject()														//called to drop current held object
 	{
 		if(heldObj != null){
+			this.audio.Stop();
 			heldObj.gameObject.layer = 11;												//reset object layer
 
 			heldObj.collider2D.enabled = false;
@@ -150,6 +152,8 @@ public class Telekinesis : MonoBehaviour
 
 			if(heldObj.GetComponent<SmartPipes>() != null)
 				heldObj.SendMessage("SnapPipe");
+
+			heldObj = null;
 		}
 	}
 	

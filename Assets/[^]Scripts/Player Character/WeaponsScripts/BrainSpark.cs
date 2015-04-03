@@ -83,6 +83,7 @@ public class BrainSpark : MonoBehaviour
 		spark.renderer.enabled = true;
 		spark.isKinematic = false;
 		myTrail.time = 3; 
+		CameraShake.instance.CamShake(0.2f, 0.2f);
 		Vector2 shootVector = new Vector2(transform.right.x * transform.parent.localScale.x, transform.right.y);
 		sparkGO.SetActive(true);
 		spark.AddForce(shootVector*speed, ForceMode2D.Impulse);

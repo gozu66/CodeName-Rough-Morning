@@ -59,7 +59,7 @@ public class Telekinesis : MonoBehaviour
 						LineRendererObject.GetComponent<TelekinesisLineRenderer>().SetTarget(heldObj.gameObject);
 						LineRendererObject.SetActive(true);
 					}else{
-						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);Debug.Log(hit2D.collider.name);}
+						if(!TKpingObject.activeInHierarchy){TKpingObject.SetActive(true);}
 						else{TKpingObject.SetActive(false);TKpingObject.SetActive(true);}
 					}
 				}else{

@@ -18,6 +18,10 @@ TagManager:
   - Steam
   - SP
   - Environment
+  - boiler_2_store
+  - store_2_boiler
+  - store_2_stairs
+  - stairs_2_store
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

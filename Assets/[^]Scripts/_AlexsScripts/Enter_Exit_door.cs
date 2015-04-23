@@ -3,24 +3,17 @@ using System.Collections;
 
 public class Enter_Exit_door : MonoBehaviour 
 {
-
-	// Use this for initialization
-	void Start () {
+	public GameObject Player;
+	public Transform destination;
 	
-	}
-	
-	// Update is called once per frame
-	void Update () 
+	void OnTriggerStay2D(Collider2D other)
 	{
-	
-	}
-	void OnTriggerEnter2D(Collider2D other)
+		if(other.gameObject == Player)
 		{
-			if (other.gameObject.tag == "Untagged") 
-				{
-					//transform.position = new Vector3(0, 0, 0);
-					Debug.Log("Hello world");
-				}
+			if(Input.GetKeyDown(KeyCode.S))
+			{
+				Player.transform.position = destination.position;
+			}
 		}
-
+	}
 }

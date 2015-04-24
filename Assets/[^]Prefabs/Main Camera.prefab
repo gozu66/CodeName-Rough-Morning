@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.82999992, y: -.400000006, z: -13}
+  m_LocalPosition: {x: 41.58992, y: 35.9394608, z: -9.09784698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2376895, y: .258825928, z: 27.8363457}
+  m_LocalPosition: {x: 0, y: 0, z: 27.8363457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -115,8 +115,8 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 56
-  orthographic: 0
-  orthographic size: 3.5
+  orthographic: 1
+  orthographic size: 1
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -240,8 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dampTime: .25
   Target: {fileID: 0}
-  distance: 10
-  maxDistance: 30
+  distance: 7
+  maxDistance: 20
 --- !u!114 &11458722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,7 +270,7 @@ MonoBehaviour:
   lightRadius: 1
   coneStart: 0
   coneAngle: 360
-  lightColor: {r: .330513209, g: .27892518, b: .492647052, a: 0}
+  lightColor: {r: .321568638, g: .273560792, b: .221945405, a: 0}
   lightDetail: 48
   lightMaterial: {fileID: 2100000, guid: 7f2be65d02f1b1740ae118214241e28e, type: 2}
   shadowLayer:
@@ -278,8 +278,8 @@ MonoBehaviour:
     m_Bits: 0
   useEvents: 0
   lightEnabled: 1
-  beamSize: 64.6500015
-  beamRange: 34.5999985
+  beamSize: 30.6700001
+  beamRange: 16.2000008
   uvTiling: {x: 1, y: 1}
   uvOffset: {x: 0, y: 0}
   pivotPoint: {x: 0, y: 0, z: 0}

@@ -22,10 +22,11 @@ public class repsawnOnDropped : MonoBehaviour
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerExit2D(Collider2D other)
 	{
-		if(other.tag == "boundingBox")
+		if (other.tag == "boundingBox") {
 			isReady = !isReady;
+		}
 	}
 
 	void OnBecameInvisible()
@@ -41,6 +42,7 @@ public class repsawnOnDropped : MonoBehaviour
 	IEnumerator Respawn()
 	{
 		yield return new WaitForSeconds(timer);
+
 		if(isReady && isInvisible){
 			isReady = false;
 			rigidbody2D.velocity = new Vector2(0, 0);

@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.58992, y: 35.9394608, z: -9.09784698}
+  m_LocalPosition: {x: 110.199997, y: 41.0999985, z: -9.10000038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 27.8363457}
+  m_LocalPosition: {x: -2.23768616, y: .258827209, z: 27.8363457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -116,7 +116,7 @@ Camera:
   far clip plane: 1000
   field of view: 56
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 12
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -270,7 +270,7 @@ MonoBehaviour:
   lightRadius: 1
   coneStart: 0
   coneAngle: 360
-  lightColor: {r: .321568638, g: .273560792, b: .221945405, a: 0}
+  lightColor: {r: .43889454, g: .441176474, b: .275735289, a: 0}
   lightDetail: 48
   lightMaterial: {fileID: 2100000, guid: 7f2be65d02f1b1740ae118214241e28e, type: 2}
   shadowLayer:

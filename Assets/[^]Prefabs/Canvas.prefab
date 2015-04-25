@@ -52,6 +52,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &128556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22428556}
+  - 222: {fileID: 22228556}
+  - 114: {fileID: 11428556}
+  m_Layer: 5
+  m_Name: SparkCharge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &134984
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .545098066, g: .505882382, b: .388235301, a: 1}
   m_Sprite: {fileID: 21300000, guid: e5782e17f5a4aa346a1fc184c08c8a16, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -165,6 +182,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 0
   m_FillOrigin: 1
+--- !u!114 &11428556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300004, guid: 2c668dd041c107c4fa909b970d2b8454, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: .187000006
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &11434984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,15 +236,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .213235319, g: .213235319, b: .213235319, a: 1}
   m_Sprite: {fileID: 21300004, guid: 2c668dd041c107c4fa909b970d2b8454, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
 --- !u!222 &22200000
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -219,6 +257,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
+--- !u!222 &22228556
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128556}
 --- !u!222 &22234984
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -261,6 +305,7 @@ RectTransform:
   - {fileID: 22434984}
   - {fileID: 22400006}
   - {fileID: 22455328}
+  - {fileID: 22428556}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -303,6 +348,23 @@ RectTransform:
   m_AnchoredPosition: {x: -76.5, y: -40.0999985}
   m_SizeDelta: {x: 128, y: 64}
   m_Pivot: {x: .5, y: .5}
+--- !u!224 &22428556
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .100000001, y: .100000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22400000}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -159, y: -42.4000015}
+  m_SizeDelta: {x: 114, y: 754}
+  m_Pivot: {x: .5, y: .5}
 --- !u!224 &22434984
 RectTransform:
   m_ObjectHideFlags: 1
@@ -328,13 +390,13 @@ RectTransform:
   m_GameObject: {fileID: 155328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .100000001, y: .100000001, z: 1}
+  m_LocalScale: {x: .127834707, y: .107650287, z: 1.0765028}
   m_Children: []
   m_Father: {fileID: 22400000}
   m_RootOrder: 2
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -159, y: -42.4000015}
+  m_AnchoredPosition: {x: -159.000031, y: -42.4000397}
   m_SizeDelta: {x: 114, y: 754}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

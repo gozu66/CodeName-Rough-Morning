@@ -9,8 +9,12 @@ public class playerHealth : MonoBehaviour
 
 	GameObject weaponTransform;
 
+	public Animator anim;
+
 	void Start()
 	{
+		anim = GetComponentInChildren<Animator>();
+
 		playerHP = 100;
 		startPoint = transform.position;
 	}
@@ -25,7 +29,7 @@ public class playerHealth : MonoBehaviour
 		}
 		if(col.tag == "playerHazard")
 		{
-			StopAllCoroutines();
+			//StopAllCoroutines();
 			StartCoroutine("RespawnPlayer");
 
 
@@ -38,11 +42,14 @@ public class playerHealth : MonoBehaviour
 
 	IEnumerator RespawnPlayer()
 	{
-		playerSprite.renderer.enabled = false;
-		rigidbody2D.isKinematic = true;
+		//playerSprite.renderer.enabled = false;
+		anim.SetTrigger("killed");
+		//rigidbody2D.isKinematic = true;
 		yield return new WaitForSeconds(delay);
+		playerSprite.renderer.enabled = false;
 		transform.position = startPoint;
-		rigidbody2D.isKinematic = false;
+		//rigidbody2D.isKinematic = false;
+		yield return new WaitForSeconds(0.2f);
 		playerSprite.renderer.enabled = true;
 //		this.gameObject.SetActive(false);
 //		yield return new WaitForSeconds(delay);

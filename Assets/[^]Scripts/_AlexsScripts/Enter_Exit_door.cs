@@ -27,7 +27,7 @@ public class Enter_Exit_door : MonoBehaviour
 	{
 		if (playerIn) 
 		{
-			if(Input.GetKeyDown(KeyCode.S))
+			if(Input.GetKeyDown(KeyCode.S) || Input.GetAxisRaw("DPad_YAxis_1") < 0)
 			{
 				Player.transform.position = destination.position;
 				Player.GetComponentInChildren<Telekinesis>().SendMessage("dropObject", gameObject.transform);

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MusicLoad : MonoBehaviour 
 {
-	private float _sofar; 
 	private static bool created = false;
 	
 	void Awake() 
@@ -14,18 +13,14 @@ public class MusicLoad : MonoBehaviour
 		} else { // this must be a duplicate from a scene reload - DESTROY! 
 			Destroy(this.gameObject); 
 		} 
+
+
 	}
 
-	void Start()
+	void Update()
 	{
-		if(Application.loadedLevel == 0)
+		if(Application.loadedLevel == 1 || Application.loadedLevel == 2 || Application.loadedLevel == 3 || Application.loadedLevel == 4 || Application.loadedLevel == 5)
 		{
-			DontDestroyOnLoad(this);
-		}
-
-		if(Application.loadedLevel != 7 && Application.loadedLevel != 6 && Application.loadedLevel != 0)
-		{
-			Debug.Log (Application.loadedLevel);
 			Destroy(gameObject);
 		}
 	}

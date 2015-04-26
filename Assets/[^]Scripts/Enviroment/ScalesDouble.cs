@@ -15,7 +15,7 @@ public class ScalesDouble : MonoBehaviour
 	float targetHeight1, targetHeight2;
 //	float normalWeight1, normalWeight2;
 
-	float refFloat = 0.0f;
+//	float refFloat = 0.0f;
 
 	void Start()
 	{

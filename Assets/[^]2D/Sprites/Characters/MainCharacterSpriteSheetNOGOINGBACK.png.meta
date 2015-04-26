@@ -21,6 +21,15 @@ TextureImporter:
     21300032: CHAR_IDLE_001
     21300034: CHAR_IDLE_002
     21300036: CHAR_IDLE_003
+    21300038: MainCharacterSpriteSheetNOGOINGBACK_19
+    21300040: MainCharacterSpriteSheetNOGOINGBACK_20
+    21300042: MainCharacterSpriteSheetNOGOINGBACK_21
+    21300044: MainCharacterSpriteSheetNOGOINGBACK_22
+    21300046: MainCharacterSpriteSheetNOGOINGBACK_23
+    21300048: MainCharacterSpriteSheetNOGOINGBACK_24
+    21300050: MainCharacterSpriteSheetNOGOINGBACK_25
+    21300052: MainCharacterSpriteSheetNOGOINGBACK_26
+    21300054: MainCharacterSpriteSheetNOGOINGBACK_27
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -249,6 +258,96 @@ TextureImporter:
         y: 514
         width: 145
         height: 461
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_19
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 27
+        width: 151
+        height: 446
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_20
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 23
+        width: 160
+        height: 426
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_21
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 27
+        width: 170
+        height: 418
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_22
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 27
+        width: 177
+        height: 373
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_23
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 29
+        width: 211
+        height: 347
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_24
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 29
+        width: 209
+        height: 294
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_25
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 34
+        width: 243
+        height: 244
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_26
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 37
+        width: 260
+        height: 216
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MainCharacterSpriteSheetNOGOINGBACK_27
+      rect:
+        serializedVersion: 2
+        x: 1754
+        y: 41
+        width: 230
+        height: 237
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

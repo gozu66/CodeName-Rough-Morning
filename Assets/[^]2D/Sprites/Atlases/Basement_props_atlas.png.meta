@@ -71,8 +71,8 @@ TextureImporter:
         y: 1687
         width: 325
         height: 349
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .0102145206, y: .717686355}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Grammaphone_Front
       rect:

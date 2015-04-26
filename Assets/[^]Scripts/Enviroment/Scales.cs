@@ -13,7 +13,6 @@ public class Scales : MonoBehaviour
 
 	float refFloat = 1.0f;
 	
-	Transform myT;
 
 	void Awake()
 	{
@@ -25,7 +24,6 @@ public class Scales : MonoBehaviour
 	void Start()
 	{
 		InvokeRepeating("CheckWeight", 0.1f, 0.25f);
-		myT = this.transform;
 	}
 
 	void FixedUpdate()

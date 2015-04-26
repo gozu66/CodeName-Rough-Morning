@@ -100,6 +100,7 @@ public class CharacterControls : MonoBehaviour
 					else if (move < 0 && !facingLeft)
 						Flip();
 				}
+
 			break;
 		}
 

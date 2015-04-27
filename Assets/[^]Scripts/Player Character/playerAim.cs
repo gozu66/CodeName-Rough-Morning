@@ -27,7 +27,7 @@ public class playerAim : MonoBehaviour
 		{
 		case UIManager.InputType.XboxPad:
 			
-			float angle2 = Mathf.Atan2 (-Input.GetAxis("R_YAxis_1") * sensitivity, Mathf.Abs(transform.position.x)) * Mathf.Rad2Deg;	//XBOX PAD 
+			float angle2 = Mathf.Atan2 (-Input.GetAxis("R_YAxis_1") * sensitivity, 25) * Mathf.Rad2Deg;	//XBOX PAD 
 			//Debug.Log(angle2);
 			//angle2 = angle2+180;
 			this.transform.rotation = Quaternion.Euler (new Vector3(0, 0, angle2));											//AIM

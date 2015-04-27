@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class UIManager : MonoBehaviour
@@ -29,17 +30,17 @@ public class UIManager : MonoBehaviour
 //		else
 //		{
 
-		Debug.Log(Input.GetJoystickNames().Length);
+//		Debug.Log(Input.GetJoystickNames().Length);
 
 			if(Input.GetJoystickNames().Length > 0)			//Input detection if player input null
 			{
 				_input = InputType.XboxPad;
-				Debug.Log("xbox");
+//				Debug.Log("xbox");
 			}
 			else
 			{
 				_input = InputType.MouseKBoard;
-				Debug.Log("KMB");
+//				Debug.Log("KMB");
 			}
 
 //			if(_input == UIManager.InputType.XboxPad)
